@@ -1,0 +1,4 @@
+# Archify delivery and browser-check evidence (machine-specific, contains local paths)
+*.delivery.json
+*.visual-check.*
+.DS_Store
