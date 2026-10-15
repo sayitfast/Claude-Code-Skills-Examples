@@ -8,6 +8,10 @@
 
 A static, responsive catalog of 100 Claude Code skills (`SKILL.md` packages). You can search it, filter it, and open any skill to see copy-ready install steps. It is built with Bootstrap 5.3.8 and vanilla JavaScript. There is no build step and no backend.
 
+
+<img width="1725" height="759" alt="Screenshot 2026-10-15 at 1 18 41 PM" src="https://github.com/user-attachments/assets/c3afa52d-5322-40d3-b269-1ffe676abb4f" />
+
+
 ## Run it
 
 ### Option 1: Double-click
