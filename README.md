@@ -12,6 +12,9 @@ A static, responsive catalog of 100 Claude Code skills (`SKILL.md` packages). Yo
 <img width="1725" height="759" alt="Screenshot 2026-10-15 at 1 18 41 PM" src="https://github.com/user-attachments/assets/c3afa52d-5322-40d3-b269-1ffe676abb4f" />
 
 
+<img width="1401" height="1004" alt="Screenshot 2026-10-15 at 1 20 10 PM" src="https://github.com/user-attachments/assets/84053a41-d161-4481-8586-5a19b23ffe92" />
+
+
 ## Run it
 
 ### Option 1: Double-click
