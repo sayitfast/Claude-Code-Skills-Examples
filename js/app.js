@@ -3,7 +3,7 @@
  * UI logic for the Claude Code Skills and Plugins catalogs.
  * The page picks its data with <body data-catalog="skills|plugins">: window.SKILLS (data/skills.js)
  * or window.PLUGINS (data/plugins.js). Handles search, filters, sorting,
- * batched card rendering, the detail modal, copy-to-clipboard, and the theme toggle.
+ * batched card rendering, the detail modal, copy-to-clipboard, favorites, and the theme toggle.
  * Vanilla ES2020, no framework, no build step.
  */
 (() => {
@@ -40,6 +40,10 @@
   };
 
   const state = { filtered: [], shown: 0, opener: null, category: "" };
+
+  // Favorites are saved per catalog in localStorage, keyed by entry name.
+  const FAVORITES_KEY = `favorites:${CATALOG.noun}`;
+  const favorites = loadFavorites();
 
   // If the Bootstrap CDN failed to load, say so instead of failing silently.
   if (typeof window.bootstrap === "undefined") {
@@ -82,6 +86,101 @@
     if (attrs) Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
     return node;
   }
+
+  /* Read the saved favorites; storage can be missing or blocked, so fall back to none. */
+  function loadFavorites() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+      return new Set(Array.isArray(saved) ? saved : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  /* Write favorites back; if storage is unavailable they still last for this page view. */
+  function saveFavorites() {
+    try {
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
+    } catch (e) {
+      /* storage unavailable */
+    }
+  }
+
+  /* Add or remove a favorite, update the card's star, and announce the change. */
+  function toggleFavorite(skill, card) {
+    const added = !favorites.has(skill.name);
+    if (added) favorites.add(skill.name);
+    else favorites.delete(skill.name);
+    saveFavorites();
+    markFavorite(card, added);
+    favoriteStatus.textContent = added ? `Added ${skill.name} to favorites.` : `Removed ${skill.name} from favorites.`;
+  }
+
+  /* Show or hide the star on a card. */
+  function markFavorite(card, isFavorite) {
+    card.classList.toggle("is-favorite", isFavorite);
+    card.querySelector(".fav-star").classList.toggle("d-none", !isFavorite);
+  }
+
+  /* Live region for favorite announcements; the modal's copy region is hidden while the modal is closed. */
+  const favoriteStatus = el("p", { cls: "visually-hidden", attrs: { role: "status", "aria-live": "polite" } });
+  document.body.append(favoriteStatus);
+
+  /* Right-click menu for cards, built from Bootstrap's dropdown styles. */
+  const cardMenu = el("ul", { cls: "dropdown-menu card-menu shadow", attrs: { role: "menu" } });
+  const cardMenuItem = el("button", { cls: "dropdown-item", attrs: { type: "button", role: "menuitem" } });
+  const cardMenuLi = el("li", { attrs: { role: "none" } });
+  cardMenuLi.append(cardMenuItem);
+  cardMenu.append(cardMenuLi);
+  document.body.append(cardMenu);
+  const menuState = { skill: null, card: null };
+
+  /* Open the card menu at the pointer, or beside the card when opened from the keyboard. */
+  function openCardMenu(e, skill, card) {
+    e.preventDefault();
+    menuState.skill = skill;
+    menuState.card = card;
+    cardMenuItem.textContent = favorites.has(skill.name) ? "Remove from favorites" : "Add to favorites";
+    cardMenu.classList.add("show");
+    let x = e.clientX;
+    let y = e.clientY;
+    if (!x && !y) {
+      const r = card.getBoundingClientRect();
+      x = r.left + 16;
+      y = r.top + 16;
+    }
+    const w = cardMenu.offsetWidth;
+    const h = cardMenu.offsetHeight;
+    cardMenu.style.left = `${Math.max(8, Math.min(x, window.innerWidth - w - 8))}px`;
+    cardMenu.style.top = `${Math.max(8, Math.min(y, window.innerHeight - h - 8))}px`;
+    cardMenuItem.focus();
+  }
+
+  /* Close the card menu; refocus the card when the menu had focus. */
+  function closeCardMenu(refocus) {
+    if (!cardMenu.classList.contains("show")) return;
+    cardMenu.classList.remove("show");
+    if (refocus && menuState.card && document.contains(menuState.card)) menuState.card.focus();
+    menuState.skill = null;
+    menuState.card = null;
+  }
+
+  cardMenuItem.addEventListener("click", () => {
+    const { skill, card } = menuState;
+    if (skill) toggleFavorite(skill, card);
+    closeCardMenu(true);
+  });
+  cardMenu.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "Tab") {
+      e.preventDefault();
+      closeCardMenu(true);
+    }
+  });
+  document.addEventListener("pointerdown", (e) => {
+    if (!cardMenu.contains(e.target)) closeCardMenu(false);
+  });
+  window.addEventListener("scroll", () => closeCardMenu(false), { passive: true });
+  window.addEventListener("resize", () => closeCardMenu(false));
 
   /* Fill the category dropdown from the distinct categories present in the data.
      Each option shows the name on the left and its color dot aligned on the right. */
@@ -144,6 +243,11 @@
       result.sort((a, b) => a.name.localeCompare(b.name));
     } else if (els.sort.value === "category") {
       result.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
+    } else if (els.sort.value === "favorites") {
+      // Favorites first, then the page's usual order: rank for skills, name for plugins.
+      result.sort((a, b) =>
+        (favorites.has(b.name) - favorites.has(a.name)) ||
+        (CATALOG.ranked ? a.rank - b.rank : a.name.localeCompare(b.name)));
     } else {
       result.sort((a, b) => a.rank - b.rank);
     }
@@ -169,6 +273,7 @@
         "aria-describedby": `${catId} ${summaryId}`
       }
     });
+    const isFavorite = favorites.has(skill.name);
 
     const body = el("div", { cls: "card-body d-flex flex-column" });
     // Top row: rank and name on the left, category color dot pinned to the top right.
@@ -180,6 +285,9 @@
       title.append(rank);
     }
     title.append(el("span", { cls: "text-break", text: skill.name, attrs: { id: nameId } }));
+    const star = el("span", { cls: "fav-star" });
+    star.append(el("span", { text: "★", attrs: { "aria-hidden": "true" } }), el("span", { cls: "visually-hidden", text: "Favorite" }));
+    title.append(star);
     const dot = el("span", { cls: "card-dot" });
     dot.append(
       el("span", { cls: "cat-dot", attrs: { "aria-hidden": "true", title: skill.category } }),
@@ -194,7 +302,10 @@
     body.append(el("p", { cls: "card-text text-body-secondary mb-0", text: skill.summary, attrs: { id: summaryId } }));
     card.append(body);
 
+    markFavorite(card, isFavorite);
+
     card.addEventListener("click", () => openModal(skill, card));
+    card.addEventListener("contextmenu", (e) => openCardMenu(e, skill, card));
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();

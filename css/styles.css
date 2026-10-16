@@ -292,6 +292,20 @@ body {
   font-size: 1.3rem;
 }
 
+/* Star shown after the name of a favorite card. */
+.fav-star {
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Right-click menu for cards (Add to / Remove from favorites). */
+.card-menu {
+  position: fixed;
+  z-index: 1070;
+  min-width: 12rem;
+}
+
 .skill-rank {
   font-size: 1rem;
   font-variant-numeric: tabular-nums;
