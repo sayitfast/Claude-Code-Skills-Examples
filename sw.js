@@ -6,7 +6,7 @@
  * with the cache as the offline fallback. The pinned Bootstrap CDN files never change, so they are cache-first.
  * Bump CACHE_VERSION whenever a shell file changes so old caches are cleared on activate.
  */
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v4";
 const CACHE_NAME = `cc-skills-${CACHE_VERSION}`;
 
 const SHELL = [
@@ -20,9 +20,9 @@ const SHELL = [
   "js/pwa.js",
   "manifest.webmanifest",
   "icons/logo.png",
-  "icons/icon.svg",
   "icons/icon-192.png",
   "icons/icon-512.png",
+  "icons/icon-maskable-512.png",
   "icons/apple-touch-icon.png",
   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css",
   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

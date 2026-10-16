@@ -34,7 +34,7 @@ A static catalog of 100 Claude Code skills: plain HTML, Bootstrap 5.3.8 (from th
 
 ### PWA
 
-- `manifest.webmanifest`, `icons/` (SVG source plus 192/512 PNGs and an apple-touch icon), `sw.js`, and `js/pwa.js` (loaded after `app.js`).
+- `manifest.webmanifest`, `icons/` (`logo.png` is the source; 192/512, maskable 512, and apple-touch PNGs are made from it on a white background), `sw.js`, and `js/pwa.js` (loaded after `app.js`).
 - `js/pwa.js` registers `sw.js` only over http(s); under `file://` it does nothing.
 - `sw.js` precaches the shell and the two pinned Bootstrap CDN files, then serves stale-while-revalidate. Bump `CACHE_VERSION` when any shell file changes, and add new shell files to `SHELL`.
 
