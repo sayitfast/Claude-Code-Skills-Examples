@@ -1,10 +1,10 @@
 <!--
   README.md
   Setup, ranking criteria, data format, assumptions, and verification summary
-  for the Top Claude Code Skill & Plugins static web app.
+  for the Top Claude Code Skills & Plugins static web app.
 -->
 
-# Top Claude Code Skill & Plugins
+# Top Claude Code Skills & Plugins
 
 A static, responsive catalog of 100 Claude Code skills (`SKILL.md` packages). You can search it, filter it, and open any skill to see copy-ready install steps. It is built with Bootstrap 5.3.8 and vanilla JavaScript. There is no build step and no backend.
 
