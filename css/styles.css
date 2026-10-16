@@ -293,6 +293,7 @@ body {
 }
 
 .skill-rank {
+  font-size: 1rem;
   font-variant-numeric: tabular-nums;
   color: var(--bs-secondary-color);
 }
