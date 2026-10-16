@@ -1,10 +1,10 @@
 <!--
   README.md
   Setup, ranking criteria, data format, assumptions, and verification summary
-  for the Top 100 Claude Code Skills static web app.
+  for the Top Claude Code Skill & Plugins static web app.
 -->
 
-# Top 100 Claude Code Skills
+# Top Claude Code Skill & Plugins
 
 A static, responsive catalog of 100 Claude Code skills (`SKILL.md` packages). You can search it, filter it, and open any skill to see copy-ready install steps. It is built with Bootstrap 5.3.8 and vanilla JavaScript. There is no build step and no backend.
 
@@ -140,12 +140,15 @@ If you add an entry, the list holds more than 100 skills. To keep exactly 100, r
 
 ## Features
 
+- Two catalogs with a Skills / Plugins tab bar at the top: `index.html` (top 100 skills) and `plugins.html` (all 315 plugins in the official `anthropics/claude-plugins-official` marketplace, with their `/plugin install` commands).
+
 - Live search across name, summary, and tags. All words must match.
 - Category filter, a "Verified only" switch, and sorting by rank or by name (A–Z).
 - Cards render in batches of 24. A "Load more" button shows how many remain and moves focus to the first new card.
 - Detail modal shows install steps, prerequisites, dependencies, usage, source, author, and tags. Each command and prompt has a Copy button that changes to "Copied" for 2 seconds.
 - A message appears when nothing matches, with a button to clear search and filters.
 - Light/dark toggle using `data-bs-theme`. It defaults to `prefers-color-scheme`, and your choice is remembered in `localStorage` when storage is available.
+- Installable PWA: when served over http(s), `sw.js` caches the page, data, icons, and the pinned Bootstrap files, so the catalog can be installed and works offline. Bump `CACHE_VERSION` in `sw.js` after changing any of those files. From `file://` the service worker is skipped and the page works as before.
 - Accessibility: cards can be focused and opened with Enter or Space, focus returns to the card when the modal closes, Tab and Shift+Tab wrap inside the open modal, Copy results are announced to screen readers, there is a skip link, results are announced in a live region, and colors are tuned for WCAG AA in both themes.
 
 ## Assumptions
@@ -158,6 +161,6 @@ If you add an entry, the list holds more than 100 skills. To keep exactly 100, r
 6. **Source links point to the `main` branch.** They can move if upstream repositories reorganize.
 7. **Summaries, usage prompts, and expected results** were written for this catalog from each skill's front-matter description. They are not quoted from upstream.
 8. **Dependencies** list what the skill's `SKILL.md` calls for (for example, `pypdf` or `pptxgenjs`). They may not be exhaustive.
-9. **Internet access is needed** for the Bootstrap CDN. No other external requests are made. If the CDN cannot be reached, the page shows a message saying so.
+9. **Internet access is needed** for the Bootstrap CDN on first load (after that, the service worker serves it offline when the page is served over http(s)). No other external requests are made. If the CDN cannot be reached, the page shows a message saying so.
 10. **Plugin-installed skills are namespaced** as `plugin:skill` (for example, `superpowers:systematic-debugging`).
 11. **Install steps assume Claude Code's `/plugin` commands.** The same actions are available as `claude plugin ...` from a shell.

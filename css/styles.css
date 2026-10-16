@@ -104,6 +104,17 @@
 [data-category="Refactoring"] { --cat: var(--cat-refactoring); }
 [data-category="Code Generation"] { --cat: var(--cat-codegen); }
 
+/* Plugin categories (plugins.html) reuse the same palette. Location and Other stay grey. */
+[data-category="Development"] { --cat: var(--cat-backend); }
+[data-category="Design"] { --cat: var(--cat-frontend); }
+[data-category="Database"] { --cat: var(--cat-data); }
+[data-category="Monitoring"] { --cat: var(--cat-debugging); }
+[data-category="Deployment"] { --cat: var(--cat-devops); }
+[data-category="Migration"] { --cat: var(--cat-refactoring); }
+[data-category="Automation"] { --cat: var(--cat-git); }
+[data-category="Learning"] { --cat: var(--cat-docs); }
+[data-category="Math"] { --cat: var(--cat-codegen); }
+
 /* ---------- Page ---------- */
 
 body {
@@ -117,6 +128,18 @@ body {
 
 .ranking-note {
   background: var(--panel-bg);
+}
+
+/* Skills / Plugins navigation: the current page gets a lime underline. */
+.catalog-nav {
+  --bs-nav-link-color: var(--bs-secondary-color);
+  --bs-nav-link-hover-color: var(--bs-body-color);
+  --bs-nav-underline-link-active-color: var(--bs-body-color);
+  font-weight: 600;
+}
+
+.catalog-nav .nav-link.active {
+  border-bottom-color: var(--lime);
 }
 
 /* ---------- Buttons ---------- */

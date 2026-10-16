@@ -25,6 +25,19 @@ A static catalog of 100 Claude Code skills: plain HTML, Bootstrap 5.3.8 (from th
 - **Entry schema** (the full table is in README.md): `rank` (unique, 1–100), `name`, `summary` (160 characters or fewer), `category` (one of 12 fixed values), `install` as an array of `{step, command|null}`, `prerequisites[]`, `dependencies[]`, `usage` as an array of `{prompt, result}`, `source` (URL or null), `author`, `tags[]`, `verified`, `verificationNote`.
 - **Verification rule:** `verified: true` only when the source has actually been confirmed (for example via `gh api`). An unverified entry has `source: null`. Never invent URLs, authors or star counts. All 100 shipped entries were confirmed on 2026-10-15, and every `/plugin install X@Y` was checked against that repo's `.claude-plugin/marketplace.json`.
 
+### Plugins page
+
+- `plugins.html` lists all 315 plugins from `anthropics/claude-plugins-official` (`.claude-plugin/marketplace.json`, read 2026-10-15). Data is `data/plugins.js` (`window.PLUGINS`), sorted by name, unranked.
+- Plugin entry fields: `name`, `summary` (≤160, cut from `description`), `description`, `category` (marketplace category, title-cased; missing becomes `Other`), `install[]`, `source` (repo or subfolder URL), `homepage`, `author` (null when the marketplace lists none), `verified`, `verificationNote`.
+- `js/app.js` serves both pages. `<body data-catalog="skills|plugins">` picks the data; rank, verified switch, counts, and skill-only modal sections (prerequisites, dependencies, usage, tags) are skipped when absent.
+- The Skills/Plugins nav (`.catalog-nav`) is duplicated in both HTML files; keep them in sync.
+
+### PWA
+
+- `manifest.webmanifest`, `icons/` (SVG source plus 192/512 PNGs and an apple-touch icon), `sw.js`, and `js/pwa.js` (loaded after `app.js`).
+- `js/pwa.js` registers `sw.js` only over http(s); under `file://` it does nothing.
+- `sw.js` precaches the shell and the two pinned Bootstrap CDN files, then serves stale-while-revalidate. Bump `CACHE_VERSION` when any shell file changes, and add new shell files to `SHELL`.
+
 ### How category colors work
 
 - JS puts a `data-category="<Category>"` attribute on cards, the modal header and the category dropdown items.

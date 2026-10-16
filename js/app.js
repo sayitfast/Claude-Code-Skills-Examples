@@ -1,7 +1,8 @@
 /*
  * js/app.js
- * UI logic for the Top 100 Claude Code Skills catalog.
- * Reads only from window.SKILLS (data/skills.js). Handles search, filters, sorting,
+ * UI logic for the Claude Code Skills and Plugins catalogs.
+ * The page picks its data with <body data-catalog="skills|plugins">: window.SKILLS (data/skills.js)
+ * or window.PLUGINS (data/plugins.js). Handles search, filters, sorting,
  * batched card rendering, the detail modal, copy-to-clipboard, and the theme toggle.
  * Vanilla ES2020, no framework, no build step.
  */
@@ -12,7 +13,11 @@
   const SEARCH_DELAY_MS = 120;
   const COPIED_MS = 2000;
 
-  const skills = Array.isArray(window.SKILLS) ? window.SKILLS : [];
+  // Which catalog this page shows. Skills are ranked; plugins are not.
+  const CATALOG = document.body.getAttribute("data-catalog") === "plugins"
+    ? { data: window.PLUGINS, noun: "plugins", ranked: false }
+    : { data: window.SKILLS, noun: "skills", ranked: true };
+  const skills = Array.isArray(CATALOG.data) ? CATALOG.data : [];
 
   const els = {
     search: document.getElementById("searchInput"),
@@ -115,6 +120,7 @@
 
   /* Show verified vs. unverified totals in the ranking note. */
   function renderCounts() {
+    if (!els.counts) return;
     const verified = skills.filter((s) => s.verified).length;
     els.counts.textContent =
       ` Of ${skills.length} entries, ${verified} are verified against a public source and ${skills.length - verified} are unverified.`;
@@ -124,18 +130,20 @@
   function applyFilters() {
     const q = els.search.value.trim().toLowerCase();
     const cat = state.category;
-    const verifiedOnly = els.verifiedOnly.checked;
+    const verifiedOnly = els.verifiedOnly ? els.verifiedOnly.checked : false;
 
     const result = skills.filter((s) => {
       if (cat && s.category !== cat) return false;
       if (verifiedOnly && !s.verified) return false;
       if (!q) return true;
-      const haystack = [s.name, s.summary, ...(s.tags || [])].join(" ").toLowerCase();
+      const haystack = [s.name, s.summary, s.description, s.author, ...(s.tags || [])].join(" ").toLowerCase();
       return q.split(/\s+/).every((term) => haystack.includes(term));
     });
 
     if (els.sort.value === "name") {
       result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (els.sort.value === "category") {
+      result.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
     } else {
       result.sort((a, b) => a.rank - b.rank);
     }
@@ -145,9 +153,10 @@
   /* Build one card. The whole card is focusable and opens the modal on click, Enter, or Space. */
   function buildCard(skill) {
     const col = el("div", { cls: "col", attrs: { role: "listitem" } });
-    const nameId = `skill-name-${skill.rank}`;
-    const summaryId = `skill-summary-${skill.rank}`;
-    const catId = `skill-cat-${skill.rank}`;
+    const key = CATALOG.ranked ? skill.rank : skill.name;
+    const nameId = `skill-name-${key}`;
+    const summaryId = `skill-summary-${key}`;
+    const catId = `skill-cat-${key}`;
 
     const card = el("article", {
       cls: "card h-100 skill-card",
@@ -165,9 +174,12 @@
     // Top row: rank and name on the left, category color dot pinned to the top right.
     const top = el("div", { cls: "d-flex align-items-start gap-2 mb-2" });
     const title = el("h2", { cls: "h6 card-title mb-0 d-flex align-items-baseline gap-2 flex-grow-1 min-w-0" });
-    const rank = el("span", { cls: "skill-rank fw-semibold" });
-    rank.append(el("span", { cls: "visually-hidden", text: "Rank " }), document.createTextNode(`#${skill.rank}`));
-    title.append(rank, el("span", { cls: "text-break", text: skill.name, attrs: { id: nameId } }));
+    if (CATALOG.ranked) {
+      const rank = el("span", { cls: "skill-rank fw-semibold" });
+      rank.append(el("span", { cls: "visually-hidden", text: "Rank " }), document.createTextNode(`#${skill.rank}`));
+      title.append(rank);
+    }
+    title.append(el("span", { cls: "text-break", text: skill.name, attrs: { id: nameId } }));
     const dot = el("span", { cls: "card-dot" });
     dot.append(
       el("span", { cls: "cat-dot", attrs: { "aria-hidden": "true", title: skill.category } }),
@@ -206,8 +218,8 @@
     els.loadMore.classList.toggle("d-none", remaining <= 0);
     els.loadMore.textContent = `Load more (${remaining} remaining)`;
     els.status.textContent = state.filtered.length
-      ? `Showing ${state.shown} of ${state.filtered.length} skills`
-      : "No skills match the current search and filters.";
+      ? `Showing ${state.shown} of ${state.filtered.length} ${CATALOG.noun}`
+      : `No ${CATALOG.noun} match the current search and filters.`;
   }
 
   /* Load more button handler: render the next batch and move focus to its first card. */
@@ -291,10 +303,19 @@
     return ul;
   }
 
+  /* A paragraph holding one link that opens in a new tab. */
+  function externalLink(url) {
+    const p = el("p", { cls: "mb-1 text-break" });
+    const a = el("a", { text: url, attrs: { href: url, target: "_blank", rel: "noopener noreferrer" } });
+    a.append(el("span", { cls: "visually-hidden", text: " (opens in a new tab)" }));
+    p.append(a);
+    return p;
+  }
+
   /* Fill and open the detail modal for a skill; opener is the card to refocus on close. */
   function openModal(skill, opener) {
     state.opener = opener || null;
-    els.modalTitle.textContent = `#${skill.rank} ${skill.name}`;
+    els.modalTitle.textContent = CATALOG.ranked ? `#${skill.rank} ${skill.name}` : skill.name;
     els.modalTitle.closest(".modal-header").setAttribute("data-category", skill.category);
     const body = els.modalBody;
     body.replaceChildren();
@@ -306,7 +327,7 @@
       text: skill.verified ? "Verified" : "Unverified"
     }));
     body.append(meta);
-    body.append(el("p", { text: skill.summary }));
+    body.append(el("p", { text: skill.description || skill.summary }));
     body.append(el("p", { cls: "text-body-secondary", text: skill.verificationNote }));
 
     // Install steps
@@ -321,42 +342,52 @@
     inst.append(ol);
     body.append(inst);
 
-    const pre = section("Prerequisites");
-    pre.append(bulletList(skill.prerequisites));
-    body.append(pre);
+    // Skill-only sections; plugin entries do not carry these fields.
+    if (Array.isArray(skill.prerequisites)) {
+      const pre = section("Prerequisites");
+      pre.append(bulletList(skill.prerequisites));
+      body.append(pre);
+    }
 
-    const deps = section("Dependencies");
-    deps.append(bulletList(skill.dependencies));
-    body.append(deps);
+    if (Array.isArray(skill.dependencies)) {
+      const deps = section("Dependencies");
+      deps.append(bulletList(skill.dependencies));
+      body.append(deps);
+    }
 
     // Usage examples
-    const usage = section("Usage");
-    (skill.usage || []).forEach((u, i) => {
-      usage.append(codeBlock(u.prompt, `example prompt ${i + 1}`));
-      usage.append(el("p", { cls: "mt-2", text: `Expected result: ${u.result}` }));
-    });
-    body.append(usage);
+    if (Array.isArray(skill.usage)) {
+      const usage = section("Usage");
+      skill.usage.forEach((u, i) => {
+        usage.append(codeBlock(u.prompt, `example prompt ${i + 1}`));
+        usage.append(el("p", { cls: "mt-2", text: `Expected result: ${u.result}` }));
+      });
+      body.append(usage);
+    }
 
     // Source and author
     const src = section("Source");
     if (skill.source) {
-      const p = el("p", { cls: "mb-1 text-break" });
-      const a = el("a", { text: skill.source, attrs: { href: skill.source, target: "_blank", rel: "noopener noreferrer" } });
-      a.append(el("span", { cls: "visually-hidden", text: " (opens in a new tab)" }));
-      p.append(a);
-      src.append(p);
+      src.append(externalLink(skill.source));
     } else {
       src.append(el("p", { cls: "mb-1", text: "No confirmed source." }));
     }
-    src.append(el("p", { cls: "mb-0", text: `Author: ${skill.author || "Unknown"}` }));
+    if (skill.homepage && skill.homepage !== skill.source) {
+      const home = externalLink(skill.homepage);
+      home.prepend(document.createTextNode("Homepage: "));
+      src.append(home);
+    }
+    src.append(el("p", { cls: "mb-0", text: `Author: ${skill.author || (CATALOG.ranked ? "Unknown" : "Not listed in the marketplace")}` }));
     body.append(src);
 
     // Tags
-    const tags = section("Tags");
-    const tagWrap = el("div", { cls: "d-flex flex-wrap gap-2" });
-    (skill.tags || []).forEach((t) => tagWrap.append(el("span", { cls: "badge border text-body-emphasis bg-body-tertiary fw-normal", text: t })));
-    tags.append(tagWrap);
-    body.append(tags);
+    if (Array.isArray(skill.tags)) {
+      const tags = section("Tags");
+      const tagWrap = el("div", { cls: "d-flex flex-wrap gap-2" });
+      skill.tags.forEach((t) => tagWrap.append(el("span", { cls: "badge border text-body-emphasis bg-body-tertiary fw-normal", text: t })));
+      tags.append(tagWrap);
+      body.append(tags);
+    }
 
     modal.show();
   }
@@ -410,8 +441,8 @@
   function clearAll() {
     els.search.value = "";
     setCategory("");
-    els.verifiedOnly.checked = false;
-    els.sort.value = "rank";
+    if (els.verifiedOnly) els.verifiedOnly.checked = false;
+    els.sort.selectedIndex = 0;
     refresh();
     els.search.focus();
   }
@@ -424,7 +455,7 @@
     renderCounts();
     els.search.addEventListener("input", debounce(refresh, SEARCH_DELAY_MS));
     els.sort.addEventListener("change", refresh);
-    els.verifiedOnly.addEventListener("change", refresh);
+    if (els.verifiedOnly) els.verifiedOnly.addEventListener("change", refresh);
     els.clear.addEventListener("click", clearAll);
     els.loadMore.addEventListener("click", loadMore);
     refresh();

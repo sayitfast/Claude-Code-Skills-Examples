@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
   index.html
-  Top 100 Claude Code Skills: a static, searchable catalog.
+  Top Claude Code Skill & Plugins: a static, searchable catalog.
   Data comes from data/skills.js (window.SKILLS); behavior lives in js/app.js.
   Runs from file:// (double-click) or any static server. No build step.
 -->
@@ -10,7 +10,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A curated, searchable list of the top 100 Claude Code skills with install steps and usage examples.">
-  <title>Top 100 Claude Code Skills</title>
+  <title>Top Claude Code Skill &amp; Plugins</title>
+
+  <!-- PWA: install metadata and icons. The service worker is registered by js/pwa.js.
+       The manifest is only linked over http(s); from file:// Chrome blocks it with a CORS error. -->
+  <script>
+    if (location.protocol === "http:" || location.protocol === "https:") {
+      var manifest = document.createElement("link");
+      manifest.rel = "manifest";
+      manifest.href = "manifest.webmanifest";
+      document.head.appendChild(manifest);
+    }
+  </script>
+  <meta name="theme-color" content="#f5f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="CC Skills">
 
   <!-- Apply the saved or system theme before first paint to avoid a flash. -->
   <script>
@@ -28,14 +44,14 @@
         crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-catalog="skills">
   <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary" href="#results">Skip to results</a>
 
   <header class="site-header border-bottom">
     <div class="container py-4">
       <div class="d-flex align-items-start justify-content-between gap-3">
         <div>
-          <h1 class="h2 fw-semibold mb-1">Top 100 Claude Code Skills</h1>
+          <h1 class="h2 fw-semibold mb-1">Top Claude Code Skill &amp; Plugins</h1>
           <p class="text-body-secondary mb-0">Curated SKILL.md packages you can install today, with exact steps and example prompts.</p>
         </div>
         <button id="themeToggle" type="button" class="btn btn-outline-secondary flex-shrink-0"
@@ -43,6 +59,12 @@
           <span id="themeToggleText">Dark</span>
         </button>
       </div>
+      <nav class="mt-3" aria-label="Catalogs">
+        <ul class="nav nav-underline catalog-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="plugins.html">Plugins</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -141,5 +163,6 @@
           crossorigin="anonymous"></script>
   <script src="data/skills.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/pwa.js"></script>
 </body>
 </html>

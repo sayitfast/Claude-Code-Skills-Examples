@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Full-bleed background so the same art works as a maskable icon. -->
+  <rect width="512" height="512" fill="#141414"/>
+  <rect x="96" y="96" width="320" height="320" rx="56" fill="#8cc63f"/>
+  <text x="256" y="300" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="128" font-weight="700" fill="#141414">100</text>
+</svg>
