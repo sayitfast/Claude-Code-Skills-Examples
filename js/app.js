@@ -35,15 +35,18 @@
     modal: document.getElementById("skillModal"),
     modalTitle: document.getElementById("skillModalTitle"),
     modalBody: document.getElementById("skillModalBody"),
+    modalFavorite: document.getElementById("modalFavorite"),
     themeToggle: document.getElementById("themeToggle"),
     themeText: document.getElementById("themeToggleText")
   };
 
-  const state = { filtered: [], shown: 0, opener: null, category: "" };
+  const state = { filtered: [], shown: 0, opener: null, category: "", modalSkill: null };
 
   // Favorites are saved per catalog in localStorage, keyed by entry name.
   const FAVORITES_KEY = `favorites:${CATALOG.noun}`;
   const favorites = loadFavorites();
+  // The rendered card for each entry, so the modal's star can update the card's star too.
+  const cardFor = new Map();
 
   // If the Bootstrap CDN failed to load, say so instead of failing silently.
   if (typeof window.bootstrap === "undefined") {
@@ -59,6 +62,7 @@
   els.modal.addEventListener("hidden.bs.modal", () => {
     if (state.opener && document.contains(state.opener)) state.opener.focus();
     state.opener = null;
+    state.modalSkill = null;
   });
 
   // Wrap Tab and Shift+Tab inside the modal so focus never leaves it, even for one keystroke.
@@ -106,15 +110,30 @@
     }
   }
 
-  /* Add or remove a favorite, update the card's star, and announce the change. */
-  function toggleFavorite(skill, card) {
+  /* Add or remove a favorite, update the card's and the modal's stars, and announce the change. */
+  function toggleFavorite(skill) {
     const added = !favorites.has(skill.name);
     if (added) favorites.add(skill.name);
     else favorites.delete(skill.name);
     saveFavorites();
-    markFavorite(card, added);
+    const card = cardFor.get(skill);
+    if (card && document.contains(card)) markFavorite(card, added);
+    if (state.modalSkill === skill) markModalFavorite(added);
     favoriteStatus.textContent = added ? `Added ${skill.name} to favorites.` : `Removed ${skill.name} from favorites.`;
   }
+
+  /* Show a filled star in the modal header for a favorite, or an empty one to add it. */
+  function markModalFavorite(isFavorite) {
+    const btn = els.modalFavorite;
+    btn.classList.toggle("is-favorite", isFavorite);
+    btn.setAttribute("aria-pressed", String(isFavorite));
+    btn.title = isFavorite ? "Remove from favorites" : "Add to favorites";
+    btn.firstElementChild.textContent = isFavorite ? "★" : "☆";
+  }
+
+  els.modalFavorite.addEventListener("click", () => {
+    if (state.modalSkill) toggleFavorite(state.modalSkill);
+  });
 
   /* Show or hide the star on a card. */
   function markFavorite(card, isFavorite) {
@@ -166,8 +185,8 @@
   }
 
   cardMenuItem.addEventListener("click", () => {
-    const { skill, card } = menuState;
-    if (skill) toggleFavorite(skill, card);
+    const { skill } = menuState;
+    if (skill) toggleFavorite(skill);
     closeCardMenu(true);
   });
   cardMenu.addEventListener("keydown", (e) => {
@@ -313,6 +332,7 @@
     card.append(body);
 
     markFavorite(card, isFavorite);
+    cardFor.set(skill, card);
 
     card.addEventListener("click", () => openModal(skill, card));
     card.addEventListener("contextmenu", (e) => openCardMenu(e, skill, card));
@@ -436,6 +456,8 @@
   /* Fill and open the detail modal for a skill; opener is the card to refocus on close. */
   function openModal(skill, opener) {
     state.opener = opener || null;
+    state.modalSkill = skill;
+    markModalFavorite(favorites.has(skill.name));
     els.modalTitle.textContent = CATALOG.ranked ? `#${skill.rank} ${skill.name}` : skill.name;
     els.modalTitle.closest(".modal-header").setAttribute("data-category", skill.category);
     const body = els.modalBody;

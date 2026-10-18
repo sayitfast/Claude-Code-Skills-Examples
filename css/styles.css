@@ -368,6 +368,32 @@ body {
   border-top: 4px solid var(--cat);
 }
 
+/* Favorite toggle in the modal header: an empty star, or a filled accent star for a favorite. */
+.modal-fav {
+  margin-left: auto;
+  padding: 0 0.25rem;
+  border: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--bs-secondary-color);
+}
+
+.modal-fav:hover,
+.modal-fav.is-favorite {
+  color: var(--accent);
+}
+
+.modal-fav:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* Bootstrap pushes the close button right with an auto margin; the star already does that. */
+.modal-header .modal-fav + .btn-close {
+  margin-left: 0.75rem;
+}
+
 /* Code blocks with a copy button in the top-right corner. */
 .code-block {
   position: relative;

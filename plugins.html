@@ -63,7 +63,7 @@
         <ul class="nav nav-underline catalog-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Skills</a></li>
           <li class="nav-item"><a class="nav-link active" href="plugins.html" aria-current="page">Plugins</a></li>
-          <li class="nav-item"><a class="nav-link" href="architecture-diagram.html">Site Architecture</a></li>
+          <li class="nav-item"><a class="nav-link" href="architecture-diagram.html" target="_blank" rel="noopener">Site Architecture<span class="visually-hidden"> (opens in a new tab)</span></a></li>
         </ul>
       </nav>
     </div>
@@ -143,6 +143,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title h5" id="skillModalTitle">Skill</h2>
+          <button type="button" class="btn modal-fav" id="modalFavorite" aria-pressed="false" aria-label="Favorite" title="Add to favorites"><span aria-hidden="true">☆</span></button>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="skillModalBody"></div>
