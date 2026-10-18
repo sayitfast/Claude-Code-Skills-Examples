@@ -5239,7 +5239,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
         <g data-graph-role="automatic-crossover" style="--step:7">
           <path data-graph-role="automatic-crossover-underlay" d="M 624 200 L 624 268 Q 624 276 632 276 L 730 276" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="app" data-edge-to="storage" data-edge-label="theme" data-edge-key="7" data-edge-id="save-theme" data-composition-points="624,200;624,276;730,276" data-composition-crossover="halo" data-composition-independent="true" d="M 624 200 L 624 268 Q 624 276 632 276 L 730 276" class="a-dashed" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-edge-from="app" data-edge-to="storage" data-edge-label="saves" data-edge-key="7" data-edge-id="save-prefs" data-composition-points="624,200;624,276;730,276" data-composition-crossover="halo" data-composition-independent="true" d="M 624 200 L 624 268 Q 624 276 632 276 L 730 276" class="a-dashed" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:8">
           <path data-graph-role="automatic-crossover-underlay" d="M 1030 200 L 1030 260" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -5306,15 +5306,15 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="fine" x="570" y="72" class="t-database" font-size="7" text-anchor="middle">strict JSON</text>
         </g>
 
-        <g id="node-app" data-node-id="app" data-node-label="js/app.js" tabindex="0" role="button" aria-label="Focus js/app.js, filter, sort, render, Architecture component" aria-pressed="false" data-node-kind="backend" data-node-sublabel="filter, sort, render" data-node-context="Architecture component">
-          <title>js/app.js · filter, sort, render · Architecture component</title>
+        <g id="node-app" data-node-id="app" data-node-label="js/app.js" tabindex="0" role="button" aria-label="Focus js/app.js, filter, sort, favorites, Architecture component" aria-pressed="false" data-node-kind="backend" data-node-sublabel="filter, sort, favorites" data-node-context="Architecture component">
+          <title>js/app.js · filter, sort, favorites · Architecture component</title>
           <rect x="500" y="140" width="140" height="60" rx="8" class="c-mask"/>
           <rect x="500" y="140" width="140" height="60" rx="8" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(506 146) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="570" y="168" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">js/app.js</text>
-        <text data-detail="context" x="570" y="184" class="t-muted" font-size="9" text-anchor="middle">filter, sort, render</text>
+        <text data-detail="context" x="570" y="184" class="t-muted" font-size="9" text-anchor="middle">filter, sort, favorites</text>
         </g>
 
         <g id="node-css" data-node-id="css" data-node-label="css/styles.css" tabindex="0" role="button" aria-label="Focus css/styles.css, lime accent, Architecture component" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="lime accent" data-node-context="Architecture component">
@@ -5359,8 +5359,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="context" x="1030" y="184" class="t-muted" font-size="9" text-anchor="middle">install steps</text>
         </g>
 
-        <g id="node-storage" data-node-id="storage" data-node-label="localStorage" tabindex="0" role="button" aria-label="Focus localStorage, theme choice, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="theme choice" data-node-context="Architecture component">
-          <title>localStorage · theme choice · Architecture component</title>
+        <g id="node-storage" data-node-id="storage" data-node-label="localStorage" tabindex="0" role="button" aria-label="Focus localStorage, theme + favorites, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="theme + favorites" data-node-context="Architecture component">
+          <title>localStorage · theme + favorites · Architecture component</title>
           <rect x="730" y="260" width="140" height="60" rx="8" class="c-mask"/>
           <rect x="730" y="260" width="140" height="60" rx="8" class="c-database" data-animate="node" style="--step:8" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(736 266) scale(0.6875)">
@@ -5368,7 +5368,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="800" y="288" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">localStorage</text>
-        <text data-detail="context" x="800" y="304" class="t-muted" font-size="9" text-anchor="middle">theme choice</text>
+        <text data-detail="context" x="800" y="304" class="t-muted" font-size="9" text-anchor="middle">theme + favorites</text>
         </g>
 
         <g id="node-clipboard" data-node-id="clipboard" data-node-label="Clipboard API" tabindex="0" role="button" aria-label="Focus Clipboard API, copy commands, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="copy commands" data-node-context="Architecture component">
@@ -5438,9 +5438,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <rect x="898" y="150" width="34" height="14" rx="3" class="c-mask"/>
           <text x="915" y="160" class="t-edge-emphasis" font-size="8" text-anchor="middle">Enter</text>
         </g>
-        <g data-detail="context" data-edge-from="app" data-edge-to="storage" data-edge-label="theme" data-edge-key="7" data-edge-id="save-theme">
+        <g data-detail="context" data-edge-from="app" data-edge-to="storage" data-edge-label="saves" data-edge-key="7" data-edge-id="save-prefs">
           <rect x="660" y="256" width="34" height="14" rx="3" class="c-mask"/>
-          <text x="677" y="266" class="t-edge-dashed" font-size="8" text-anchor="middle">theme</text>
+          <text x="677" y="266" class="t-edge-dashed" font-size="8" text-anchor="middle">saves</text>
         </g>
         <g data-detail="context" data-edge-from="modal" data-edge-to="clipboard" data-edge-label="Copy" data-edge-key="8" data-edge-id="copy-command">
           <rect x="1015" y="204" width="30" height="14" rx="3" class="c-mask"/>
@@ -5667,6 +5667,17 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <ul>
           <li>Skills and plugins as strict JSON in data/*.js</li>
           <li>The UI reads only window.SKILLS or window.PLUGINS</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot amber"></div>
+          <h3>Sort by</h3>
+        </div>
+        <ul>
+          <li>Rank or Name, Category on plugins, and Favorites first</li>
+          <li>Anthropic Official keeps only entries from anthropics/ repos</li>
         </ul>
       </div>
 

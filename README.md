@@ -42,20 +42,30 @@ The page opens from `file://`. The data loads from `data/skills.js` through a no
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Page markup, Bootstrap CDN links (pinned and SRI-checked), modal shell |
-| `css/styles.css` | Small overrides: accent color, focus states, code blocks |
-| `js/app.js` | Search, filters, sort, batched rendering, modal, copy, theme toggle |
-| `data/skills.js` | `window.SKILLS = [...]`, every entry as strict JSON |
+| `index.html` | Skills page: markup, Bootstrap CDN links (pinned and SRI-checked), modal shell |
+| `plugins.html` | Plugins page, with the same layout as `index.html` |
+| `css/styles.css` | Small overrides: accent color, category colors, focus states, code blocks |
+| `js/app.js` | Search, filters, sort, favorites, batched rendering, modal, copy, theme toggle (serves both pages) |
+| `js/pwa.js` | Registers the service worker when the page is served over http(s) |
+| `sw.js` | Service worker: precaches the app shell and serves it offline |
+| `manifest.webmanifest`, `icons/` | PWA install metadata and app icons |
+| `data/skills.js` | `window.SKILLS = [...]`, every skill as strict JSON |
+| `data/plugins.js` | `window.PLUGINS = [...]`, every plugin in the official marketplace as strict JSON |
+| `architecture-diagram.html` | Interactive architecture diagram of the app |
 | `REVIEW.md` | Independent review findings, followed by a Resolution section listing what was fixed |
 
 ## Ranking criteria
 
-The order of skills is an editorial judgment based on these criteria, in priority order:
+The skills were added in two batches.
+
+**First batch (checked 2026-10-15).** The order is an editorial judgment based on these criteria, in priority order:
 
 1. **Official / first-party status.** Skills that Anthropic publishes (`anthropics/skills`, `anthropics/claude-plugins-official`, `anthropics/claude-code`) rank first.
 2. **Community adoption.** GitHub stars of the source repository, and whether the plugin is listed in Anthropic's official plugin marketplace. For example, obra/superpowers (~299k stars) ranks above smaller vendor collections.
 3. **Breadth of usefulness.** General workflows (debugging, TDD, code review, documents) rank above stack-specific skills (Expo, Terraform, Cloudflare).
 4. **Maintenance activity.** Every source repository received a push within the 14 days before it was checked on 2026-10-15.
+
+**Second batch (added 2026-10-18).** These rank after the first batch. They are ordered by the source repository's GitHub stars, then by the date of the last commit to the skill's `SKILL.md` (newest first), then by name. At most 25 skills come from any one repository, so a few very large collections don't crowd out everything else.
 
 ## Verification summary
 
@@ -141,6 +151,7 @@ To replace a skill instead of adding one, overwrite an existing entry and reuse 
 
 - Live search across name, summary, and tags. All words must match.
 - Category filter, a "Verified only" switch, and sorting by rank, name (A–Z), or favorites. The "Anthropic Official" sort option shows only Anthropic's own skills or plugins (sourced from an `anthropics/` repository, not counting the third-party plugins under `external_plugins/`).
+- Favorites: right-click a card and choose "Add to favorites". Favorite cards show a star, and the Favorites sort option lists them first. Each page keeps its own favorites in `localStorage` when storage is available.
 - Cards render in batches of 24. A "Load more" button shows how many remain and moves focus to the first new card.
 - Detail modal shows install steps, prerequisites, dependencies, usage, source, author, and tags. Each command and prompt has a Copy button that changes to "Copied" for 2 seconds.
 - A message appears when nothing matches, with a button to clear search and filters.
@@ -152,12 +163,12 @@ To replace a skill instead of adding one, overwrite an existing entry and reuse 
 
 1. **"Top" is editorial.** No public ranking of skills exists, so the ranking criteria above define the order.
 2. **Only real `SKILL.md` files count.** Every entry maps to one `SKILL.md` in a public repository. Slash-command-only plugins, MCP servers, and generic tips are excluded.
-3. **Sources are limited to well-known publishers.** Anthropic, obra/superpowers, Vercel, Trail of Bits, Sentry, Cloudflare, Supabase, Expo, HashiCorp, and Hugging Face. Using only these let every entry be verified, which is why there are 0 unverified entries. The UI still fully supports unverified entries (badge and filter).
+3. **Where the skills come from.** The first batch comes only from well-known publishers: Anthropic, obra/superpowers, Vercel, Trail of Bits, Sentry, Cloudflare, Supabase, Expo, HashiCorp, and Hugging Face. The second batch comes from GitHub searches (repository, topic, and code searches for `SKILL.md`) and from awesome-claude-skills and awesome-claude-code lists. Forks, archived repositories, placeholder or template skills, and repositories of copied or leaked vendor prompts are left out. A skill is also skipped when its name or source already appears in this catalog or in the plugins catalog. Every entry is verified. The UI still fully supports unverified entries (badge and filter).
 4. **Plugin installs are preferred.** When the source repository has a Claude Code plugin marketplace, install steps use `/plugin marketplace add` and `/plugin install`. Otherwise they clone the repository (POSIX shell, safe to re-run) and copy the skill folder's contents into `~/.claude/skills/<name>/`, using the front-matter `name` as the folder name.
-5. **`author` is the publishing organization** (for example, "Anthropic" or "Trail of Bits"). It is not an individual's name, to avoid misattribution.
-6. **Source links point to the `main` branch.** They can move if upstream repositories reorganize.
+5. **`author` is the publisher, not an individual's name**, to avoid misattribution. In the first batch it is the publishing organization (for example, "Anthropic" or "Trail of Bits"). In the second batch it is the GitHub account that owns the repository, except that Anthropic's repositories use "Anthropic".
+6. **Source links point to the repository's default branch** (usually `main`). They can move if upstream repositories reorganize.
 7. **Summaries, usage prompts, and expected results** were written for this catalog from each skill's front-matter description. They are not quoted from upstream.
-8. **Dependencies** list what the skill's `SKILL.md` calls for (for example, `pypdf` or `pptxgenjs`). They may not be exhaustive.
+8. **Dependencies** list what the skill's `SKILL.md` calls for (for example, `pypdf` or `pptxgenjs`). In the second batch they list only tools the front-matter description names. They may not be exhaustive.
 9. **Internet access is needed** for the Bootstrap CDN on first load (after that, the service worker serves it offline when the page is served over http(s)). No other external requests are made. If the CDN cannot be reached, the page shows a message saying so.
 10. **Plugin-installed skills are namespaced** as `plugin:skill` (for example, `superpowers:systematic-debugging`).
 11. **Install steps assume Claude Code's `/plugin` commands.** The same actions are available as `claude plugin ...` from a shell.
