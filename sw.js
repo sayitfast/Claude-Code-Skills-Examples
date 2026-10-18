@@ -6,13 +6,14 @@
  * with the cache as the offline fallback. The pinned Bootstrap CDN files never change, so they are cache-first.
  * Bump CACHE_VERSION whenever a shell file changes so old caches are cleared on activate.
  */
-const CACHE_VERSION = "v10";
+const CACHE_VERSION = "v11";
 const CACHE_NAME = `cc-skills-${CACHE_VERSION}`;
 
 const SHELL = [
   "./",
   "index.html",
   "plugins.html",
+  "architecture-diagram.html",
   "css/styles.css",
   "data/skills.js",
   "data/plugins.js",
