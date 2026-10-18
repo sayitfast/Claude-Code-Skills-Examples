@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static catalog of 100 Claude Code skills: plain HTML, Bootstrap 5.3.8 (from the jsDelivr CDN, pinned with SRI hashes), and vanilla ES2020. There is no build step, no package.json, no backend and no test suite in the repo.
+A static catalog of Claude Code skills and plugins: plain HTML, Bootstrap 5.3.8 (from the jsDelivr CDN, pinned with SRI hashes), and vanilla ES2020. There is no build step, no package.json, no backend and no test suite in the repo.
 
 ## Commands
 
@@ -22,12 +22,12 @@ A static catalog of 100 Claude Code skills: plain HTML, Bootstrap 5.3.8 (from th
 
 - **The data is a script, not JSON.** `data/skills.js` assigns a strict-JSON array to `window.SKILLS`: double quotes, no trailing commas, no comments or functions inside the array. It is a `.js` file because `fetch()` of local files is blocked under `file://`. Load order in `index.html` is: Bootstrap bundle, then `data/skills.js`, then `js/app.js`.
 - **The UI reads only `window.SKILLS`.** Adding or editing a skill must never require UI changes. `js/app.js` is a single IIFE that handles filtering and sorting, renders cards in batches of 24 ("Load more"), and fills one shared Bootstrap modal using `textContent`, never `innerHTML`.
-- **Entry schema** (the full table is in README.md): `rank` (unique, 1–100), `name`, `summary` (160 characters or fewer), `category` (one of 12 fixed values), `install` as an array of `{step, command|null}`, `prerequisites[]`, `dependencies[]`, `usage` as an array of `{prompt, result}`, `source` (URL or null), `author`, `tags[]`, `verified`, `verificationNote`.
-- **Verification rule:** `verified: true` only when the source has actually been confirmed (for example via `gh api`). An unverified entry has `source: null`. Never invent URLs, authors or star counts. All 100 shipped entries were confirmed on 2026-10-15, and every `/plugin install X@Y` was checked against that repo's `.claude-plugin/marketplace.json`.
+- **Entry schema** (the full table is in README.md): `rank` (unique positive integer), `name`, `summary` (160 characters or fewer), `category` (one of 12 fixed values), `install` as an array of `{step, command|null}`, `prerequisites[]`, `dependencies[]`, `usage` as an array of `{prompt, result}`, `source` (URL or null), `author`, `tags[]`, `verified`, `verificationNote`.
+- **Verification rule:** `verified: true` only when the source has actually been confirmed (for example via `gh api`). An unverified entry has `source: null`. Never invent URLs, authors or star counts. Every shipped entry was confirmed through the GitHub API (the first batch on 2026-10-15, the second on 2026-10-18), and every `/plugin install X@Y` was checked against that repo's `.claude-plugin/marketplace.json`.
 
 ### Plugins page
 
-- `plugins.html` lists all 315 plugins from `anthropics/claude-plugins-official` (`.claude-plugin/marketplace.json`, read 2026-10-15). Data is `data/plugins.js` (`window.PLUGINS`), sorted by name, unranked.
+- `plugins.html` lists every plugin from `anthropics/claude-plugins-official` (`.claude-plugin/marketplace.json`, read 2026-10-15). Data is `data/plugins.js` (`window.PLUGINS`), sorted by name, unranked.
 - Plugin entry fields: `name`, `summary` (≤160, cut from `description`), `description`, `category` (marketplace category, title-cased; missing becomes `Other`), `install[]`, `source` (repo or subfolder URL), `homepage`, `author` (null when the marketplace lists none), `verified`, `verificationNote`.
 - `js/app.js` serves both pages. `<body data-catalog="skills|plugins">` picks the data; rank, verified switch, counts, and skill-only modal sections (prerequisites, dependencies, usage, tags) are skipped when absent.
 - The Skills/Plugins nav (`.catalog-nav`) is duplicated in both HTML files; keep them in sync.

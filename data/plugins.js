@@ -1,7 +1,7 @@
 /*
  * data/plugins.js
  * Every plugin in the official Claude Code marketplace (anthropics/claude-plugins-official),
- * generated from its .claude-plugin/marketplace.json on 2026-10-15. 315 entries, sorted by name.
+ * generated from its .claude-plugin/marketplace.json on 2026-10-15, sorted by name.
  * The value assigned to window.PLUGINS is a plain JSON array (double quotes, no trailing commas).
  * A .js file is used instead of .json because fetch() of local files is blocked under file://.
  */

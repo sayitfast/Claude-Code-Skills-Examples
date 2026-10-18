@@ -225,15 +225,24 @@
       ` Of ${skills.length} entries, ${verified} are verified against a public source and ${skills.length - verified} are unverified.`;
   }
 
-  /* Return skills matching the current search text, category, and verified filter, sorted. */
+  /* Anthropic's own entries: sourced from an anthropics/ repo, excluding the third-party
+     plugins the official marketplace hosts under external_plugins/. */
+  function isAnthropic(s) {
+    return /^https:\/\/github\.com\/anthropics\//i.test(s.source || "") && !s.source.includes("/external_plugins/");
+  }
+
+  /* Return skills matching the current search text, category, and verified filter, sorted.
+     The "Anthropic" sort option also narrows the list to Anthropic's own entries. */
   function applyFilters() {
     const q = els.search.value.trim().toLowerCase();
     const cat = state.category;
     const verifiedOnly = els.verifiedOnly ? els.verifiedOnly.checked : false;
+    const anthropicOnly = els.sort.value === "anthropic";
 
     const result = skills.filter((s) => {
       if (cat && s.category !== cat) return false;
       if (verifiedOnly && !s.verified) return false;
+      if (anthropicOnly && !isAnthropic(s)) return false;
       if (!q) return true;
       const haystack = [s.name, s.summary, s.description, s.author, ...(s.tags || [])].join(" ").toLowerCase();
       return q.split(/\s+/).every((term) => haystack.includes(term));
@@ -249,7 +258,8 @@
         (favorites.has(b.name) - favorites.has(a.name)) ||
         (CATALOG.ranked ? a.rank - b.rank : a.name.localeCompare(b.name)));
     } else {
-      result.sort((a, b) => a.rank - b.rank);
+      // Rank, or the Anthropic option, which keeps the page's usual order.
+      result.sort((a, b) => (CATALOG.ranked ? a.rank - b.rank : a.name.localeCompare(b.name)));
     }
     return result;
   }

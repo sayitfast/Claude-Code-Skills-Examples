@@ -1,7 +1,7 @@
 {
   "name": "Top Claude Code Skills & Plugins",
   "short_name": "CC Skills",
-  "description": "A curated, searchable list of the top 100 Claude Code skills with install steps and usage examples.",
+  "description": "A curated, searchable list of the top Claude Code skills with install steps and usage examples.",
   "id": "./",
   "start_url": "./",
   "scope": "./",

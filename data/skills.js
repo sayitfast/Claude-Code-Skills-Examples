@@ -1,6 +1,8 @@
 /*
  * data/skills.js
- * Curated list of 100 Claude Code skills. The value assigned to window.SKILLS is a plain JSON array
+ * Curated list of Claude Code skills. The first batch was checked on 2026-10-15; the second batch was added
+ * on 2026-10-18, ranked by repository stars, then SKILL.md recency, then name (at most 25 per repository).
+ * The value assigned to window.SKILLS is a plain JSON array
  * (double quotes, no trailing commas, no functions) so it can be copied into a .json file as-is.
  * A .js file is used instead of .json because fetch() of local files is blocked under file://.
  * Edit entries here only; the UI reads window.SKILLS and needs no changes.
@@ -4506,5 +4508,19499 @@ window.SKILLS = [
     ],
     "verified": true,
     "verificationNote": "SKILL.md confirmed at anthropics/claude-code/plugins/claude-opus-4-5-migration/skills/claude-opus-4-5-migration via the GitHub API on 2026-10-15; installable via the claude-code-plugins marketplace (plugin claude-opus-4-5-migration)."
+  },
+  {
+    "rank": 101,
+    "name": "rea-analysis-optimization",
+    "summary": "Optimizes REA analysis providers and shared workflows for context, latency, CPU and memory while preserving correctness and Evidence.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/morluto-rea ] || git clone --depth 1 https://github.com/morluto/rea.git /tmp/morluto-rea"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/rea-analysis-optimization/.",
+        "command": "mkdir -p ~/.claude/skills/rea-analysis-optimization && cp -R /tmp/morluto-rea/.agents/skills/rea-analysis-optimization/. ~/.claude/skills/rea-analysis-optimization/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/rea-analysis-optimization/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/rea-analysis-optimization/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/rea-analysis-optimization && cp -R /tmp/morluto-rea/.agents/skills/rea-analysis-optimization/. .claude/skills/rea-analysis-optimization/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Our REA analysis provider is slow and uses too much memory; optimize it.",
+        "result": "Claude profiles the analysis bottleneck and improves cache or query design while keeping correctness and Evidence intact."
+      }
+    ],
+    "source": "https://github.com/morluto/rea/tree/main/.agents/skills/rea-analysis-optimization",
+    "author": "morluto",
+    "tags": [
+      "rea",
+      "optimization",
+      "performance",
+      "caching",
+      "latency"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at morluto/rea/.agents/skills/rea-analysis-optimization/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 315,200 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 102,
+    "name": "reverse-engineer-anything",
+    "summary": "Reverse engineers native, managed, Electron, packaged, firmware and browser targets with REA to explain features, compare versions or guide reconstruction.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/morluto-rea ] || git clone --depth 1 https://github.com/morluto/rea.git /tmp/morluto-rea"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/reverse-engineer-anything/.",
+        "command": "mkdir -p ~/.claude/skills/reverse-engineer-anything && cp -R /tmp/morluto-rea/.agents/skills/reverse-engineer-anything/. ~/.claude/skills/reverse-engineer-anything/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/reverse-engineer-anything/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/reverse-engineer-anything/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/reverse-engineer-anything && cp -R /tmp/morluto-rea/.agents/skills/reverse-engineer-anything/. .claude/skills/reverse-engineer-anything/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Use REA to reverse engineer this Electron app and explain how its update feature works.",
+        "result": "Claude gathers evidence from the shipped artifact or runtime and explains the feature, compares versions or guides a reconstruction."
+      }
+    ],
+    "source": "https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything",
+    "author": "morluto",
+    "tags": [
+      "reverse-engineering",
+      "decompile",
+      "rea",
+      "firmware",
+      "electron"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at morluto/rea/.agents/skills/reverse-engineer-anything/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 315,200 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 103,
+    "name": "rea-changelog-update",
+    "summary": "Prepares or rewrites REA release changelogs and GitHub release notes from pinned Git history, with verified contributor thanks and Release Please sync.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/morluto-rea ] || git clone --depth 1 https://github.com/morluto/rea.git /tmp/morluto-rea"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/rea-changelog-update/.",
+        "command": "mkdir -p ~/.claude/skills/rea-changelog-update && cp -R /tmp/morluto-rea/.agents/skills/rea-changelog-update/. ~/.claude/skills/rea-changelog-update/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/rea-changelog-update/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/rea-changelog-update/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/rea-changelog-update && cp -R /tmp/morluto-rea/.agents/skills/rea-changelog-update/. .claude/skills/rea-changelog-update/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write the changelog and GitHub release notes for the next REA release.",
+        "result": "Claude builds the notes from pinned Git history, verifies contributor thanks and keeps them in sync with Release Please."
+      }
+    ],
+    "source": "https://github.com/morluto/rea/tree/main/.agents/skills/rea-changelog-update",
+    "author": "morluto",
+    "tags": [
+      "changelog",
+      "release-notes",
+      "git",
+      "rea"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at morluto/rea/.agents/skills/rea-changelog-update/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 315,200 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 104,
+    "name": "rea-ci-tests-audit",
+    "summary": "Audits REA CI and test suites for correctness, fixture drift, false passes and measured performance.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/morluto-rea ] || git clone --depth 1 https://github.com/morluto/rea.git /tmp/morluto-rea"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/rea-ci-tests-audit/.",
+        "command": "mkdir -p ~/.claude/skills/rea-ci-tests-audit && cp -R /tmp/morluto-rea/.agents/skills/rea-ci-tests-audit/. ~/.claude/skills/rea-ci-tests-audit/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/rea-ci-tests-audit/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/rea-ci-tests-audit/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/rea-ci-tests-audit && cp -R /tmp/morluto-rea/.agents/skills/rea-ci-tests-audit/. .claude/skills/rea-ci-tests-audit/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit our REA CI workflow for false passes and slow tests.",
+        "result": "Claude investigates the suite for correctness, fixture drift and false passes, and measures performance before suggesting efficiency changes."
+      }
+    ],
+    "source": "https://github.com/morluto/rea/tree/main/.agents/skills/rea-ci-tests-audit",
+    "author": "morluto",
+    "tags": [
+      "ci",
+      "test-audit",
+      "performance",
+      "rea"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at morluto/rea/.agents/skills/rea-ci-tests-audit/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 315,200 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 105,
+    "name": "rea-tool-design",
+    "summary": "Designs or changes REA investigation tools, CLI and MCP contracts, provider capabilities and Evidence semantics.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/morluto-rea ] || git clone --depth 1 https://github.com/morluto/rea.git /tmp/morluto-rea"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/rea-tool-design/.",
+        "command": "mkdir -p ~/.claude/skills/rea-tool-design && cp -R /tmp/morluto-rea/.agents/skills/rea-tool-design/. ~/.claude/skills/rea-tool-design/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/rea-tool-design/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/rea-tool-design/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/rea-tool-design && cp -R /tmp/morluto-rea/.agents/skills/rea-tool-design/. .claude/skills/rea-tool-design/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Design a new REA investigation tool with a CLI and MCP contract.",
+        "result": "Claude designs the tool, its contracts, provider capabilities and Evidence semantics."
+      }
+    ],
+    "source": "https://github.com/morluto/rea/tree/main/.agents/skills/rea-tool-design",
+    "author": "morluto",
+    "tags": [
+      "rea",
+      "tool-design",
+      "cli",
+      "mcp"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at morluto/rea/.agents/skills/rea-tool-design/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 315,200 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 106,
+    "name": "module-regression",
+    "summary": "Governs cross-module regression with a REGRESSION.md ledger of downstream consumers and acceptance commands, using observed exit codes as evidence.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/module-regression/.",
+        "command": "mkdir -p ~/.claude/skills/module-regression && cp -R /tmp/affaan-m-ecc/.agents/skills/module-regression/. ~/.claude/skills/module-regression/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/module-regression/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/module-regression/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/module-regression && cp -R /tmp/affaan-m-ecc/.agents/skills/module-regression/. .claude/skills/module-regression/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "I changed the auth module; run regression checks on everything downstream.",
+        "result": "Claude consults the REGRESSION.md ledger, runs the changed module and each affected downstream command, and records the observed exit codes."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/module-regression",
+    "author": "affaan-m",
+    "tags": [
+      "regression",
+      "ledger",
+      "modules",
+      "acceptance"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/module-regression/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 107,
+    "name": "delivery-gate",
+    "summary": "Provides a stop hook that blocks Claude from finishing until quality checks pass, catching rationalization patterns, stale learning logs and low disk space.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add affaan-m/ECC"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ecc@ecc"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ecc:delivery-gate. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Set up the delivery gate so Claude can't finish before quality checks pass.",
+        "result": "Claude installs the stop hook that blocks completion until the checks pass and learning capture is current."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/skills/delivery-gate",
+    "author": "affaan-m",
+    "tags": [
+      "hook",
+      "quality-gate",
+      "stop",
+      "learning"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/skills/delivery-gate/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable via the ecc marketplace (plugin ecc)."
+  },
+  {
+    "rank": 108,
+    "name": "story-lifecycle",
+    "summary": "Manages a file-based epic, story and sprint loop, breaking epics into user stories and driving implementation story by story without an external tracker.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add affaan-m/ECC"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ecc@ecc"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ecc:story-lifecycle. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Start a new epic for user notifications and break it into stories.",
+        "result": "Claude creates and tracks the epic, splits it into user stories, assigns sprints and implements them one story at a time."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/skills/story-lifecycle",
+    "author": "affaan-m",
+    "tags": [
+      "agile",
+      "epics",
+      "stories",
+      "sprints",
+      "planning"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/skills/story-lifecycle/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable via the ecc marketplace (plugin ecc)."
+  },
+  {
+    "rank": 109,
+    "name": "test-collaboration",
+    "summary": "Inventories and governs a project's test assets, linking requirements, risks and bugs to stable TEST-IDs and executable evidence in the registry or TESTS.md.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/test-collaboration/.",
+        "command": "mkdir -p ~/.claude/skills/test-collaboration && cp -R /tmp/affaan-m-ecc/.agents/skills/test-collaboration/. ~/.claude/skills/test-collaboration/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/test-collaboration/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/test-collaboration/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/test-collaboration && cp -R /tmp/affaan-m-ecc/.agents/skills/test-collaboration/. .claude/skills/test-collaboration/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Do a test gap analysis and map our requirements to TEST-IDs.",
+        "result": "Claude inventories the tests, classifies them and links requirements, risks and bugs to stable TEST-IDs with executable evidence."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/test-collaboration",
+    "author": "affaan-m",
+    "tags": [
+      "test-inventory",
+      "traceability",
+      "contracts",
+      "coverage"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/test-collaboration/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 110,
+    "name": "deepseek-harness-setup",
+    "summary": "Guides installing and operating Everything Claude Code on the DeepSeek Harness, including skill roots, the hooks bridge, generator use and updates.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add affaan-m/ECC"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ecc@ecc"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ecc:deepseek-harness-setup. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "DeepSeek Harness (DSH)",
+      "@deepseek-ai/dsh-hooks-claude-code"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up ECC on DeepSeek Harness and wire in the hooks.",
+        "result": "Claude walks through the skill roots, the dsh-hooks-claude-code bridge and the update workflow for the DSH profile."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/skills/deepseek-harness-setup",
+    "author": "affaan-m",
+    "tags": [
+      "deepseek",
+      "harness",
+      "ecc",
+      "hooks"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/skills/deepseek-harness-setup/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable via the ecc marketplace (plugin ecc)."
+  },
+  {
+    "rank": 111,
+    "name": "skill-host-compat",
+    "summary": "Lints ECC skills for Codex and Cursor-safe frontmatter and Claude-only substitutions before a skill PR.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/skill-host-compat/.",
+        "command": "mkdir -p ~/.claude/skills/skill-host-compat && cp -R /tmp/affaan-m-ecc/.agents/skills/skill-host-compat/. ~/.claude/skills/skill-host-compat/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/skill-host-compat/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/skill-host-compat/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/skill-host-compat && cp -R /tmp/affaan-m-ecc/.agents/skills/skill-host-compat/. .claude/skills/skill-host-compat/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Check my new ECC skill for host compatibility before I open the PR.",
+        "result": "Claude lints the skill for Codex and Cursor-safe frontmatter and flags Claude-only substitutions."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/skill-host-compat",
+    "author": "affaan-m",
+    "tags": [
+      "lint",
+      "skills",
+      "frontmatter",
+      "compatibility"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/skill-host-compat/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 112,
+    "name": "agent-runtime-gateway-smoke-test",
+    "summary": "Verifies a local agent API, temporary gateway tunnel and remote sandbox callback with a tool-free task, then restores the original app connection.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add affaan-m/ECC"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ecc@ecc"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ecc:agent-runtime-gateway-smoke-test. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Smoke test the agent gateway and sandbox callback.",
+        "result": "Claude runs a tool-free task through the local API, tunnel and remote callback, then restores the original app connection."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/skills/agent-runtime-gateway-smoke-test",
+    "author": "affaan-m",
+    "tags": [
+      "smoke-test",
+      "gateway",
+      "agent",
+      "sandbox"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/skills/agent-runtime-gateway-smoke-test/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable via the ecc marketplace (plugin ecc)."
+  },
+  {
+    "rank": 113,
+    "name": "brownfield-retrospective",
+    "summary": "Runs the ECC engineering process retroactively on an existing project, producing a four-axis gap register and fixing gaps via a plan, TDD and review pipeline.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add affaan-m/ECC"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ecc@ecc"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ecc:brownfield-retrospective. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "We inherited this codebase; run a brownfield retrospective and tell us what was missed.",
+        "result": "Claude audits current state, reconstructs past decisions, builds a gap register and executes fixes through the plan-TDD-review pipeline."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/skills/brownfield-retrospective",
+    "author": "affaan-m",
+    "tags": [
+      "retrospective",
+      "brownfield",
+      "audit",
+      "gap-analysis"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/skills/brownfield-retrospective/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable via the ecc marketplace (plugin ecc)."
+  },
+  {
+    "rank": 114,
+    "name": "prompt-caching-strategy",
+    "summary": "Optimizes LLM prompt caching hit rate by analyzing prompt structure and recommending restructuring to cut API cost and latency.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add affaan-m/ECC"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ecc@ecc"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ecc:prompt-caching-strategy. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How can I improve my prompt cache hit rate and reduce LLM cost?",
+        "result": "Claude analyzes the prompt structure, separates cacheable from non-cacheable content and recommends a restructure to maximize reuse."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/skills/prompt-caching-strategy",
+    "author": "affaan-m",
+    "tags": [
+      "prompt-caching",
+      "llm",
+      "cost",
+      "latency"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/skills/prompt-caching-strategy/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable via the ecc marketplace (plugin ecc)."
+  },
+  {
+    "rank": 115,
+    "name": "tinystruct-patterns",
+    "summary": "Gives guidance for developing with the tinystruct Java framework, covering actions, routing, testing, HTTP and CLI modes, JSON, persistence and SSE.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/tinystruct-patterns/.",
+        "command": "mkdir -p ~/.claude/skills/tinystruct-patterns && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/tinystruct-patterns/. ~/.claude/skills/tinystruct-patterns/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/tinystruct-patterns/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/tinystruct-patterns/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/tinystruct-patterns && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/tinystruct-patterns/. .claude/skills/tinystruct-patterns/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "tinystruct"
+    ],
+    "usage": [
+      {
+        "prompt": "Add a new @Action route to my tinystruct application and write a unit test.",
+        "result": "Claude creates the Application class and action route following tinystruct patterns and adds the test."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/tinystruct-patterns",
+    "author": "affaan-m",
+    "tags": [
+      "java",
+      "tinystruct",
+      "framework",
+      "web"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/tinystruct-patterns/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 116,
+    "name": "token-card",
+    "summary": "Renders a token-usage stat card from local Claude Code, Codex, Gemini CLI and OpenCode session logs and commits it into the repository.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add affaan-m/ECC"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ecc@ecc"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ecc:token-card. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Generate a token usage card for my README.",
+        "result": "Claude reads the local session logs, renders the stat card and commits it as a file in the repository."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/skills/token-card",
+    "author": "affaan-m",
+    "tags": [
+      "token-usage",
+      "stats",
+      "readme",
+      "card"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/skills/token-card/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable via the ecc marketplace (plugin ecc)."
+  },
+  {
+    "rank": 117,
+    "name": "agent-security-hardening",
+    "summary": "Provides security hardening guidance for AI agent frameworks that process untrusted content, invoke tools, write files or handle credentials.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-security-hardening/.",
+        "command": "mkdir -p ~/.claude/skills/agent-security-hardening && cp -R /tmp/affaan-m-ecc/pi/core/skills/agent-security-hardening/. ~/.claude/skills/agent-security-hardening/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-security-hardening/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-security-hardening/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-security-hardening && cp -R /tmp/affaan-m-ecc/pi/core/skills/agent-security-hardening/. .claude/skills/agent-security-hardening/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review our agent runtime for security hardening gaps.",
+        "result": "Claude reviews the agent runtime against hardening guidance for untrusted content, tool use, workspace writes and credentials."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/pi/core/skills/agent-security-hardening",
+    "author": "affaan-m",
+    "tags": [
+      "agent-security",
+      "hardening",
+      "credentials",
+      "tools"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/pi/core/skills/agent-security-hardening/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 118,
+    "name": "conventional-commit-review",
+    "summary": "Reviews staged changes and drafts a Conventional Commits message with the right type, scope and length.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/conventional-commit-review/.",
+        "command": "mkdir -p ~/.claude/skills/conventional-commit-review && cp -R /tmp/affaan-m-ecc/pi/core/skills/conventional-commit-review/. ~/.claude/skills/conventional-commit-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/conventional-commit-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/conventional-commit-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/conventional-commit-review && cp -R /tmp/affaan-m-ecc/pi/core/skills/conventional-commit-review/. .claude/skills/conventional-commit-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write a commit message for my staged changes.",
+        "result": "Claude reviews the staged diff and drafts a Conventional Commits message with the right type, scope and length."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/pi/core/skills/conventional-commit-review",
+    "author": "affaan-m",
+    "tags": [
+      "commit",
+      "conventional-commits",
+      "git",
+      "review"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/pi/core/skills/conventional-commit-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 119,
+    "name": "agent-payment-x402",
+    "summary": "Adds x402 payment execution to AI agents with per-task budgets, spend controls and non-custodial wallets across Base, X Layer, Solana and EVM networks.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-payment-x402/.",
+        "command": "mkdir -p ~/.claude/skills/agent-payment-x402 && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/agent-payment-x402/. ~/.claude/skills/agent-payment-x402/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-payment-x402/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-payment-x402/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-payment-x402 && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/agent-payment-x402/. .claude/skills/agent-payment-x402/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "agentwallet-sdk",
+      "x402"
+    ],
+    "usage": [
+      {
+        "prompt": "Add x402 payments with a per-task budget to my agent.",
+        "result": "Claude wires in x402 payment execution with spend controls and a non-custodial wallet on the chosen network."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/agent-payment-x402",
+    "author": "affaan-m",
+    "tags": [
+      "x402",
+      "payments",
+      "agent",
+      "wallet"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/agent-payment-x402/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 120,
+    "name": "mcp-dependency-review",
+    "summary": "Statically reviews MCP configuration for mutable package references before approval or CI, without running the discovered servers.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/mcp-dependency-review/.",
+        "command": "mkdir -p ~/.claude/skills/mcp-dependency-review && cp -R /tmp/affaan-m-ecc/.agents/skills/mcp-dependency-review/. ~/.claude/skills/mcp-dependency-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/mcp-dependency-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/mcp-dependency-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/mcp-dependency-review && cp -R /tmp/affaan-m-ecc/.agents/skills/mcp-dependency-review/. .claude/skills/mcp-dependency-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review our .mcp.json for unpinned package references.",
+        "result": "Claude statically inspects the MCP config for mutable package references without executing any server."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/mcp-dependency-review",
+    "author": "affaan-m",
+    "tags": [
+      "mcp",
+      "dependency-review",
+      "supply-chain",
+      "config"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/mcp-dependency-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 121,
+    "name": "docs-governance",
+    "summary": "Routes documentation-governance requests to existing ECC skills and runs a read-only audit of doc roles, links, ADR indexes and evidence references.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/docs-governance/.",
+        "command": "mkdir -p ~/.claude/skills/docs-governance && cp -R /tmp/affaan-m-ecc/.agents/skills/docs-governance/. ~/.claude/skills/docs-governance/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/docs-governance/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/docs-governance/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/docs-governance && cp -R /tmp/affaan-m-ecc/.agents/skills/docs-governance/. .claude/skills/docs-governance/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run a documentation governance audit on this repo.",
+        "result": "Claude routes to the relevant ECC skills and performs a read-only audit of mapped docs, links, ADR indexes and evidence references."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/docs-governance",
+    "author": "affaan-m",
+    "tags": [
+      "docs",
+      "governance",
+      "audit",
+      "adr"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/docs-governance/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 122,
+    "name": "change-impact",
+    "summary": "Performs evidence-backed impact analysis before code, data or interface changes and compares planned impact with the actual diff afterward.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/change-impact/.",
+        "command": "mkdir -p ~/.claude/skills/change-impact && cp -R /tmp/affaan-m-ecc/.agents/skills/change-impact/. ~/.claude/skills/change-impact/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/change-impact/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/change-impact/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/change-impact && cp -R /tmp/affaan-m-ecc/.agents/skills/change-impact/. .claude/skills/change-impact/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Do an impact analysis before I change the users table schema.",
+        "result": "Claude traces call paths, data, contracts, tests, docs and rollback, then compares the plan with the final diff."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/change-impact",
+    "author": "affaan-m",
+    "tags": [
+      "impact-analysis",
+      "migration",
+      "api",
+      "risk"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/change-impact/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 123,
+    "name": "context-and-decisions",
+    "summary": "Governs stable domain context with a narrowly scoped CONTEXT.md and routes hard-to-reverse decisions to the architecture-decision-records skill.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/context-and-decisions/.",
+        "command": "mkdir -p ~/.claude/skills/context-and-decisions && cp -R /tmp/affaan-m-ecc/.agents/skills/context-and-decisions/. ~/.claude/skills/context-and-decisions/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/context-and-decisions/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/context-and-decisions/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/context-and-decisions && cp -R /tmp/affaan-m-ecc/.agents/skills/context-and-decisions/. .claude/skills/context-and-decisions/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Our team uses 'account' with three meanings; set up a CONTEXT.md.",
+        "result": "Claude records the domain terms in a scoped CONTEXT.md and routes irreversible decisions to the ADR skill."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/context-and-decisions",
+    "author": "affaan-m",
+    "tags": [
+      "context",
+      "domain",
+      "adr",
+      "glossary"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/context-and-decisions/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 124,
+    "name": "autonomous-agent-harness",
+    "summary": "Turns Claude Code into a persistent autonomous agent system using memory, scheduled operations, computer use and task queueing instead of standalone frameworks.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/autonomous-agent-harness/.",
+        "command": "mkdir -p ~/.claude/skills/autonomous-agent-harness && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/autonomous-agent-harness/. ~/.claude/skills/autonomous-agent-harness/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/autonomous-agent-harness/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/autonomous-agent-harness/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/autonomous-agent-harness && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/autonomous-agent-harness/. .claude/skills/autonomous-agent-harness/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Turn Claude Code into an always-on agent with scheduled tasks.",
+        "result": "Claude sets up persistent memory, scheduled operations, dispatch and MCP tools to run a self-directed agent loop."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/autonomous-agent-harness",
+    "author": "affaan-m",
+    "tags": [
+      "autonomous-agent",
+      "cron",
+      "memory",
+      "scheduling"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/autonomous-agent-harness/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 125,
+    "name": "blueprint",
+    "summary": "Converts a one-line objective into a step-by-step, multi-session build plan with context briefs, a dependency graph, parallel steps and adversarial review.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/blueprint/.",
+        "command": "mkdir -p ~/.claude/skills/blueprint && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/blueprint/. ~/.claude/skills/blueprint/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/blueprint/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/blueprint/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/blueprint && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/blueprint/. .claude/skills/blueprint/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make a blueprint for migrating our monolith to services across many PRs.",
+        "result": "Claude produces a step-by-step plan where each step has a self-contained brief, with dependency graph and review gates."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/blueprint",
+    "author": "affaan-m",
+    "tags": [
+      "planning",
+      "blueprint",
+      "roadmap",
+      "multi-agent"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/blueprint/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 126,
+    "name": "carrier-relationship-management",
+    "summary": "Supports carrier portfolio management, rate negotiation, performance tracking and freight allocation with scorecards, RFP processes and compliance checks.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/carrier-relationship-management/.",
+        "command": "mkdir -p ~/.claude/skills/carrier-relationship-management && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/carrier-relationship-management/. ~/.claude/skills/carrier-relationship-management/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/carrier-relationship-management/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/carrier-relationship-management/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/carrier-relationship-management && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/carrier-relationship-management/. .claude/skills/carrier-relationship-management/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Help me build a scorecard to evaluate our freight carriers.",
+        "result": "Claude applies scorecarding, RFP and market-intelligence frameworks to evaluate carriers and plan rate strategy."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/carrier-relationship-management",
+    "author": "affaan-m",
+    "tags": [
+      "logistics",
+      "carriers",
+      "freight",
+      "negotiation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/carrier-relationship-management/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 127,
+    "name": "configure-ecc",
+    "summary": "Guides installing, updating and reconfiguring ECC inside Claude Code, Codex and Kimi while respecting each harness's plugin, scope and hook capabilities.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/configure-ecc/.",
+        "command": "mkdir -p ~/.claude/skills/configure-ecc && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/configure-ecc/. ~/.claude/skills/configure-ecc/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/configure-ecc/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/configure-ecc/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/configure-ecc && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/configure-ecc/. .claude/skills/configure-ecc/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Help me install and configure ECC in Claude Code.",
+        "result": "Claude guides the install or update, respecting the harness's plugin, scope and hook capabilities."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/configure-ecc",
+    "author": "affaan-m",
+    "tags": [
+      "ecc",
+      "install",
+      "configuration",
+      "harness"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/configure-ecc/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 128,
+    "name": "customs-trade-compliance",
+    "summary": "Provides customs and trade compliance expertise for customs documents, tariff classification, duty optimization, restricted-party screening and penalties.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/customs-trade-compliance/.",
+        "command": "mkdir -p ~/.claude/skills/customs-trade-compliance && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/customs-trade-compliance/. ~/.claude/skills/customs-trade-compliance/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/customs-trade-compliance/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/customs-trade-compliance/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/customs-trade-compliance && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/customs-trade-compliance/. .claude/skills/customs-trade-compliance/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How should I classify this product under HS codes for import?",
+        "result": "Claude applies HS classification logic, Incoterms, FTA use and compliance checks to the import or export question."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/customs-trade-compliance",
+    "author": "affaan-m",
+    "tags": [
+      "customs",
+      "trade",
+      "compliance",
+      "tariffs"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/customs-trade-compliance/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 129,
+    "name": "ecc-conventions",
+    "summary": "Documents development conventions and patterns for the ECC JavaScript project, which uses conventional commits.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ecc-conventions/.",
+        "command": "mkdir -p ~/.claude/skills/ecc-conventions && cp -R /tmp/affaan-m-ecc/.agents/skills/ecc-conventions/. ~/.claude/skills/ecc-conventions/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ecc-conventions/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ecc-conventions/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ecc-conventions && cp -R /tmp/affaan-m-ecc/.agents/skills/ecc-conventions/. .claude/skills/ecc-conventions/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "What conventions should I follow when contributing to ECC?",
+        "result": "Claude applies the project's JavaScript conventions and conventional commit patterns to the contribution."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/.agents/skills/ecc-conventions",
+    "author": "affaan-m",
+    "tags": [
+      "conventions",
+      "javascript",
+      "commits",
+      "ecc"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/.agents/skills/ecc-conventions/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 130,
+    "name": "ecc-guide",
+    "summary": "Guides users through ECC's current agents, skills, commands, hooks, rules, install profiles and project onboarding by reading the live repository first.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/affaan-m-ecc ] || git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/affaan-m-ecc"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ecc-guide/.",
+        "command": "mkdir -p ~/.claude/skills/ecc-guide && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/ecc-guide/. ~/.claude/skills/ecc-guide/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ecc-guide/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ecc-guide/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ecc-guide && cp -R /tmp/affaan-m-ecc/docs/ja-JP/skills/ecc-guide/. .claude/skills/ecc-guide/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "What ECC skills and hooks are available, and how do I onboard my project?",
+        "result": "Claude reads the live repository surfaces and answers with the current agents, skills, commands, hooks and install profiles."
+      }
+    ],
+    "source": "https://github.com/affaan-m/ECC/tree/main/docs/ja-JP/skills/ecc-guide",
+    "author": "affaan-m",
+    "tags": [
+      "ecc",
+      "guide",
+      "onboarding",
+      "hooks"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at affaan-m/ECC/docs/ja-JP/skills/ecc-guide/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 282,957 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 131,
+    "name": "anatomy",
+    "summary": "Explains an idea as an interactive isometric machine figure.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/anatomy/.",
+        "command": "mkdir -p ~/.claude/skills/anatomy && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/anatomy/. ~/.claude/skills/anatomy/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/anatomy/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/anatomy/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/anatomy && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/anatomy/. .claude/skills/anatomy/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Explain how a load balancer works as an interactive isometric machine.",
+        "result": "Claude builds an interactive isometric machine figure that illustrates the idea."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/anatomy",
+    "author": "NousResearch",
+    "tags": [
+      "isometric",
+      "visualization",
+      "diagram",
+      "explainer"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/anatomy/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 132,
+    "name": "claude-code",
+    "summary": "Delegates coding work such as features and pull requests to the Claude Code CLI.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/claude-code/.",
+        "command": "mkdir -p ~/.claude/skills/claude-code && cp -R /tmp/nousresearch-hermes-agent/skills/autonomous-ai-agents/claude-code/. ~/.claude/skills/claude-code/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/claude-code/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/claude-code/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/claude-code && cp -R /tmp/nousresearch-hermes-agent/skills/autonomous-ai-agents/claude-code/. .claude/skills/claude-code/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Claude Code CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Delegate this feature to Claude Code and open a PR.",
+        "result": "Claude hands the coding task to the Claude Code CLI to build the feature or PR."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/skills/autonomous-ai-agents/claude-code",
+    "author": "NousResearch",
+    "tags": [
+      "delegation",
+      "claude-code",
+      "cli",
+      "pull-requests"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/skills/autonomous-ai-agents/claude-code/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 133,
+    "name": "hermes-agent-skill-authoring",
+    "summary": "Guides authoring in-repo SKILL.md files, covering frontmatter and structure.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/hermes-agent-skill-authoring/.",
+        "command": "mkdir -p ~/.claude/skills/hermes-agent-skill-authoring && cp -R /tmp/nousresearch-hermes-agent/skills/software-development/hermes-agent-skill-authoring/. ~/.claude/skills/hermes-agent-skill-authoring/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/hermes-agent-skill-authoring/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/hermes-agent-skill-authoring/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/hermes-agent-skill-authoring && cp -R /tmp/nousresearch-hermes-agent/skills/software-development/hermes-agent-skill-authoring/. .claude/skills/hermes-agent-skill-authoring/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Help me write a SKILL.md for the Hermes repo.",
+        "result": "Claude drafts the SKILL.md with the correct frontmatter and structure."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/skills/software-development/hermes-agent-skill-authoring",
+    "author": "NousResearch",
+    "tags": [
+      "skill-authoring",
+      "skill-md",
+      "frontmatter",
+      "hermes"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/skills/software-development/hermes-agent-skill-authoring/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 134,
+    "name": "system-atlas",
+    "summary": "Builds explorable isometric architecture atlases as HTML.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/system-atlas/.",
+        "command": "mkdir -p ~/.claude/skills/system-atlas && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/system-atlas/. ~/.claude/skills/system-atlas/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/system-atlas/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/system-atlas/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/system-atlas && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/system-atlas/. .claude/skills/system-atlas/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build an isometric architecture atlas of our services.",
+        "result": "Claude generates an explorable isometric architecture atlas as an HTML page."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/system-atlas",
+    "author": "NousResearch",
+    "tags": [
+      "architecture",
+      "atlas",
+      "isometric",
+      "html"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/system-atlas/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 135,
+    "name": "unreal-mcp",
+    "summary": "Automates Unreal Engine editor scenes, actors and renders.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/unreal-mcp/.",
+        "command": "mkdir -p ~/.claude/skills/unreal-mcp && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/unreal-mcp/. ~/.claude/skills/unreal-mcp/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/unreal-mcp/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/unreal-mcp/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/unreal-mcp && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/unreal-mcp/. .claude/skills/unreal-mcp/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Unreal Engine"
+    ],
+    "usage": [
+      {
+        "prompt": "Add ten point lights to the level in Unreal and render it.",
+        "result": "Claude drives the Unreal Engine editor to create the scene content and actors and produce a render."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/unreal-mcp",
+    "author": "NousResearch",
+    "tags": [
+      "unreal-engine",
+      "automation",
+      "scenes",
+      "mcp"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/unreal-mcp/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 136,
+    "name": "honcho",
+    "summary": "Configures and troubleshoots Honcho memory for Hermes.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/honcho/.",
+        "command": "mkdir -p ~/.claude/skills/honcho && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/honcho/. ~/.claude/skills/honcho/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/honcho/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/honcho/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/honcho && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/honcho/. .claude/skills/honcho/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Honcho"
+    ],
+    "usage": [
+      {
+        "prompt": "Honcho memory isn't working in Hermes; help me fix it.",
+        "result": "Claude configures Honcho memory for Hermes and troubleshoots the problem."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/autonomous-ai-agents/honcho",
+    "author": "NousResearch",
+    "tags": [
+      "honcho",
+      "memory",
+      "hermes",
+      "troubleshooting"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/autonomous-ai-agents/honcho/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 137,
+    "name": "baoyu-article-illustrator",
+    "summary": "Creates article illustrations with a consistent combination of type, style and palette.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/baoyu-article-illustrator/.",
+        "command": "mkdir -p ~/.claude/skills/baoyu-article-illustrator && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/baoyu-article-illustrator/. ~/.claude/skills/baoyu-article-illustrator/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/baoyu-article-illustrator/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/baoyu-article-illustrator/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/baoyu-article-illustrator && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/baoyu-article-illustrator/. .claude/skills/baoyu-article-illustrator/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Illustrate my blog post with a consistent style.",
+        "result": "Claude generates article illustrations that stay consistent in type, style and palette."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/baoyu-article-illustrator",
+    "author": "NousResearch",
+    "tags": [
+      "illustration",
+      "article",
+      "design",
+      "palette"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/baoyu-article-illustrator/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 138,
+    "name": "baoyu-comic",
+    "summary": "Creates educational, biographical and tutorial knowledge comics.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/baoyu-comic/.",
+        "command": "mkdir -p ~/.claude/skills/baoyu-comic && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/baoyu-comic/. ~/.claude/skills/baoyu-comic/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/baoyu-comic/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/baoyu-comic/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/baoyu-comic && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/baoyu-comic/. .claude/skills/baoyu-comic/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make a knowledge comic explaining how HTTPS works.",
+        "result": "Claude produces a knowledge comic in the requested educational, biography or tutorial form."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/baoyu-comic",
+    "author": "NousResearch",
+    "tags": [
+      "comic",
+      "education",
+      "tutorial",
+      "illustration"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/baoyu-comic/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 139,
+    "name": "baoyu-infographic",
+    "summary": "Creates infographics from 21 layouts and 21 styles.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/baoyu-infographic/.",
+        "command": "mkdir -p ~/.claude/skills/baoyu-infographic && cp -R /tmp/nousresearch-hermes-agent/skills/creative/baoyu-infographic/. ~/.claude/skills/baoyu-infographic/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/baoyu-infographic/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/baoyu-infographic/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/baoyu-infographic && cp -R /tmp/nousresearch-hermes-agent/skills/creative/baoyu-infographic/. .claude/skills/baoyu-infographic/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Turn this report into an infographic.",
+        "result": "Claude builds an infographic by choosing from 21 layouts and 21 styles."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/skills/creative/baoyu-infographic",
+    "author": "NousResearch",
+    "tags": [
+      "infographic",
+      "visualization",
+      "layout",
+      "design"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/skills/creative/baoyu-infographic/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 140,
+    "name": "openclaw-migration",
+    "summary": "Imports an OpenClaw setup, including memories and skills, into Hermes.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/openclaw-migration/.",
+        "command": "mkdir -p ~/.claude/skills/openclaw-migration && cp -R /tmp/nousresearch-hermes-agent/optional-skills/migration/openclaw-migration/. ~/.claude/skills/openclaw-migration/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/openclaw-migration/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/openclaw-migration/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/openclaw-migration && cp -R /tmp/nousresearch-hermes-agent/optional-skills/migration/openclaw-migration/. .claude/skills/openclaw-migration/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OpenClaw"
+    ],
+    "usage": [
+      {
+        "prompt": "Migrate my OpenClaw memories and skills into Hermes.",
+        "result": "Claude imports the OpenClaw setup, including memories and skills, into Hermes."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/migration/openclaw-migration",
+    "author": "NousResearch",
+    "tags": [
+      "migration",
+      "openclaw",
+      "hermes",
+      "import"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/migration/openclaw-migration/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 141,
+    "name": "brag",
+    "summary": "Creates a project launch video via Hyperframes, maintained upstream.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/brag/.",
+        "command": "mkdir -p ~/.claude/skills/brag && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/brag/. ~/.claude/skills/brag/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/brag/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/brag/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/brag && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/brag/. .claude/skills/brag/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Hyperframes"
+    ],
+    "usage": [
+      {
+        "prompt": "Make a launch video for this project.",
+        "result": "Claude produces a project launch video using Hyperframes."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/brag",
+    "author": "NousResearch",
+    "tags": [
+      "video",
+      "launch",
+      "hyperframes",
+      "marketing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/brag/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 142,
+    "name": "brag-slim",
+    "summary": "Creates a launch video from a project or URL, maintained upstream.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/brag-slim/.",
+        "command": "mkdir -p ~/.claude/skills/brag-slim && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/brag-slim/. ~/.claude/skills/brag-slim/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/brag-slim/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/brag-slim/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/brag-slim && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/brag-slim/. .claude/skills/brag-slim/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make a launch video from https://example.com.",
+        "result": "Claude generates a launch video from the given project or URL."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/brag-slim",
+    "author": "NousResearch",
+    "tags": [
+      "video",
+      "launch",
+      "marketing",
+      "url"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/brag-slim/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 143,
+    "name": "python-debugpy",
+    "summary": "Debugs Python using the pdb REPL and debugpy remote debugging over the Debug Adapter Protocol.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/python-debugpy/.",
+        "command": "mkdir -p ~/.claude/skills/python-debugpy && cp -R /tmp/nousresearch-hermes-agent/skills/software-development/python-debugpy/. ~/.claude/skills/python-debugpy/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/python-debugpy/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/python-debugpy/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/python-debugpy && cp -R /tmp/nousresearch-hermes-agent/skills/software-development/python-debugpy/. .claude/skills/python-debugpy/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "debugpy"
+    ],
+    "usage": [
+      {
+        "prompt": "Step through this Python script and find why it crashes.",
+        "result": "Claude debugs the Python program with the pdb REPL or remote debugpy (DAP)."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/skills/software-development/python-debugpy",
+    "author": "NousResearch",
+    "tags": [
+      "python",
+      "debugging",
+      "pdb",
+      "debugpy"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/skills/software-development/python-debugpy/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 144,
+    "name": "godmode",
+    "summary": "Covers jailbreaking LLMs with the Parseltongue, GODMODE and ULTRAPLINIAN techniques.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/godmode/.",
+        "command": "mkdir -p ~/.claude/skills/godmode && cp -R /tmp/nousresearch-hermes-agent/optional-skills/security/godmode/. ~/.claude/skills/godmode/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/godmode/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/godmode/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/godmode && cp -R /tmp/nousresearch-hermes-agent/optional-skills/security/godmode/. .claude/skills/godmode/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Show me the GODMODE technique for testing model jailbreak resistance.",
+        "result": "Claude applies the Parseltongue, GODMODE and ULTRAPLINIAN techniques described by the skill."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/security/godmode",
+    "author": "NousResearch",
+    "tags": [
+      "llm",
+      "jailbreak",
+      "red-team",
+      "prompts"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/security/godmode/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 145,
+    "name": "har-derived-api-client",
+    "summary": "Records a site's XHR traffic into a HAR file and derives an HTTP client from it.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/har-derived-api-client/.",
+        "command": "mkdir -p ~/.claude/skills/har-derived-api-client && cp -R /tmp/nousresearch-hermes-agent/optional-skills/web-development/har-derived-api-client/. ~/.claude/skills/har-derived-api-client/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/har-derived-api-client/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/har-derived-api-client/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/har-derived-api-client && cp -R /tmp/nousresearch-hermes-agent/optional-skills/web-development/har-derived-api-client/. .claude/skills/har-derived-api-client/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Record this site's network calls and generate an API client.",
+        "result": "Claude captures the site's XHR into a HAR and derives an HTTP client from it."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/web-development/har-derived-api-client",
+    "author": "NousResearch",
+    "tags": [
+      "har",
+      "api-client",
+      "http",
+      "reverse-engineering"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/web-development/har-derived-api-client/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 146,
+    "name": "1password",
+    "summary": "Sets up the 1Password op CLI, signs in, and reads or injects secrets.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/1password/.",
+        "command": "mkdir -p ~/.claude/skills/1password && cp -R /tmp/nousresearch-hermes-agent/optional-skills/security/1password/. ~/.claude/skills/1password/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/1password/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/1password/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/1password && cp -R /tmp/nousresearch-hermes-agent/optional-skills/security/1password/. .claude/skills/1password/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "1Password op CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up the 1Password CLI and inject my API key into the env.",
+        "result": "Claude installs and signs in the op CLI, then reads or injects the secrets."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/security/1password",
+    "author": "NousResearch",
+    "tags": [
+      "1password",
+      "secrets",
+      "cli",
+      "credentials"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/security/1password/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 147,
+    "name": "ascii-art",
+    "summary": "Creates ASCII art using pyfiglet, cowsay, boxes and image-to-ascii conversion.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ascii-art/.",
+        "command": "mkdir -p ~/.claude/skills/ascii-art && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/ascii-art/. ~/.claude/skills/ascii-art/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ascii-art/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ascii-art/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ascii-art && cp -R /tmp/nousresearch-hermes-agent/optional-skills/creative/ascii-art/. .claude/skills/ascii-art/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "pyfiglet",
+      "cowsay",
+      "boxes"
+    ],
+    "usage": [
+      {
+        "prompt": "Turn this logo into ASCII art.",
+        "result": "Claude produces ASCII art using pyfiglet, cowsay, boxes or image-to-ascii."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/ascii-art",
+    "author": "NousResearch",
+    "tags": [
+      "ascii-art",
+      "pyfiglet",
+      "cowsay",
+      "terminal"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/creative/ascii-art/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 148,
+    "name": "bioinformatics",
+    "summary": "Provides a gateway to over 400 genomics and computational biology skills.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/bioinformatics/.",
+        "command": "mkdir -p ~/.claude/skills/bioinformatics && cp -R /tmp/nousresearch-hermes-agent/optional-skills/research/bioinformatics/. ~/.claude/skills/bioinformatics/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/bioinformatics/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/bioinformatics/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/bioinformatics && cp -R /tmp/nousresearch-hermes-agent/optional-skills/research/bioinformatics/. .claude/skills/bioinformatics/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Which skill should I use for RNA-seq analysis?",
+        "result": "Claude routes to the matching skill among the 400+ genomics and computational biology skills."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/research/bioinformatics",
+    "author": "NousResearch",
+    "tags": [
+      "bioinformatics",
+      "genomics",
+      "biology",
+      "research"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/research/bioinformatics/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 149,
+    "name": "blackbox",
+    "summary": "Delegates coding tasks to the Blackbox AI multi-model CLI.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/blackbox/.",
+        "command": "mkdir -p ~/.claude/skills/blackbox && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/blackbox/. ~/.claude/skills/blackbox/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/blackbox/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/blackbox/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/blackbox && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/blackbox/. .claude/skills/blackbox/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Blackbox AI CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Delegate this refactor to Blackbox.",
+        "result": "Claude hands the coding task to the Blackbox AI multi-model CLI."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/autonomous-ai-agents/blackbox",
+    "author": "NousResearch",
+    "tags": [
+      "blackbox",
+      "delegation",
+      "cli",
+      "multi-model"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/autonomous-ai-agents/blackbox/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 150,
+    "name": "blocked-page-recovery",
+    "summary": "Recovers from failed fetches such as 403 or 429 responses, paywalls, WAFs and bot walls.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/blocked-page-recovery/.",
+        "command": "mkdir -p ~/.claude/skills/blocked-page-recovery && cp -R /tmp/nousresearch-hermes-agent/skills/web/blocked-page-recovery/. ~/.claude/skills/blocked-page-recovery/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/blocked-page-recovery/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/blocked-page-recovery/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/blocked-page-recovery && cp -R /tmp/nousresearch-hermes-agent/skills/web/blocked-page-recovery/. .claude/skills/blocked-page-recovery/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "My fetch of this page returns 403; find another way to get it.",
+        "result": "Claude works around the blocked fetch (403, 429, paywall, WAF or bot wall) to retrieve the page."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/skills/web/blocked-page-recovery",
+    "author": "NousResearch",
+    "tags": [
+      "fetch",
+      "403",
+      "paywall",
+      "scraping"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/skills/web/blocked-page-recovery/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 151,
+    "name": "codex",
+    "summary": "Delegates coding tasks such as new features and pull requests to the OpenAI Codex CLI.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/codex/.",
+        "command": "mkdir -p ~/.claude/skills/codex && cp -R /tmp/nousresearch-hermes-agent/skills/autonomous-ai-agents/codex/. ~/.claude/skills/codex/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/codex/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/codex/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/codex && cp -R /tmp/nousresearch-hermes-agent/skills/autonomous-ai-agents/codex/. .claude/skills/codex/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OpenAI Codex CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Hand this feature off to Codex and have it open a PR.",
+        "result": "Claude delegates the coding work to the OpenAI Codex CLI to build the feature and prepare a pull request."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/skills/autonomous-ai-agents/codex",
+    "author": "NousResearch",
+    "tags": [
+      "codex",
+      "delegation",
+      "agents",
+      "pull-requests"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/skills/autonomous-ai-agents/codex/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 152,
+    "name": "darwinian-evolver",
+    "summary": "Evolves prompts, regexes, SQL, or code by running Imbue's evolution loop to iteratively improve candidates.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/darwinian-evolver/.",
+        "command": "mkdir -p ~/.claude/skills/darwinian-evolver && cp -R /tmp/nousresearch-hermes-agent/optional-skills/research/darwinian-evolver/. ~/.claude/skills/darwinian-evolver/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/darwinian-evolver/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/darwinian-evolver/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/darwinian-evolver && cp -R /tmp/nousresearch-hermes-agent/optional-skills/research/darwinian-evolver/. .claude/skills/darwinian-evolver/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Imbue's evolution loop"
+    ],
+    "usage": [
+      {
+        "prompt": "Use the darwinian evolver to improve this regex until it passes all my test cases.",
+        "result": "Claude runs Imbue's evolution loop to iteratively evolve and refine the regex."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/research/darwinian-evolver",
+    "author": "NousResearch",
+    "tags": [
+      "evolution",
+      "optimization",
+      "prompts",
+      "regex",
+      "sql"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/research/darwinian-evolver/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 153,
+    "name": "dynamic-workflow",
+    "summary": "Plans work in code using fan-outs, adversarial verification, and waves of parallel agents.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/dynamic-workflow/.",
+        "command": "mkdir -p ~/.claude/skills/dynamic-workflow && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/dynamic-workflow/. ~/.claude/skills/dynamic-workflow/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/dynamic-workflow/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/dynamic-workflow/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/dynamic-workflow && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/dynamic-workflow/. .claude/skills/dynamic-workflow/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Fan this migration out across parallel agents and verify the results adversarially.",
+        "result": "Claude plans the work in code, runs it in waves of parallel tasks, and checks results with adversarial verification."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/autonomous-ai-agents/dynamic-workflow",
+    "author": "NousResearch",
+    "tags": [
+      "workflow",
+      "agents",
+      "fan-out",
+      "verification"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/autonomous-ai-agents/dynamic-workflow/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 154,
+    "name": "findmy",
+    "summary": "Tracks Apple devices and AirTags through the FindMy app on macOS.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/findmy/.",
+        "command": "mkdir -p ~/.claude/skills/findmy && cp -R /tmp/nousresearch-hermes-agent/skills/apple/findmy/. ~/.claude/skills/findmy/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/findmy/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/findmy/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/findmy && cp -R /tmp/nousresearch-hermes-agent/skills/apple/findmy/. .claude/skills/findmy/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "FindMy.app",
+      "macOS"
+    ],
+    "usage": [
+      {
+        "prompt": "Where is my AirTag right now?",
+        "result": "Claude uses FindMy.app on macOS to locate the tracked Apple device or AirTag."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/skills/apple/findmy",
+    "author": "NousResearch",
+    "tags": [
+      "apple",
+      "findmy",
+      "airtag",
+      "macos"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/skills/apple/findmy/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 155,
+    "name": "grok",
+    "summary": "Delegates coding tasks such as new features and pull requests to the xAI Grok Build CLI.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nousresearch-hermes-agent ] || git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/nousresearch-hermes-agent"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/grok/.",
+        "command": "mkdir -p ~/.claude/skills/grok && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/grok/. ~/.claude/skills/grok/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/grok/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/grok/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/grok && cp -R /tmp/nousresearch-hermes-agent/optional-skills/autonomous-ai-agents/grok/. .claude/skills/grok/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "xAI Grok Build CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Have Grok build this feature and prepare a PR.",
+        "result": "Claude hands the coding task to the xAI Grok Build CLI to implement the feature and pull request."
+      }
+    ],
+    "source": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/autonomous-ai-agents/grok",
+    "author": "NousResearch",
+    "tags": [
+      "grok",
+      "xai",
+      "delegation",
+      "agents"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at NousResearch/hermes-agent/optional-skills/autonomous-ai-agents/grok/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 254,815 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 156,
+    "name": "karpathy-guidelines",
+    "summary": "Applies behavioral guidelines that reduce common LLM coding mistakes, favoring simple, surgical changes with stated assumptions and verifiable success criteria.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add multica-ai/andrej-karpathy-skills"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install andrej-karpathy-skills@karpathy-skills"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for andrej-karpathy-skills:karpathy-guidelines. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Refactor this function, keeping changes minimal and tell me your assumptions first.",
+        "result": "Claude states its assumptions, makes only surgical changes, avoids overcomplication, and defines how success will be verified."
+      }
+    ],
+    "source": "https://github.com/multica-ai/andrej-karpathy-skills/tree/main/skills/karpathy-guidelines",
+    "author": "multica-ai",
+    "tags": [
+      "guidelines",
+      "code-quality",
+      "simplicity",
+      "review"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at multica-ai/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 220,826 stars); installable via the karpathy-skills marketplace (plugin andrej-karpathy-skills)."
+  },
+  {
+    "rank": 157,
+    "name": "unit-tests",
+    "summary": "Guides writing, reviewing, speeding up, and fixing flaky bun test unit tests across opencode packages, including Windows CI timeouts.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/unit-tests/.",
+        "command": "mkdir -p ~/.claude/skills/unit-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/unit-tests/. ~/.claude/skills/unit-tests/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/unit-tests/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/unit-tests/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/unit-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/unit-tests/. .claude/skills/unit-tests/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "bun"
+    ],
+    "usage": [
+      {
+        "prompt": "This bun test times out after 5000ms on Windows CI, fix it.",
+        "result": "Claude applies the opencode unit-test conventions to diagnose and fix the slow or flaky bun test."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/.opencode/skills/unit-tests",
+    "author": "anomalyco",
+    "tags": [
+      "bun",
+      "unit-tests",
+      "flaky",
+      "windows-ci"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/.opencode/skills/unit-tests/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 158,
+    "name": "app-e2e-tests",
+    "summary": "Guides writing, changing, and debugging Playwright end-to-end tests in packages/app/e2e, covering the mocked server harness, isolation, and race conditions.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/app-e2e-tests/.",
+        "command": "mkdir -p ~/.claude/skills/app-e2e-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/app-e2e-tests/. ~/.claude/skills/app-e2e-tests/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/app-e2e-tests/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/app-e2e-tests/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/app-e2e-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/app-e2e-tests/. .claude/skills/app-e2e-tests/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Playwright"
+    ],
+    "usage": [
+      {
+        "prompt": "Write a Playwright e2e test for the new settings dialog.",
+        "result": "Claude follows the app e2e harness conventions to write an isolated Playwright test against the mocked opencode server."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/.opencode/skills/app-e2e-tests",
+    "author": "anomalyco",
+    "tags": [
+      "playwright",
+      "e2e",
+      "testing",
+      "flaky"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/.opencode/skills/app-e2e-tests/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 159,
+    "name": "component-tests",
+    "summary": "Guides writing, debugging, and reviewing Storybook-based Playwright component tests, fixtures, and the shared harness.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/component-tests/.",
+        "command": "mkdir -p ~/.claude/skills/component-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/component-tests/. ~/.claude/skills/component-tests/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/component-tests/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/component-tests/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/component-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/component-tests/. .claude/skills/component-tests/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Storybook",
+      "Playwright"
+    ],
+    "usage": [
+      {
+        "prompt": "Add a component test for the panel fixture.",
+        "result": "Claude writes the Storybook-based Playwright component test using the shared harness and fixtures."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/.opencode/skills/component-tests",
+    "author": "anomalyco",
+    "tags": [
+      "storybook",
+      "playwright",
+      "component-tests",
+      "fixtures"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/.opencode/skills/component-tests/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 160,
+    "name": "tui-tests",
+    "summary": "Guides writing, fixing, and reviewing tests that render OpenTUI, covering frame waits, injected clocks, mock input, and terminal sizes.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/tui-tests/.",
+        "command": "mkdir -p ~/.claude/skills/tui-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/tui-tests/. ~/.claude/skills/tui-tests/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/tui-tests/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/tui-tests/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/tui-tests && cp -R /tmp/anomalyco-opencode/.opencode/skills/tui-tests/. .claude/skills/tui-tests/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OpenTUI"
+    ],
+    "usage": [
+      {
+        "prompt": "Write a TUI test that sends keyboard input and waits for the next frame.",
+        "result": "Claude uses OpenTUI test renderers with frame waits and mock input to write the test."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/.opencode/skills/tui-tests",
+    "author": "anomalyco",
+    "tags": [
+      "opentui",
+      "tui",
+      "testing",
+      "terminal"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/.opencode/skills/tui-tests/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 161,
+    "name": "figma-generate-diagram",
+    "summary": "Prepares Claude to create flowcharts, architecture, sequence, ER, state, gantt, and timeline diagrams with the Figma generate_diagram tool.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-generate-diagram/.",
+        "command": "mkdir -p ~/.claude/skills/figma-generate-diagram && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generate-diagram/. ~/.claude/skills/figma-generate-diagram/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-generate-diagram/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-generate-diagram/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-generate-diagram && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generate-diagram/. .claude/skills/figma-generate-diagram/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Draw a sequence diagram of our login flow in Figma.",
+        "result": "Claude loads this skill first, then calls generate_diagram to produce the sequence diagram."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-generate-diagram",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "diagram",
+      "flowchart",
+      "sequence"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-generate-diagram/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 162,
+    "name": "figma-generative-plugins",
+    "summary": "Guides creating, updating, and fixing reusable generative Figma plugins with the create and update generative plugin tools.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-generative-plugins/.",
+        "command": "mkdir -p ~/.claude/skills/figma-generative-plugins && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generative-plugins/. ~/.claude/skills/figma-generative-plugins/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-generative-plugins/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-generative-plugins/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-generative-plugins && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generative-plugins/. .claude/skills/figma-generative-plugins/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Create a generative Figma plugin that scatters shapes randomly.",
+        "result": "Claude loads this skill and then calls create_generative_plugin to build the reusable plugin."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-generative-plugins",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "plugins",
+      "generative",
+      "design"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-generative-plugins/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 163,
+    "name": "figma-implement-motion",
+    "summary": "Translates Figma motion and animations into production-ready application code.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-implement-motion/.",
+        "command": "mkdir -p ~/.claude/skills/figma-implement-motion && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-implement-motion/. ~/.claude/skills/figma-implement-motion/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-implement-motion/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-implement-motion/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-implement-motion && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-implement-motion/. .claude/skills/figma-implement-motion/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Implement the animation from this Figma link in our React app.",
+        "result": "Claude reads the motion data from Figma and writes matching animation code for the app."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-implement-motion",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "animation",
+      "motion",
+      "css"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-implement-motion/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 164,
+    "name": "figma-shaders",
+    "summary": "Guides creating, changing, and iterating on shader effects and procedural fills in Figma using the shader tools.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-shaders/.",
+        "command": "mkdir -p ~/.claude/skills/figma-shaders && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-shaders/. ~/.claude/skills/figma-shaders/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-shaders/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-shaders/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-shaders && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-shaders/. .claude/skills/figma-shaders/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Make a procedural noise shader fill in Figma.",
+        "result": "Claude loads this skill and then calls create_shader to author the shader effect."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-shaders",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "shaders",
+      "effects",
+      "design"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-shaders/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 165,
+    "name": "figma-swiftui",
+    "summary": "Translates between Figma designs and SwiftUI in both directions, turning designs into SwiftUI code or pushing SwiftUI views back into Figma.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-swiftui/.",
+        "command": "mkdir -p ~/.claude/skills/figma-swiftui && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-swiftui/. ~/.claude/skills/figma-swiftui/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-swiftui/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-swiftui/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-swiftui && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-swiftui/. .claude/skills/figma-swiftui/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Implement this Figma design in SwiftUI.",
+        "result": "Claude translates the Figma design into SwiftUI views for the screen."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-swiftui",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "swiftui",
+      "ios",
+      "design-to-code"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-swiftui/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 166,
+    "name": "figma-use-figjam",
+    "summary": "Helps agents use Figma's use_figma MCP tool in the FigJam context, alongside the foundational figma-use skill.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-use-figjam/.",
+        "command": "mkdir -p ~/.claude/skills/figma-use-figjam && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use-figjam/. ~/.claude/skills/figma-use-figjam/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-use-figjam/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-use-figjam/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-use-figjam && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use-figjam/. .claude/skills/figma-use-figjam/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Add sticky notes to my FigJam board for these ideas.",
+        "result": "Claude uses the use_figma tool with FigJam-specific guidance to add the content to the board."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-use-figjam",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "figjam",
+      "mcp",
+      "whiteboard"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-use-figjam/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 167,
+    "name": "figma-use-motion",
+    "summary": "Provides motion and animation context for the use_figma tool, covering keyframes, animation styles, easing, and timeline duration on Figma nodes.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-use-motion/.",
+        "command": "mkdir -p ~/.claude/skills/figma-use-motion && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use-motion/. ~/.claude/skills/figma-use-motion/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-use-motion/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-use-motion/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-use-motion && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use-motion/. .claude/skills/figma-use-motion/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Animate this Figma frame with an ease-out fade over one second.",
+        "result": "Claude uses use_figma with keyframes, easing, and duration settings to animate the node."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-use-motion",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "animation",
+      "keyframes",
+      "easing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-use-motion/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 168,
+    "name": "figma-use-slides",
+    "summary": "Helps agents use Figma's use_figma MCP tool in the Slides context, alongside the foundational figma-use skill.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-use-slides/.",
+        "command": "mkdir -p ~/.claude/skills/figma-use-slides && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use-slides/. ~/.claude/skills/figma-use-slides/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-use-slides/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-use-slides/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-use-slides && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use-slides/. .claude/skills/figma-use-slides/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Add a title slide to my Figma Slides deck.",
+        "result": "Claude uses the use_figma tool with Slides-specific guidance to edit the deck."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-use-slides",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "slides",
+      "mcp",
+      "presentation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-use-slides/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 169,
+    "name": "figma-code-connect",
+    "summary": "Creates and maintains Figma Code Connect template files that map Figma components to code snippets.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-code-connect/.",
+        "command": "mkdir -p ~/.claude/skills/figma-code-connect && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-code-connect/. ~/.claude/skills/figma-code-connect/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-code-connect/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-code-connect/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-code-connect && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-code-connect/. .claude/skills/figma-code-connect/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Create a Code Connect file for our Button component.",
+        "result": "Claude writes a .figma.ts template mapping the Figma Button component to its code snippet."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-code-connect",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "code-connect",
+      "components",
+      "design-system"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-code-connect/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 170,
+    "name": "figma-create-new-file",
+    "summary": "Guides creating a new Figma Design, FigJam, or Slides file through the create_new_file tool.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-create-new-file/.",
+        "command": "mkdir -p ~/.claude/skills/figma-create-new-file && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-create-new-file/. ~/.claude/skills/figma-create-new-file/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-create-new-file/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-create-new-file/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-create-new-file && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-create-new-file/. .claude/skills/figma-create-new-file/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Create a new FigJam file for our sprint retro.",
+        "result": "Claude loads this skill and then calls create_new_file to make the FigJam file."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-create-new-file",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "figjam",
+      "slides",
+      "new-file"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-create-new-file/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 171,
+    "name": "figma-design-to-code",
+    "summary": "Guides implementing a Figma design as code by loading before the get_design_context tool is used.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-design-to-code/.",
+        "command": "mkdir -p ~/.claude/skills/figma-design-to-code && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-design-to-code/. ~/.claude/skills/figma-design-to-code/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-design-to-code/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-design-to-code/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-design-to-code && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-design-to-code/. .claude/skills/figma-design-to-code/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Build this screen from the Figma link.",
+        "result": "Claude loads this skill, then fetches the design context and implements the screen as code."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-design-to-code",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "design-to-code",
+      "ui",
+      "implementation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-design-to-code/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 172,
+    "name": "figma-generate-design",
+    "summary": "Translates an application page, view, or multi-section layout from code into a Figma screen, and updates Figma to match code.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-generate-design/.",
+        "command": "mkdir -p ~/.claude/skills/figma-generate-design && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generate-design/. ~/.claude/skills/figma-generate-design/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-generate-design/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-generate-design/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-generate-design && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generate-design/. .claude/skills/figma-generate-design/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Push our landing page into Figma as a new screen.",
+        "result": "Claude builds the page layout in Figma from the code, working alongside the figma-use skill."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-generate-design",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "design",
+      "layout",
+      "code-to-design"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-generate-design/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 173,
+    "name": "figma-generate-library",
+    "summary": "Builds or updates a professional design system in Figma from a codebase, including variables, components, variants, and light and dark themes.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-generate-library/.",
+        "command": "mkdir -p ~/.claude/skills/figma-generate-library && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generate-library/. ~/.claude/skills/figma-generate-library/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-generate-library/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-generate-library/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-generate-library && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-generate-library/. .claude/skills/figma-generate-library/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Create a Figma component library from our codebase's tokens and buttons.",
+        "result": "Claude sets up variables, builds components with variant sets, and reconciles gaps between code and Figma."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-generate-library",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "design-system",
+      "tokens",
+      "components"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-generate-library/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 174,
+    "name": "figma-use",
+    "summary": "Provides required groundwork before every use_figma call, covering node edits, variables, and other actions that run JavaScript in a Figma file.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/figma-use/.",
+        "command": "mkdir -p ~/.claude/skills/figma-use && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use/. ~/.claude/skills/figma-use/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/figma-use/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/figma-use/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/figma-use && cp -R /tmp/anomalyco-opencode/packages/plugins/figma/skills/figma-use/. .claude/skills/figma-use/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Figma MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Create a rectangle and set up color variables in my Figma file.",
+        "result": "Claude loads this skill first and then calls use_figma to create the nodes and variables."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/packages/plugins/figma/skills/figma-use",
+    "author": "anomalyco",
+    "tags": [
+      "figma",
+      "mcp",
+      "automation",
+      "variables"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/packages/plugins/figma/skills/figma-use/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 175,
+    "name": "opencode-dev",
+    "summary": "Helps run, debug, and verify opencode's own V2 CLI, TUI, and server during development, including log reading and attaching Bun's inspector.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/opencode-dev/.",
+        "command": "mkdir -p ~/.claude/skills/opencode-dev && cp -R /tmp/anomalyco-opencode/.opencode/skills/opencode-dev/. ~/.claude/skills/opencode-dev/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/opencode-dev/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/opencode-dev/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/opencode-dev && cp -R /tmp/anomalyco-opencode/.opencode/skills/opencode-dev/. .claude/skills/opencode-dev/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "termctrl",
+      "Bun"
+    ],
+    "usage": [
+      {
+        "prompt": "Start the dev TUI and compare V2 against the legacy TUI.",
+        "result": "Claude launches the V2 dev TUI or server, drives it, and checks logs to verify behavior."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/.opencode/skills/opencode-dev",
+    "author": "anomalyco",
+    "tags": [
+      "opencode",
+      "tui",
+      "dev-server",
+      "inspector"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/.opencode/skills/opencode-dev/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 176,
+    "name": "effect",
+    "summary": "Guides working with Effect v4 TypeScript code in the opencode repo.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/effect/.",
+        "command": "mkdir -p ~/.claude/skills/effect && cp -R /tmp/anomalyco-opencode/.opencode/skills/effect/. ~/.claude/skills/effect/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/effect/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/effect/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/effect && cp -R /tmp/anomalyco-opencode/.opencode/skills/effect/. .claude/skills/effect/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Rewrite this service using Effect v4.",
+        "result": "Claude applies the repo's Effect v4 conventions when editing the TypeScript code."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/.opencode/skills/effect",
+    "author": "anomalyco",
+    "tags": [
+      "effect",
+      "typescript",
+      "opencode",
+      "functional"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/.opencode/skills/effect/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 177,
+    "name": "rtl-aware-development",
+    "summary": "Guides making OpenCode Desktop RTL-aware, covering CSS, menus, scrolling, icons, mixed-direction text, and Electron title bars.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/anomalyco-opencode ] || git clone --depth 1 https://github.com/anomalyco/opencode.git /tmp/anomalyco-opencode"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/rtl-aware-development/.",
+        "command": "mkdir -p ~/.claude/skills/rtl-aware-development && cp -R /tmp/anomalyco-opencode/.opencode/skills/rtl-aware-development/. ~/.claude/skills/rtl-aware-development/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/rtl-aware-development/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/rtl-aware-development/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/rtl-aware-development && cp -R /tmp/anomalyco-opencode/.opencode/skills/rtl-aware-development/. .claude/skills/rtl-aware-development/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review this menu component for RTL support.",
+        "result": "Claude checks the layout, icons, and scrolling for RTL and LTR behavior and fixes the issues."
+      }
+    ],
+    "source": "https://github.com/anomalyco/opencode/tree/dev/.opencode/skills/rtl-aware-development",
+    "author": "anomalyco",
+    "tags": [
+      "rtl",
+      "i18n",
+      "css",
+      "electron"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anomalyco/opencode/.opencode/skills/rtl-aware-development/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 215,961 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 178,
+    "name": "academy-guide",
+    "summary": "Recommends matching courses, tutorials, and use cases from Claude Academy when users ask how to use Claude or Claude products.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add anthropics/skills"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install academy-guide@anthropic-agent-skills"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for academy-guide:academy-guide. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How do I get started with Claude skills?",
+        "result": "Claude checks Claude Academy and recommends matching courses and tutorials alongside its answer."
+      }
+    ],
+    "source": "https://github.com/anthropics/skills/tree/main/skills/academy-guide",
+    "author": "Anthropic",
+    "tags": [
+      "claude",
+      "learning",
+      "academy",
+      "tutorials"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anthropics/skills/skills/academy-guide/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 181,886 stars); installable via the anthropic-agent-skills marketplace (plugin academy-guide)."
+  },
+  {
+    "rank": 179,
+    "name": "discernment-nudge",
+    "summary": "Appends two or three short follow-up questions after substantive answers or drafts so users can judge advice, plans, and claims before acting.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add anthropics/skills"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install discernment-nudge@anthropic-agent-skills"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for discernment-nudge:discernment-nudge. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Draft a project proposal for my manager.",
+        "result": "After drafting, Claude adds a few short follow-up questions that help the user evaluate the draft before relying on it."
+      }
+    ],
+    "source": "https://github.com/anthropics/skills/tree/main/skills/discernment-nudge",
+    "author": "Anthropic",
+    "tags": [
+      "critical-thinking",
+      "follow-up",
+      "review",
+      "advice"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anthropics/skills/skills/discernment-nudge/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 181,886 stars); installable via the anthropic-agent-skills marketplace (plugin discernment-nudge)."
+  },
+  {
+    "rank": 180,
+    "name": "ponytail-help",
+    "summary": "Shows a quick one-shot reference of ponytail's modes, skills, and commands.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/dietrichgebert-ponytail ] || git clone --depth 1 https://github.com/DietrichGebert/ponytail.git /tmp/dietrichgebert-ponytail"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ponytail-help/.",
+        "command": "mkdir -p ~/.claude/skills/ponytail-help && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-help/. ~/.claude/skills/ponytail-help/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ponytail-help/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ponytail-help/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ponytail-help && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-help/. .claude/skills/ponytail-help/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/ponytail-help",
+        "result": "Claude displays the quick reference of ponytail modes, skills, and commands."
+      }
+    ],
+    "source": "https://github.com/DietrichGebert/ponytail/tree/main/.openclaw/skills/ponytail-help",
+    "author": "DietrichGebert",
+    "tags": [
+      "ponytail",
+      "help",
+      "reference",
+      "commands"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at DietrichGebert/ponytail/.openclaw/skills/ponytail-help/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 166,603 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 181,
+    "name": "ponytail-debt",
+    "summary": "Collects every shortcut comment into a single debt ledger so deferrals are tracked instead of forgotten.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/dietrichgebert-ponytail ] || git clone --depth 1 https://github.com/DietrichGebert/ponytail.git /tmp/dietrichgebert-ponytail"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ponytail-debt/.",
+        "command": "mkdir -p ~/.claude/skills/ponytail-debt && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-debt/. ~/.claude/skills/ponytail-debt/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ponytail-debt/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ponytail-debt/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ponytail-debt && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-debt/. .claude/skills/ponytail-debt/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Show me our debt ledger.",
+        "result": "Claude harvests every shortcut comment in the code and reports them as one debt ledger."
+      }
+    ],
+    "source": "https://github.com/DietrichGebert/ponytail/tree/main/.openclaw/skills/ponytail-debt",
+    "author": "DietrichGebert",
+    "tags": [
+      "tech-debt",
+      "ledger",
+      "comments",
+      "report"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at DietrichGebert/ponytail/.openclaw/skills/ponytail-debt/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 166,603 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 182,
+    "name": "ponytail-gain",
+    "summary": "Shows ponytail's measured impact as a scoreboard of less code, lower cost, and more speed from benchmark averages.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/dietrichgebert-ponytail ] || git clone --depth 1 https://github.com/DietrichGebert/ponytail.git /tmp/dietrichgebert-ponytail"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ponytail-gain/.",
+        "command": "mkdir -p ~/.claude/skills/ponytail-gain && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-gain/. ~/.claude/skills/ponytail-gain/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ponytail-gain/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ponytail-gain/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ponytail-gain && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-gain/. .claude/skills/ponytail-gain/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/ponytail-gain",
+        "result": "Claude displays a scoreboard of ponytail's measured impact from the agentic benchmark averages."
+      }
+    ],
+    "source": "https://github.com/DietrichGebert/ponytail/tree/main/.openclaw/skills/ponytail-gain",
+    "author": "DietrichGebert",
+    "tags": [
+      "ponytail",
+      "benchmarks",
+      "metrics",
+      "scoreboard"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at DietrichGebert/ponytail/.openclaw/skills/ponytail-gain/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 166,603 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 183,
+    "name": "ponytail",
+    "summary": "Applies a lazy senior developer mode that makes the smallest change that fully solves a coding task and replies in a way a busy human grasps at once.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/dietrichgebert-ponytail ] || git clone --depth 1 https://github.com/DietrichGebert/ponytail.git /tmp/dietrichgebert-ponytail"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ponytail/.",
+        "command": "mkdir -p ~/.claude/skills/ponytail && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail/. ~/.claude/skills/ponytail/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ponytail/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ponytail/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ponytail && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail/. .claude/skills/ponytail/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Fix this bug with the smallest change possible.",
+        "result": "Claude makes the smallest change that fully solves the problem and gives a short, one-read reply."
+      }
+    ],
+    "source": "https://github.com/DietrichGebert/ponytail/tree/main/.openclaw/skills/ponytail",
+    "author": "DietrichGebert",
+    "tags": [
+      "minimal",
+      "concise",
+      "coding",
+      "workflow"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at DietrichGebert/ponytail/.openclaw/skills/ponytail/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 166,603 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 184,
+    "name": "ponytail-audit",
+    "summary": "Audits the whole repo for bugs, security issues, real load, missing tests, speed, and what to delete, with the most important findings first.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/dietrichgebert-ponytail ] || git clone --depth 1 https://github.com/DietrichGebert/ponytail.git /tmp/dietrichgebert-ponytail"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ponytail-audit/.",
+        "command": "mkdir -p ~/.claude/skills/ponytail-audit && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-audit/. ~/.claude/skills/ponytail-audit/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ponytail-audit/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ponytail-audit/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ponytail-audit && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-audit/. .claude/skills/ponytail-audit/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit this repo.",
+        "result": "Claude reviews the whole repo and lists findings ordered by importance."
+      }
+    ],
+    "source": "https://github.com/DietrichGebert/ponytail/tree/main/.openclaw/skills/ponytail-audit",
+    "author": "DietrichGebert",
+    "tags": [
+      "audit",
+      "code-quality",
+      "security",
+      "testing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at DietrichGebert/ponytail/.openclaw/skills/ponytail-audit/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 166,603 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 185,
+    "name": "ponytail-review",
+    "summary": "Reviews a diff for bugs, security, real load, missing tests, speed, and deletable code, explaining what goes wrong and how to fix each finding.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/dietrichgebert-ponytail ] || git clone --depth 1 https://github.com/DietrichGebert/ponytail.git /tmp/dietrichgebert-ponytail"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ponytail-review/.",
+        "command": "mkdir -p ~/.claude/skills/ponytail-review && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-review/. ~/.claude/skills/ponytail-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ponytail-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ponytail-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ponytail-review && cp -R /tmp/dietrichgebert-ponytail/.openclaw/skills/ponytail-review/. .claude/skills/ponytail-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review my current diff.",
+        "result": "Claude reviews the diff and reports each finding with what goes wrong and how to fix it."
+      }
+    ],
+    "source": "https://github.com/DietrichGebert/ponytail/tree/main/.openclaw/skills/ponytail-review",
+    "author": "DietrichGebert",
+    "tags": [
+      "code-review",
+      "diff",
+      "bugs",
+      "quality"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at DietrichGebert/ponytail/.openclaw/skills/ponytail-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 166,603 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 186,
+    "name": "Plugin Settings",
+    "summary": "Explains how to store per-project plugin configuration in .claude/plugin-name.local.md files with YAML frontmatter and markdown content.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add anthropics/claude-code"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install plugin-dev@claude-code-plugins"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for plugin-dev:Plugin Settings. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How do I make my plugin's behavior configurable per project?",
+        "result": "Claude explains the .claude/plugin-name.local.md pattern and how to read the YAML frontmatter settings."
+      }
+    ],
+    "source": "https://github.com/anthropics/claude-code/tree/main/plugins/plugin-dev/skills/plugin-settings",
+    "author": "Anthropic",
+    "tags": [
+      "plugins",
+      "settings",
+      "yaml",
+      "configuration"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at anthropics/claude-code/plugins/plugin-dev/skills/plugin-settings/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 152,208 stars); installable via the claude-code-plugins marketplace (plugin plugin-dev)."
+  },
+  {
+    "rank": 187,
+    "name": "advisor-orchestrator-worker",
+    "summary": "Splits large tasks across a team of models, with a stronger model reviewing the plan while cheaper workers handle parallel research or generation.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/advisor-orchestrator-worker/.",
+        "command": "mkdir -p ~/.claude/skills/advisor-orchestrator-worker && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/advisor-orchestrator-worker/. ~/.claude/skills/advisor-orchestrator-worker/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/advisor-orchestrator-worker/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/advisor-orchestrator-worker/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/advisor-orchestrator-worker && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/advisor-orchestrator-worker/. .claude/skills/advisor-orchestrator-worker/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Research a dozen competitors at once and fan this out.",
+        "result": "Claude has a stronger model plan and review while cheaper workers run the subtasks in parallel."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/advisor-orchestrator-worker",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "orchestration",
+      "multi-model",
+      "parallel",
+      "agents"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/agent_skills/advisor-orchestrator-worker/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 188,
+    "name": "first-reader",
+    "summary": "Simulates beta readers for a draft, producing a skim gate, timed attention transcript with quit points, next-day recall test, and trust ledger.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/first-reader/.",
+        "command": "mkdir -p ~/.claude/skills/first-reader && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/first-reader/. ~/.claude/skills/first-reader/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/first-reader/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/first-reader/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/first-reader && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/first-reader/. .claude/skills/first-reader/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Give me a beta read of this draft.",
+        "result": "Claude simulates readers moment by moment and reports attention, recall, and trust findings."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/first-reader",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "beta-reader",
+      "writing",
+      "feedback",
+      "draft"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/agent_skills/first-reader/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 189,
+    "name": "dependency-doctor",
+    "summary": "Checks requirements.txt, pyproject.toml, and package.json for dependency footguns like stdlib-shadowing pins, abandoned backports, and unpinned packages.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/dependency-doctor/.",
+        "command": "mkdir -p ~/.claude/skills/dependency-doctor && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/dependency-doctor/. ~/.claude/skills/dependency-doctor/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/dependency-doctor/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/dependency-doctor/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/dependency-doctor && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/dependency-doctor/. .claude/skills/dependency-doctor/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Why won't my dependencies install? Check requirements.txt.",
+        "result": "Claude scans the manifest for direct-dependency footguns and reports what to fix."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/dependency-doctor",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "dependencies",
+      "python",
+      "npm",
+      "manifest"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/agent_skills/dependency-doctor/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 190,
+    "name": "thinking-out-loud",
+    "summary": "Handles long rambling input by echoing a brief of mission, decisions, constraints, and open questions, and acts on nothing until approved.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/thinking-out-loud/.",
+        "command": "mkdir -p ~/.claude/skills/thinking-out-loud && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/thinking-out-loud/. ~/.claude/skills/thinking-out-loud/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/thinking-out-loud/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/thinking-out-loud/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/thinking-out-loud && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/thinking-out-loud/. .claude/skills/thinking-out-loud/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Okay so, rambling voice dictation about a new feature with several tangents...",
+        "result": "Claude echoes back a structured brief with its inferences separated out and acts on nothing until approved."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/thinking-out-loud",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "dictation",
+      "planning",
+      "brief",
+      "clarification"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/agent_skills/thinking-out-loud/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 191,
+    "name": "commit-archaeologist",
+    "summary": "Reconstructs why code exists from local git history, including the introducing commit, later changes, authors, and likely intent.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/commit-archaeologist/.",
+        "command": "mkdir -p ~/.claude/skills/commit-archaeologist && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/commit-archaeologist/. ~/.claude/skills/commit-archaeologist/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/commit-archaeologist/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/commit-archaeologist/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/commit-archaeologist && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/commit-archaeologist/. .claude/skills/commit-archaeologist/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Why does this function exist and who wrote it?",
+        "result": "Claude digs through local git history to find the introducing commit, later changes, and likely intent."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/commit-archaeologist",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "git-history",
+      "blame",
+      "intent",
+      "archaeology"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/agent_skills/commit-archaeologist/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 192,
+    "name": "scope-creep-detector",
+    "summary": "Analyzes git diffs against a stated intent to flag scope creep, unrelated files, and oversized hunks, with keep, split, or justify guidance.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/scope-creep-detector/.",
+        "command": "mkdir -p ~/.claude/skills/scope-creep-detector && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/scope-creep-detector/. ~/.claude/skills/scope-creep-detector/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/scope-creep-detector/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/scope-creep-detector/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/scope-creep-detector && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/scope-creep-detector/. .claude/skills/scope-creep-detector/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Did my change grow beyond the fix? Check this PR.",
+        "result": "Claude compares the diff to the stated intent and flags unrelated changes with keep, split, or justify advice."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/scope-creep-detector",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "scope-creep",
+      "diff",
+      "pull-request",
+      "review"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/agent_skills/scope-creep-detector/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 193,
+    "name": "project-graveyard",
+    "summary": "Scans for dead side projects, analyzes how each one died from git history, finds your patterns, and helps resurrect and ship the best candidate.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/project-graveyard/.",
+        "command": "mkdir -p ~/.claude/skills/project-graveyard && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/project-graveyard/. ~/.claude/skills/project-graveyard/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/project-graveyard/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/project-graveyard/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/project-graveyard && cp -R /tmp/shubhamsaboo-awesome-llm-apps/agent_skills/project-graveyard/. .claude/skills/project-graveyard/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "What abandoned side project should I finish?",
+        "result": "Claude scans your machine, autopsies each dead project from git history, and picks one to revive."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/project-graveyard",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "side-projects",
+      "git-history",
+      "revival",
+      "shipping"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/agent_skills/project-graveyard/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 194,
+    "name": "chatgpt-app-builder",
+    "summary": "Deprecated skill for building ChatGPT apps with interactive widgets using mcp-use and the OpenAI Apps SDK, replaced by mcp-app-builder.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/chatgpt-app-builder/.",
+        "command": "mkdir -p ~/.claude/skills/chatgpt-app-builder && cp -R /tmp/shubhamsaboo-awesome-llm-apps/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/chatgpt-app-builder/. ~/.claude/skills/chatgpt-app-builder/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/chatgpt-app-builder/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/chatgpt-app-builder/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/chatgpt-app-builder && cp -R /tmp/shubhamsaboo-awesome-llm-apps/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/chatgpt-app-builder/. .claude/skills/chatgpt-app-builder/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "mcp-use",
+      "OpenAI Apps SDK"
+    ],
+    "usage": [
+      {
+        "prompt": "Build a ChatGPT app with an interactive widget.",
+        "result": "Claude points to the replacement mcp-app-builder skill and otherwise builds the app with mcp-use and the OpenAI Apps SDK."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/chatgpt-app-builder",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "chatgpt",
+      "mcp",
+      "widgets",
+      "deprecated"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/chatgpt-app-builder/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 195,
+    "name": "mcp-apps-builder",
+    "summary": "Provides mcp-use framework best practices for creating, modifying, debugging, and reviewing MCP servers, including tools, resources, prompts, and widgets.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shubhamsaboo-awesome-llm-apps ] || git clone --depth 1 https://github.com/Shubhamsaboo/awesome-llm-apps.git /tmp/shubhamsaboo-awesome-llm-apps"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/mcp-apps-builder/.",
+        "command": "mkdir -p ~/.claude/skills/mcp-apps-builder && cp -R /tmp/shubhamsaboo-awesome-llm-apps/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/mcp-apps-builder/. ~/.claude/skills/mcp-apps-builder/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/mcp-apps-builder/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/mcp-apps-builder/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/mcp-apps-builder && cp -R /tmp/shubhamsaboo-awesome-llm-apps/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/mcp-apps-builder/. .claude/skills/mcp-apps-builder/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "mcp-use"
+    ],
+    "usage": [
+      {
+        "prompt": "Add a new tool to my MCP server.",
+        "result": "Claude follows mcp-use best practices to add the tool to the MCP server."
+      }
+    ],
+    "source": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/mcp-apps-builder",
+    "author": "Shubhamsaboo",
+    "tags": [
+      "mcp",
+      "mcp-use",
+      "server",
+      "widgets"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Shubhamsaboo/awesome-llm-apps/generative_ui_agents/ai-mcp-app-builder/apps/mcp-use-server/.agent/skills/mcp-apps-builder/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 142,173 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 196,
+    "name": "design",
+    "summary": "Provides broad design help covering brand identity, design tokens, UI styling, logos, corporate identity, HTML presentations, banners, icons, and social photos.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nextlevelbuilder-ui-ux-pro-max-skill ] || git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git /tmp/nextlevelbuilder-ui-ux-pro-max-skill"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/design/.",
+        "command": "mkdir -p ~/.claude/skills/design && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/design/. ~/.claude/skills/design/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/design/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/design/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/design && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/design/. .claude/skills/design/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Design a logo and banner for my startup.",
+        "result": "Claude uses the design skill's style libraries to produce the logo and banner assets."
+      }
+    ],
+    "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/design",
+    "author": "nextlevelbuilder",
+    "tags": [
+      "design",
+      "branding",
+      "logo",
+      "banner",
+      "icons"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/design/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 137,047 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 197,
+    "name": "brand",
+    "summary": "Manages brand voice, visual identity, messaging frameworks, assets, and consistency for branded content and style guides.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nextlevelbuilder-ui-ux-pro-max-skill ] || git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git /tmp/nextlevelbuilder-ui-ux-pro-max-skill"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/brand/.",
+        "command": "mkdir -p ~/.claude/skills/brand && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/brand/. ~/.claude/skills/brand/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/brand/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/brand/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/brand && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/brand/. .claude/skills/brand/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write this announcement in our brand voice.",
+        "result": "Claude applies the brand voice and messaging guidelines to keep the content consistent."
+      }
+    ],
+    "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/brand",
+    "author": "nextlevelbuilder",
+    "tags": [
+      "brand",
+      "voice",
+      "style-guide",
+      "messaging"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/brand/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 137,047 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 198,
+    "name": "ui-styling",
+    "summary": "Builds accessible user interfaces with shadcn/ui, Tailwind CSS, and canvas-based visual designs, including themes, dark mode, and responsive layouts.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nextlevelbuilder-ui-ux-pro-max-skill ] || git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git /tmp/nextlevelbuilder-ui-ux-pro-max-skill"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ui-styling/.",
+        "command": "mkdir -p ~/.claude/skills/ui-styling && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/ui-styling/. ~/.claude/skills/ui-styling/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ui-styling/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ui-styling/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ui-styling && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/ui-styling/. .claude/skills/ui-styling/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "shadcn/ui",
+      "Tailwind CSS",
+      "Radix UI"
+    ],
+    "usage": [
+      {
+        "prompt": "Build an accessible dialog with shadcn/ui and add dark mode.",
+        "result": "Claude builds the accessible component using shadcn/ui and Tailwind CSS with dark mode theming."
+      }
+    ],
+    "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-styling",
+    "author": "nextlevelbuilder",
+    "tags": [
+      "shadcn",
+      "tailwind",
+      "ui",
+      "dark-mode",
+      "accessibility"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/ui-styling/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 137,047 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 199,
+    "name": "design-system",
+    "summary": "Defines token architecture, component specifications, and slide generation using three-layer tokens, CSS variables, and spacing and typography scales.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nextlevelbuilder-ui-ux-pro-max-skill ] || git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git /tmp/nextlevelbuilder-ui-ux-pro-max-skill"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/design-system/.",
+        "command": "mkdir -p ~/.claude/skills/design-system && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/design-system/. ~/.claude/skills/design-system/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/design-system/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/design-system/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/design-system && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/design-system/. .claude/skills/design-system/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Set up a design token system with primitive, semantic, and component layers.",
+        "result": "Claude creates three-layer tokens with CSS variables and component specs."
+      }
+    ],
+    "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/design-system",
+    "author": "nextlevelbuilder",
+    "tags": [
+      "design-tokens",
+      "css-variables",
+      "components",
+      "slides"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/design-system/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 137,047 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 200,
+    "name": "slides",
+    "summary": "Creates strategic HTML presentations with Chart.js, design tokens, responsive layouts, and copywriting formulas.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nextlevelbuilder-ui-ux-pro-max-skill ] || git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git /tmp/nextlevelbuilder-ui-ux-pro-max-skill"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/slides/.",
+        "command": "mkdir -p ~/.claude/skills/slides && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/slides/. ~/.claude/skills/slides/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/slides/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/slides/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/slides && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/slides/. .claude/skills/slides/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Chart.js"
+    ],
+    "usage": [
+      {
+        "prompt": "Create an investor pitch deck with charts.",
+        "result": "Claude builds an HTML presentation with Chart.js charts, design tokens, and slide strategy."
+      }
+    ],
+    "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/slides",
+    "author": "nextlevelbuilder",
+    "tags": [
+      "slides",
+      "presentation",
+      "chartjs",
+      "html"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/slides/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 137,047 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 201,
+    "name": "banner-design",
+    "summary": "Designs banners for social media, ads, website heroes and print, offering several art direction options with generated or supplied visuals.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nextlevelbuilder-ui-ux-pro-max-skill ] || git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git /tmp/nextlevelbuilder-ui-ux-pro-max-skill"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/banner-design/.",
+        "command": "mkdir -p ~/.claude/skills/banner-design && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/banner-design/. ~/.claude/skills/banner-design/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/banner-design/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/banner-design/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/banner-design && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/banner-design/. .claude/skills/banner-design/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Design a LinkedIn banner for our product launch in a bold typography style",
+        "result": "Claude proposes multiple art direction options for the banner and builds it with generated or supplied visuals."
+      }
+    ],
+    "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/banner-design",
+    "author": "nextlevelbuilder",
+    "tags": [
+      "banner",
+      "design",
+      "social-media",
+      "graphics",
+      "ads"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/banner-design/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 137,047 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 202,
+    "name": "ui-ux-pro-max",
+    "summary": "Provides UI/UX design intelligence for web, mobile and desktop: styles, palettes, typography, accessibility, responsive layout and stack-specific UI work.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nextlevelbuilder-ui-ux-pro-max-skill ] || git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git /tmp/nextlevelbuilder-ui-ux-pro-max-skill"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ui-ux-pro-max/.",
+        "command": "mkdir -p ~/.claude/skills/ui-ux-pro-max && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/ui-ux-pro-max/. ~/.claude/skills/ui-ux-pro-max/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ui-ux-pro-max/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ui-ux-pro-max/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ui-ux-pro-max && cp -R /tmp/nextlevelbuilder-ui-ux-pro-max-skill/.claude/skills/ui-ux-pro-max/. .claude/skills/ui-ux-pro-max/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review this settings page for accessibility and responsive layout problems",
+        "result": "Claude draws on its searchable style, palette, font pairing and UX guideline data to review and fix the interface."
+      }
+    ],
+    "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-ux-pro-max",
+    "author": "nextlevelbuilder",
+    "tags": [
+      "ui",
+      "ux",
+      "design",
+      "accessibility",
+      "design-system"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/ui-ux-pro-max/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 137,047 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 203,
+    "name": "land-and-deploy",
+    "summary": "Runs a land-and-deploy workflow that merges a change and deploys it.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/land-and-deploy/.",
+        "command": "mkdir -p ~/.claude/skills/land-and-deploy && cp -R /tmp/garrytan-gstack/land-and-deploy/. ~/.claude/skills/land-and-deploy/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/land-and-deploy/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/land-and-deploy/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/land-and-deploy && cp -R /tmp/garrytan-gstack/land-and-deploy/. .claude/skills/land-and-deploy/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/land-and-deploy",
+        "result": "Claude runs the gstack land-and-deploy workflow to land the branch and deploy it."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/land-and-deploy",
+    "author": "garrytan",
+    "tags": [
+      "deploy",
+      "merge",
+      "release",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/land-and-deploy/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 204,
+    "name": "office-hours",
+    "summary": "Runs YC-style office hours sessions in two modes to pressure-test a product idea or project.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/office-hours/.",
+        "command": "mkdir -p ~/.claude/skills/office-hours && cp -R /tmp/garrytan-gstack/office-hours/. ~/.claude/skills/office-hours/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/office-hours/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/office-hours/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/office-hours && cp -R /tmp/garrytan-gstack/office-hours/. .claude/skills/office-hours/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Let's do office hours on my side project idea",
+        "result": "Claude runs a YC Office Hours session in one of its two modes."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/office-hours",
+    "author": "garrytan",
+    "tags": [
+      "startup",
+      "advice",
+      "brainstorming",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/office-hours/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 205,
+    "name": "plan-ceo-review",
+    "summary": "Reviews a plan from a CEO or founder perspective, challenging scope and ambition.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/plan-ceo-review/.",
+        "command": "mkdir -p ~/.claude/skills/plan-ceo-review && cp -R /tmp/garrytan-gstack/plan-ceo-review/. ~/.claude/skills/plan-ceo-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/plan-ceo-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/plan-ceo-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/plan-ceo-review && cp -R /tmp/garrytan-gstack/plan-ceo-review/. .claude/skills/plan-ceo-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Do a CEO review of this plan",
+        "result": "Claude reviews the plan in CEO/founder mode."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/plan-ceo-review",
+    "author": "garrytan",
+    "tags": [
+      "plan-review",
+      "ceo",
+      "strategy",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/plan-ceo-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 206,
+    "name": "setup-deploy",
+    "summary": "Configures the deployment settings that the land-and-deploy workflow relies on.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/setup-deploy/.",
+        "command": "mkdir -p ~/.claude/skills/setup-deploy && cp -R /tmp/garrytan-gstack/setup-deploy/. ~/.claude/skills/setup-deploy/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/setup-deploy/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/setup-deploy/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/setup-deploy && cp -R /tmp/garrytan-gstack/setup-deploy/. .claude/skills/setup-deploy/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Set up deployment for this repo so I can use /land-and-deploy",
+        "result": "Claude configures the deployment settings for /land-and-deploy."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/setup-deploy",
+    "author": "garrytan",
+    "tags": [
+      "deploy",
+      "setup",
+      "configuration",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/setup-deploy/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 207,
+    "name": "ship",
+    "summary": "Ships a branch by merging the base branch, running tests, reviewing the diff, bumping VERSION, updating the CHANGELOG, committing, pushing and opening a PR.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ship/.",
+        "command": "mkdir -p ~/.claude/skills/ship && cp -R /tmp/garrytan-gstack/ship/. ~/.claude/skills/ship/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ship/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ship/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ship && cp -R /tmp/garrytan-gstack/ship/. .claude/skills/ship/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/ship",
+        "result": "Claude merges the base branch, runs tests, reviews the diff, bumps VERSION, updates CHANGELOG, commits, pushes and creates a PR."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/ship",
+    "author": "garrytan",
+    "tags": [
+      "ship",
+      "pull-request",
+      "release",
+      "changelog"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/ship/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 208,
+    "name": "spec",
+    "summary": "Turns vague intent into a precise, executable spec through a five-phase process.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/spec/.",
+        "command": "mkdir -p ~/.claude/skills/spec && cp -R /tmp/garrytan-gstack/spec/. ~/.claude/skills/spec/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/spec/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/spec/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/spec && cp -R /tmp/garrytan-gstack/spec/. .claude/skills/spec/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Turn my idea for a CSV import feature into a spec",
+        "result": "Claude walks through five phases to convert the vague intent into a precise, executable spec."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/spec",
+    "author": "garrytan",
+    "tags": [
+      "spec",
+      "requirements",
+      "planning",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/spec/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 209,
+    "name": "cso",
+    "summary": "Performs a security audit that reports static findings, with qualified profiles adding reproduction and repair candidates.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cso/.",
+        "command": "mkdir -p ~/.claude/skills/cso && cp -R /tmp/garrytan-gstack/cso/. ~/.claude/skills/cso/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cso/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cso/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cso && cp -R /tmp/garrytan-gstack/cso/. .claude/skills/cso/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run a security audit on this repo",
+        "result": "Claude audits the code and reports static findings, adding reproduction and repair candidates for qualified profiles."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/cso",
+    "author": "garrytan",
+    "tags": [
+      "security",
+      "audit",
+      "vulnerabilities",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/cso/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 210,
+    "name": "gstack-upgrade",
+    "summary": "Upgrades gstack to the latest version.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gstack-upgrade/.",
+        "command": "mkdir -p ~/.claude/skills/gstack-upgrade && cp -R /tmp/garrytan-gstack/gstack-upgrade/. ~/.claude/skills/gstack-upgrade/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gstack-upgrade/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gstack-upgrade/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gstack-upgrade && cp -R /tmp/garrytan-gstack/gstack-upgrade/. .claude/skills/gstack-upgrade/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Upgrade gstack to the latest version",
+        "result": "Claude upgrades the gstack installation to the latest release."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/gstack-upgrade",
+    "author": "garrytan",
+    "tags": [
+      "upgrade",
+      "update",
+      "gstack",
+      "maintenance"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/gstack-upgrade/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 211,
+    "name": "eval-plan",
+    "summary": "Preregisters a paid eval with bars, arms, decoys and stop rules, dry-runs it at no cost, then runs a three-item priced pilot gated by a spend table.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/eval-plan/.",
+        "command": "mkdir -p ~/.claude/skills/eval-plan && cp -R /tmp/garrytan-gstack/eval-plan/. ~/.claude/skills/eval-plan/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/eval-plan/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/eval-plan/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/eval-plan && cp -R /tmp/garrytan-gstack/eval-plan/. .claude/skills/eval-plan/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Plan a paid eval for our new prompt variants",
+        "result": "Claude preregisters the eval, dry-runs it at zero cost, then runs a three-item priced pilot whose spend table gates approval."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/eval-plan",
+    "author": "garrytan",
+    "tags": [
+      "eval",
+      "planning",
+      "pilot",
+      "cost"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/eval-plan/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 212,
+    "name": "autoplan",
+    "summary": "Runs an automatic review pipeline that reads the CEO, design, eng and DX review skills and applies them in sequence using six decision principles.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/autoplan/.",
+        "command": "mkdir -p ~/.claude/skills/autoplan && cp -R /tmp/garrytan-gstack/autoplan/. ~/.claude/skills/autoplan/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/autoplan/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/autoplan/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/autoplan && cp -R /tmp/garrytan-gstack/autoplan/. .claude/skills/autoplan/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/autoplan",
+        "result": "Claude reads the CEO, design, engineering and DX review skills from disk and runs them sequentially with auto-decisions."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/autoplan",
+    "author": "garrytan",
+    "tags": [
+      "plan-review",
+      "automation",
+      "pipeline",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/autoplan/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 213,
+    "name": "devex-review",
+    "summary": "Audits the live developer experience of a product.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/devex-review/.",
+        "command": "mkdir -p ~/.claude/skills/devex-review && cp -R /tmp/garrytan-gstack/devex-review/. ~/.claude/skills/devex-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/devex-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/devex-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/devex-review && cp -R /tmp/garrytan-gstack/devex-review/. .claude/skills/devex-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run a devex review on our API docs and onboarding",
+        "result": "Claude performs a live developer experience audit."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/devex-review",
+    "author": "garrytan",
+    "tags": [
+      "developer-experience",
+      "audit",
+      "review",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/devex-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 214,
+    "name": "plan-devex-review",
+    "summary": "Interactively reviews a plan for its developer experience.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/plan-devex-review/.",
+        "command": "mkdir -p ~/.claude/skills/plan-devex-review && cp -R /tmp/garrytan-gstack/plan-devex-review/. ~/.claude/skills/plan-devex-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/plan-devex-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/plan-devex-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/plan-devex-review && cp -R /tmp/garrytan-gstack/plan-devex-review/. .claude/skills/plan-devex-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review this plan for developer experience",
+        "result": "Claude conducts an interactive developer experience plan review."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/plan-devex-review",
+    "author": "garrytan",
+    "tags": [
+      "developer-experience",
+      "plan-review",
+      "interactive",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/plan-devex-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 215,
+    "name": "benchmark",
+    "summary": "Detects web performance regressions.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/benchmark/.",
+        "command": "mkdir -p ~/.claude/skills/benchmark && cp -R /tmp/garrytan-gstack/benchmark/. ~/.claude/skills/benchmark/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/benchmark/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/benchmark/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/benchmark && cp -R /tmp/garrytan-gstack/benchmark/. .claude/skills/benchmark/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Check whether this change regressed page performance",
+        "result": "Claude runs the benchmark workflow to detect web performance regressions."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/benchmark",
+    "author": "garrytan",
+    "tags": [
+      "performance",
+      "benchmark",
+      "regression",
+      "web"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/benchmark/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 216,
+    "name": "browse",
+    "summary": "Drives a real browser through Aside to open pages, read them, click through flows, take screenshots and check console errors.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/browse/.",
+        "command": "mkdir -p ~/.claude/skills/browse && cp -R /tmp/garrytan-gstack/browse/. ~/.claude/skills/browse/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/browse/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/browse/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/browse && cp -R /tmp/garrytan-gstack/browse/. .claude/skills/browse/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Aside"
+    ],
+    "usage": [
+      {
+        "prompt": "Open our staging site, click through checkout and check console errors",
+        "result": "Claude drives a real browser through Aside, clicking through the flow, taking screenshots and checking console errors."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/browse",
+    "author": "garrytan",
+    "tags": [
+      "browser",
+      "automation",
+      "screenshots",
+      "qa"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/browse/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 217,
+    "name": "canary",
+    "summary": "Monitors a deployment with post-deploy canary checks.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/canary/.",
+        "command": "mkdir -p ~/.claude/skills/canary && cp -R /tmp/garrytan-gstack/canary/. ~/.claude/skills/canary/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/canary/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/canary/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/canary && cp -R /tmp/garrytan-gstack/canary/. .claude/skills/canary/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run canary monitoring on the release we just deployed",
+        "result": "Claude performs post-deploy canary monitoring."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/canary",
+    "author": "garrytan",
+    "tags": [
+      "canary",
+      "monitoring",
+      "deploy",
+      "post-deploy"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/canary/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 218,
+    "name": "design-consultation",
+    "summary": "Researches your product and landscape, then proposes a complete design system covering typography, color, layout, spacing and motion, with previews.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/design-consultation/.",
+        "command": "mkdir -p ~/.claude/skills/design-consultation && cp -R /tmp/garrytan-gstack/design-consultation/. ~/.claude/skills/design-consultation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/design-consultation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/design-consultation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/design-consultation && cp -R /tmp/garrytan-gstack/design-consultation/. .claude/skills/design-consultation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Help me define a design system for my new analytics app",
+        "result": "Claude researches the landscape and proposes a full design system, generating font and color previews."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/design-consultation",
+    "author": "garrytan",
+    "tags": [
+      "design-system",
+      "typography",
+      "color",
+      "consultation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/design-consultation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 219,
+    "name": "design-review",
+    "summary": "Performs a designer's-eye QA that finds visual inconsistencies, spacing and hierarchy problems, AI slop patterns and slow interactions, then fixes them.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/design-review/.",
+        "command": "mkdir -p ~/.claude/skills/design-review && cp -R /tmp/garrytan-gstack/design-review/. ~/.claude/skills/design-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/design-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/design-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/design-review && cp -R /tmp/garrytan-gstack/design-review/. .claude/skills/design-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Do a design review of the dashboard page and fix what you find",
+        "result": "Claude finds visual inconsistency, spacing, hierarchy and interaction issues and then fixes them."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/design-review",
+    "author": "garrytan",
+    "tags": [
+      "design-review",
+      "qa",
+      "visual",
+      "spacing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/design-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 220,
+    "name": "scrape",
+    "summary": "Pulls data from a web page through the Aside browser using your real, already signed-in sessions.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/scrape/.",
+        "command": "mkdir -p ~/.claude/skills/scrape && cp -R /tmp/garrytan-gstack/scrape/. ~/.claude/skills/scrape/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/scrape/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/scrape/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/scrape && cp -R /tmp/garrytan-gstack/scrape/. .claude/skills/scrape/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Aside"
+    ],
+    "usage": [
+      {
+        "prompt": "Scrape the table of invoices from my billing dashboard",
+        "result": "Claude pulls the data from the page through the Aside browser using your signed-in session."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/scrape",
+    "author": "garrytan",
+    "tags": [
+      "scraping",
+      "web-data",
+      "browser",
+      "extraction"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/scrape/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 221,
+    "name": "plan-eng-review",
+    "summary": "Reviews a plan in engineering-manager mode.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/plan-eng-review/.",
+        "command": "mkdir -p ~/.claude/skills/plan-eng-review && cp -R /tmp/garrytan-gstack/plan-eng-review/. ~/.claude/skills/plan-eng-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/plan-eng-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/plan-eng-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/plan-eng-review && cp -R /tmp/garrytan-gstack/plan-eng-review/. .claude/skills/plan-eng-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Do an eng review of this plan",
+        "result": "Claude reviews the plan from an engineering manager perspective."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/plan-eng-review",
+    "author": "garrytan",
+    "tags": [
+      "plan-review",
+      "engineering",
+      "architecture",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/plan-eng-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 222,
+    "name": "review",
+    "summary": "Reviews a pull request before it lands.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/review/.",
+        "command": "mkdir -p ~/.claude/skills/review && cp -R /tmp/garrytan-gstack/review/. ~/.claude/skills/review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/review && cp -R /tmp/garrytan-gstack/review/. .claude/skills/review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/review",
+        "result": "Claude performs a pre-landing review of the PR."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/review",
+    "author": "garrytan",
+    "tags": [
+      "code-review",
+      "pull-request",
+      "pre-merge",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 223,
+    "name": "plan-design-review",
+    "summary": "Reviews a plan with a designer's eye in an interactive style like the CEO and eng reviews.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/plan-design-review/.",
+        "command": "mkdir -p ~/.claude/skills/plan-design-review && cp -R /tmp/garrytan-gstack/plan-design-review/. ~/.claude/skills/plan-design-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/plan-design-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/plan-design-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/plan-design-review && cp -R /tmp/garrytan-gstack/plan-design-review/. .claude/skills/plan-design-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run a design review on this plan",
+        "result": "Claude runs an interactive designer's-eye review of the plan."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/plan-design-review",
+    "author": "garrytan",
+    "tags": [
+      "plan-review",
+      "design",
+      "interactive",
+      "gstack"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/plan-design-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 224,
+    "name": "setup-gbrain",
+    "summary": "Sets up gbrain by installing the CLI, initializing a local PGLite or Supabase brain, registering MCP and capturing a per-remote trust policy.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/setup-gbrain/.",
+        "command": "mkdir -p ~/.claude/skills/setup-gbrain && cp -R /tmp/garrytan-gstack/setup-gbrain/. ~/.claude/skills/setup-gbrain/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/setup-gbrain/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/setup-gbrain/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/setup-gbrain && cp -R /tmp/garrytan-gstack/setup-gbrain/. .claude/skills/setup-gbrain/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "gbrain CLI",
+      "PGLite or Supabase"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up gbrain for this agent",
+        "result": "Claude installs the CLI, initializes a local PGLite or Supabase brain, registers MCP and captures the per-remote trust policy."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/setup-gbrain",
+    "author": "garrytan",
+    "tags": [
+      "gbrain",
+      "setup",
+      "mcp",
+      "supabase"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/setup-gbrain/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 225,
+    "name": "test-audit",
+    "summary": "Finds low-value or duplicate tests and the test-only code they keep alive.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/test-audit/.",
+        "command": "mkdir -p ~/.claude/skills/test-audit && cp -R /tmp/garrytan-gstack/test-audit/. ~/.claude/skills/test-audit/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/test-audit/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/test-audit/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/test-audit && cp -R /tmp/garrytan-gstack/test-audit/. .claude/skills/test-audit/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit our test suite for low-value or duplicate tests",
+        "result": "Claude finds low-value or duplicate tests and the test-only code that they keep alive."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/test-audit",
+    "author": "garrytan",
+    "tags": [
+      "test-audit",
+      "duplicate-tests",
+      "cleanup",
+      "coverage"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/test-audit/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 226,
+    "name": "document-release",
+    "summary": "Audits the documentation for a release.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/garrytan-gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git /tmp/garrytan-gstack"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/document-release/.",
+        "command": "mkdir -p ~/.claude/skills/document-release && cp -R /tmp/garrytan-gstack/document-release/. ~/.claude/skills/document-release/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/document-release/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/document-release/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/document-release && cp -R /tmp/garrytan-gstack/document-release/. .claude/skills/document-release/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit the docs before we release",
+        "result": "Claude runs a release documentation audit."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack/tree/main/document-release",
+    "author": "garrytan",
+    "tags": [
+      "release",
+      "docs",
+      "audit",
+      "changelog"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/document-release/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 227,
+    "name": "gstack",
+    "summary": "Routes requests to the right skill in the gstack suite.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the repository straight into your personal skills directory as ~/.claude/skills/gstack/ (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d ~/.claude/skills/gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gstack/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, clone it into .claude/skills/gstack/ in your repository instead.",
+        "command": "[ -d .claude/skills/gstack ] || git clone --depth 1 https://github.com/garrytan/gstack.git .claude/skills/gstack"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Which gstack skill should I use to prepare a release?",
+        "result": "Claude acts as the gstack router and points the request to the appropriate suite skill."
+      }
+    ],
+    "source": "https://github.com/garrytan/gstack",
+    "author": "garrytan",
+    "tags": [
+      "router",
+      "gstack",
+      "skills",
+      "suite"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at garrytan/gstack/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 136,812 stars); installable by cloning the repository."
+  },
+  {
+    "rank": 228,
+    "name": "openai-docs",
+    "summary": "Answers questions about Codex, OpenAI APIs and products, model choice and migration, prompting, SDKs, agents and evals, including Codex self-knowledge.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/openai-codex ] || git clone --depth 1 https://github.com/openai/codex.git /tmp/openai-codex"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/openai-docs/.",
+        "command": "mkdir -p ~/.claude/skills/openai-docs && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/openai-docs/. ~/.claude/skills/openai-docs/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/openai-docs/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/openai-docs/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/openai-docs && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/openai-docs/. .claude/skills/openai-docs/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How do I schedule tasks in Codex?",
+        "result": "Claude answers using the skill's OpenAI and Codex documentation guidance, covering settings, setup or API topics as asked."
+      }
+    ],
+    "source": "https://github.com/openai/codex/tree/main/codex-rs/skills/src/assets/samples/openai-docs",
+    "author": "openai",
+    "tags": [
+      "openai",
+      "codex",
+      "docs",
+      "api"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at openai/codex/codex-rs/skills/src/assets/samples/openai-docs/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 129,709 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 229,
+    "name": "imagegen",
+    "summary": "Generates or edits raster images such as photos, illustrations, sprites and mockups, including transparent cutouts and variants from references.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/openai-codex ] || git clone --depth 1 https://github.com/openai/codex.git /tmp/openai-codex"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/imagegen/.",
+        "command": "mkdir -p ~/.claude/skills/imagegen && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/imagegen/. ~/.claude/skills/imagegen/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/imagegen/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/imagegen/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/imagegen && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/imagegen/. .claude/skills/imagegen/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Generate a sprite of a pixel-art knight with a transparent background",
+        "result": "Claude creates or edits the bitmap image, producing a raster asset from your request or reference images."
+      }
+    ],
+    "source": "https://github.com/openai/codex/tree/main/codex-rs/skills/src/assets/samples/imagegen",
+    "author": "openai",
+    "tags": [
+      "image-generation",
+      "raster",
+      "bitmap",
+      "illustration"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at openai/codex/codex-rs/skills/src/assets/samples/imagegen/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 129,709 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 230,
+    "name": "review-agent",
+    "summary": "Performs a read-only, defect-first review of a code change and returns every actionable finding.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/openai-codex ] || git clone --depth 1 https://github.com/openai/codex.git /tmp/openai-codex"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/review-agent/.",
+        "command": "mkdir -p ~/.claude/skills/review-agent && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/review-agent/. ~/.claude/skills/review-agent/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/review-agent/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/review-agent/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/review-agent && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/review-agent/. .claude/skills/review-agent/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review my uncommitted changes against the main branch",
+        "result": "Claude reviews the specified change read-only and returns all actionable findings, defects first."
+      }
+    ],
+    "source": "https://github.com/openai/codex/tree/main/codex-rs/skills/src/assets/samples/review-agent",
+    "author": "openai",
+    "tags": [
+      "code-review",
+      "diff",
+      "read-only",
+      "defects"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at openai/codex/codex-rs/skills/src/assets/samples/review-agent/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 129,709 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 231,
+    "name": "skill-installer",
+    "summary": "Installs Codex skills into the Codex skills directory from a curated list or a GitHub repo path, including private repos.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/openai-codex ] || git clone --depth 1 https://github.com/openai/codex.git /tmp/openai-codex"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/skill-installer/.",
+        "command": "mkdir -p ~/.claude/skills/skill-installer && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/skill-installer/. ~/.claude/skills/skill-installer/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/skill-installer/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/skill-installer/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/skill-installer && cp -R /tmp/openai-codex/codex-rs/skills/src/assets/samples/skill-installer/. .claude/skills/skill-installer/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "List the installable Codex skills and install one from GitHub",
+        "result": "Claude lists curated skills or installs a skill from a GitHub repo path into $CODEX_HOME/skills."
+      }
+    ],
+    "source": "https://github.com/openai/codex/tree/main/codex-rs/skills/src/assets/samples/skill-installer",
+    "author": "openai",
+    "tags": [
+      "skills",
+      "installer",
+      "github",
+      "codex"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at openai/codex/codex-rs/skills/src/assets/samples/skill-installer/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 129,709 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 232,
+    "name": "shadcn",
+    "summary": "Manages shadcn/ui components and projects by adding, searching, fixing, debugging, styling and composing UI, with project context and component docs.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shadcn-ui-ui ] || git clone --depth 1 https://github.com/shadcn-ui/ui.git /tmp/shadcn-ui-ui"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/shadcn/.",
+        "command": "mkdir -p ~/.claude/skills/shadcn && cp -R /tmp/shadcn-ui-ui/skills/shadcn/. ~/.claude/skills/shadcn/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/shadcn/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/shadcn/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/shadcn && cp -R /tmp/shadcn-ui-ui/skills/shadcn/. .claude/skills/shadcn/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add a dialog component to my shadcn project and style it",
+        "result": "Claude uses project context and component docs to add, fix or compose shadcn components."
+      }
+    ],
+    "source": "https://github.com/shadcn-ui/ui/tree/main/skills/shadcn",
+    "author": "shadcn-ui",
+    "tags": [
+      "shadcn",
+      "ui",
+      "components",
+      "react"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at shadcn-ui/ui/skills/shadcn/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 125,846 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 233,
+    "name": "migrate-radix-to-base",
+    "summary": "Migrates React projects and components from Radix UI to Base UI, either one component at a time or across a whole project.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shadcn-ui-ui ] || git clone --depth 1 https://github.com/shadcn-ui/ui.git /tmp/shadcn-ui-ui"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/migrate-radix-to-base/.",
+        "command": "mkdir -p ~/.claude/skills/migrate-radix-to-base && cp -R /tmp/shadcn-ui-ui/skills/migrate-radix-to-base/. ~/.claude/skills/migrate-radix-to-base/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/migrate-radix-to-base/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/migrate-radix-to-base/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/migrate-radix-to-base && cp -R /tmp/shadcn-ui-ui/skills/migrate-radix-to-base/. .claude/skills/migrate-radix-to-base/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Migrate accordion from Radix to Base UI",
+        "result": "Claude converts the Radix primitives to Base UI for the single component or the whole project."
+      }
+    ],
+    "source": "https://github.com/shadcn-ui/ui/tree/main/skills/migrate-radix-to-base",
+    "author": "shadcn-ui",
+    "tags": [
+      "migration",
+      "radix",
+      "base-ui",
+      "react"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at shadcn-ui/ui/skills/migrate-radix-to-base/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 125,846 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 234,
+    "name": "caveman-learn",
+    "summary": "Acts on a Caveman learn report by reviewing ranked token sinks, applying cost-lowering fixes with per-edit consent and reporting what they saved.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-learn. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Lower my agent's token cost using the caveman learn report",
+        "result": "Claude reviews the ranked token sinks, applies fixes with your consent for each edit and reports the result."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-learn",
+    "author": "JuliusBrussee",
+    "tags": [
+      "tokens",
+      "cost",
+      "optimization",
+      "claude-md"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-learn/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 235,
+    "name": "caveman-help",
+    "summary": "Shows a quick-reference card for the three caveman skills and their commands.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-help. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/caveman-help",
+        "result": "Claude shows the quick-reference card for the caveman skills and commands."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-help",
+    "author": "JuliusBrussee",
+    "tags": [
+      "caveman",
+      "help",
+      "reference",
+      "commands"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-help/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 236,
+    "name": "cavecrew",
+    "summary": "Guides when to delegate to cavecrew investigator, builder or reviewer subagents instead of working inline, so compressed output saves main context.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/juliusbrussee-caveman ] || git clone --depth 1 https://github.com/JuliusBrussee/caveman.git /tmp/juliusbrussee-caveman"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cavecrew/.",
+        "command": "mkdir -p ~/.claude/skills/cavecrew && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/cavecrew/. ~/.claude/skills/cavecrew/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cavecrew/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cavecrew/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cavecrew && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/cavecrew/. .claude/skills/cavecrew/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Find where authentication is handled in this repo",
+        "result": "Claude delegates the code location task to the cavecrew-investigator so its compressed output keeps main context small."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/plugins/caveman/skills/cavecrew",
+    "author": "JuliusBrussee",
+    "tags": [
+      "subagents",
+      "delegation",
+      "context",
+      "cavecrew"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/plugins/caveman/skills/cavecrew/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 237,
+    "name": "caveman",
+    "summary": "Switches Claude to a terse caveman voice that gives the answer first, drops fluff and keeps every technical fact, until you turn it off.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/juliusbrussee-caveman ] || git clone --depth 1 https://github.com/JuliusBrussee/caveman.git /tmp/juliusbrussee-caveman"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/caveman/.",
+        "command": "mkdir -p ~/.claude/skills/caveman && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/caveman/. ~/.claude/skills/caveman/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/caveman/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/caveman/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/caveman && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/caveman/. .claude/skills/caveman/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "caveman mode",
+        "result": "Claude answers tersely, answer first with fluff removed, until you say stop caveman or normal mode."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/plugins/caveman/skills/caveman",
+    "author": "JuliusBrussee",
+    "tags": [
+      "caveman",
+      "terse",
+      "brevity",
+      "tokens"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/plugins/caveman/skills/caveman/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 238,
+    "name": "megacave",
+    "summary": "Applies the caveman style in Classical Chinese with far fewer characters while keeping technical terms verbatim.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/juliusbrussee-caveman ] || git clone --depth 1 https://github.com/JuliusBrussee/caveman.git /tmp/juliusbrussee-caveman"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/megacave/.",
+        "command": "mkdir -p ~/.claude/skills/megacave && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/megacave/. ~/.claude/skills/megacave/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/megacave/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/megacave/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/megacave && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/megacave/. .claude/skills/megacave/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/megacave",
+        "result": "Claude replies in terse Classical Chinese with technical terms verbatim until you say stop caveman or normal mode."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/plugins/caveman/skills/megacave",
+    "author": "JuliusBrussee",
+    "tags": [
+      "caveman",
+      "classical-chinese",
+      "brevity",
+      "tokens"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/plugins/caveman/skills/megacave/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 239,
+    "name": "ultracave",
+    "summary": "Applies the caveman style at maximum compression, using fragments and single words and stating each fact once.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/juliusbrussee-caveman ] || git clone --depth 1 https://github.com/JuliusBrussee/caveman.git /tmp/juliusbrussee-caveman"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ultracave/.",
+        "command": "mkdir -p ~/.claude/skills/ultracave && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/ultracave/. ~/.claude/skills/ultracave/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ultracave/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ultracave/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ultracave && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/ultracave/. .claude/skills/ultracave/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/ultracave",
+        "result": "Claude responds in maximally compressed fragments, each fact once, until you say stop caveman or normal mode."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/plugins/caveman/skills/ultracave",
+    "author": "JuliusBrussee",
+    "tags": [
+      "caveman",
+      "compression",
+      "brevity",
+      "tokens"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/plugins/caveman/skills/ultracave/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 240,
+    "name": "caveman-stats",
+    "summary": "Shows recorded output and cache-read token usage and mode attribution for the current session, or locates the host's native usage report.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/juliusbrussee-caveman ] || git clone --depth 1 https://github.com/JuliusBrussee/caveman.git /tmp/juliusbrussee-caveman"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/caveman-stats/.",
+        "command": "mkdir -p ~/.claude/skills/caveman-stats && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/caveman-stats/. ~/.claude/skills/caveman-stats/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/caveman-stats/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/caveman-stats/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/caveman-stats && cp -R /tmp/juliusbrussee-caveman/plugins/caveman/skills/caveman-stats/. .claude/skills/caveman-stats/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/caveman-stats",
+        "result": "Claude shows output and cache-read token usage with mode attribution for the current session."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/plugins/caveman/skills/caveman-stats",
+    "author": "JuliusBrussee",
+    "tags": [
+      "tokens",
+      "usage",
+      "stats",
+      "session"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/plugins/caveman/skills/caveman-stats/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 241,
+    "name": "caveman-commit",
+    "summary": "Writes a Conventional Commits message compressed to intent only.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-commit. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write a commit message for my staged changes",
+        "result": "Claude writes a Conventional Commits message reduced to the intent of the change."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-commit",
+    "author": "JuliusBrussee",
+    "tags": [
+      "commit",
+      "conventional-commits",
+      "message",
+      "git"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-commit/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 242,
+    "name": "caveman-discover",
+    "summary": "Finds and labels every LLM workflow in the repository so Caveman Cloud can group spend by workflow.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-discover. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Caveman Cloud"
+    ],
+    "usage": [
+      {
+        "prompt": "Discover the LLM workflows in this repo",
+        "result": "Claude finds and labels each LLM workflow so Caveman Cloud groups spend per workflow instead of one bucket."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-discover",
+    "author": "JuliusBrussee",
+    "tags": [
+      "llm",
+      "workflows",
+      "spend",
+      "caveman-cloud"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-discover/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 243,
+    "name": "caveman-evidence-review",
+    "summary": "Reviews Caveman Cloud evidence read-only, covering cost, Cave Score, workflows, traces, latency, errors, routing and savings.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-evidence-review. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Caveman Cloud"
+    ],
+    "usage": [
+      {
+        "prompt": "Where does our LLM spend go according to Caveman?",
+        "result": "Claude reads the Caveman Cloud evidence without changing anything and reports cost, workflows, traces and savings."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-evidence-review",
+    "author": "JuliusBrussee",
+    "tags": [
+      "caveman-cloud",
+      "cost",
+      "traces",
+      "latency"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-evidence-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 244,
+    "name": "caveman-explore",
+    "summary": "Explores a repository read-only for orientation or cross-file localization, returning path:line citations and keeping its reads out of main context.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-explore. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Where is rate limiting implemented across this codebase?",
+        "result": "Claude explores the repo read-only and returns path:line citations without adding its reads to main context."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-explore",
+    "author": "JuliusBrussee",
+    "tags": [
+      "explore",
+      "codebase",
+      "search",
+      "read-only"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-explore/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 245,
+    "name": "caveman-manage",
+    "summary": "Inspects Caveman Cloud's experiment lifecycle and blocks unsafe execution when starting, approving, cancelling, promoting or rolling back experiments.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-manage. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Caveman Cloud"
+    ],
+    "usage": [
+      {
+        "prompt": "Promote the current Caveman experiment",
+        "result": "Claude inspects the experiment lifecycle and blocks the action if execution would be unsafe."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-manage",
+    "author": "JuliusBrussee",
+    "tags": [
+      "experiments",
+      "caveman-cloud",
+      "rollback",
+      "approval"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-manage/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 246,
+    "name": "caveman-optimize",
+    "summary": "Turns a Caveman optimization observation into an operator-chosen candidate with a paired baseline evaluation, requiring explicit approval.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-optimize. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Evaluate the latest Caveman optimization report",
+        "result": "Claude turns the observation into a candidate with a paired baseline evaluation, after getting explicit approval."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-optimize",
+    "author": "JuliusBrussee",
+    "tags": [
+      "optimization",
+      "evaluation",
+      "caveman",
+      "baseline"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-optimize/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 247,
+    "name": "caveman-review",
+    "summary": "Reviews code in a compressed format with one line per finding giving location, problem and fix.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-review. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "review the diff",
+        "result": "Claude reviews the diff and reports one line per finding with its location, problem and fix."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-review",
+    "author": "JuliusBrussee",
+    "tags": [
+      "code-review",
+      "diff",
+      "pull-request",
+      "terse"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 248,
+    "name": "caveman-setup",
+    "summary": "Wires a repository through the Caveman Cloud gateway so every LLM request is measured, with no behavior change.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:caveman-setup. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Caveman Cloud"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up caveman for this repo",
+        "result": "Claude routes the repository's LLM requests through the Caveman Cloud gateway for spend observability without changing behavior."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman-setup",
+    "author": "JuliusBrussee",
+    "tags": [
+      "caveman-cloud",
+      "gateway",
+      "observability",
+      "setup"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/caveman-setup/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 249,
+    "name": "investigate-first",
+    "summary": "Diagnoses ambiguous failures before editing, ranking hypotheses by evidence for unknown causes, intermittent behavior or performance regressions.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:investigate-first. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "The tests fail intermittently on CI and I don't know why",
+        "result": "Claude investigates first and ranks hypotheses by evidence before making any edits."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/investigate-first",
+    "author": "JuliusBrussee",
+    "tags": [
+      "debugging",
+      "investigation",
+      "hypotheses",
+      "regression"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/investigate-first/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 250,
+    "name": "lean-build",
+    "summary": "Builds feature work with high overbuilding risk while reusing repository code, keeping strict scope and following an explicit stop condition.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:lean-build. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add a webhook integration but keep the scope tight",
+        "result": "Claude builds the feature reusing existing repository code, within strict scope and to an explicit stop condition."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/lean-build",
+    "author": "JuliusBrussee",
+    "tags": [
+      "feature",
+      "scope",
+      "reuse",
+      "minimal"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/lean-build/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 251,
+    "name": "migration",
+    "summary": "Plans reversible, compatibility-safe migrations of schemas, data, APIs, protocols, configs or dependencies, with rollback and preservation proof.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:migration. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Migrate the users table to a new schema with a rollback plan",
+        "result": "Claude designs a reversible transition and shows rollback and preservation proof."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/migration",
+    "author": "JuliusBrussee",
+    "tags": [
+      "migration",
+      "rollback",
+      "schema",
+      "compatibility"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/migration/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 252,
+    "name": "safe-refactor",
+    "summary": "Restructures code while preserving behavior, bracketing extraction, consolidation or ownership moves with verification before and after the structural edits.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:safe-refactor. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Extract the pricing logic into its own module without changing behavior",
+        "result": "Claude verifies behavior first, makes the structural edits, then re-verifies."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/safe-refactor",
+    "author": "JuliusBrussee",
+    "tags": [
+      "refactoring",
+      "behavior-preserving",
+      "cleanup",
+      "verification"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/safe-refactor/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 253,
+    "name": "surgical-patch",
+    "summary": "Fixes bugs and small behavior changes at the narrowest responsible layer, with regression proof and preserved surrounding behavior.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:surgical-patch. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Fix the off-by-one in pagination with a minimal patch and a regression test",
+        "result": "Claude changes the narrowest responsible layer and proves the fix with relevant tests."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/surgical-patch",
+    "author": "JuliusBrussee",
+    "tags": [
+      "bugfix",
+      "patch",
+      "regression",
+      "minimal-change"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/surgical-patch/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 254,
+    "name": "verify-and-stop",
+    "summary": "Proves that existing work meets its acceptance conditions through focused checks and gate runs, without expanding the scope of the task.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add JuliusBrussee/caveman"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install caveman@caveman"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for caveman:verify-and-stop. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Just verify the feature meets the acceptance criteria, don't change anything else",
+        "result": "Claude runs focused checks against the acceptance conditions and reports proof without widening scope."
+      }
+    ],
+    "source": "https://github.com/JuliusBrussee/caveman/tree/main/skills/verify-and-stop",
+    "author": "JuliusBrussee",
+    "tags": [
+      "verification",
+      "validation",
+      "acceptance",
+      "gates"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at JuliusBrussee/caveman/skills/verify-and-stop/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 113,373 stars); installable via the caveman marketplace (plugin caveman)."
+  },
+  {
+    "rank": 255,
+    "name": "idea-refine",
+    "summary": "Refines vague ideas into sharp, actionable concepts using structured divergent and convergent thinking, stress-testing assumptions along the way.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/idea-refine/.",
+        "command": "mkdir -p ~/.claude/skills/idea-refine && cp -R /tmp/addyosmani-agent-skills/skills/idea-refine/. ~/.claude/skills/idea-refine/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/idea-refine/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/idea-refine/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/idea-refine && cp -R /tmp/addyosmani-agent-skills/skills/idea-refine/. .claude/skills/idea-refine/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Help me refine this idea for a habit tracking app",
+        "result": "Claude expands options, stress-tests assumptions, then converges on a concrete concept."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/idea-refine",
+    "author": "addyosmani",
+    "tags": [
+      "ideation",
+      "brainstorming",
+      "planning",
+      "assumptions"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/idea-refine/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 256,
+    "name": "performance-optimization",
+    "summary": "Optimizes application performance across frontend, backend, queries and databases, including Core Web Vitals, N+1 queries and profiled bottlenecks.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/performance-optimization/.",
+        "command": "mkdir -p ~/.claude/skills/performance-optimization && cp -R /tmp/addyosmani-agent-skills/skills/performance-optimization/. ~/.claude/skills/performance-optimization/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/performance-optimization/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/performance-optimization/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/performance-optimization && cp -R /tmp/addyosmani-agent-skills/skills/performance-optimization/. .claude/skills/performance-optimization/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "The dashboard page is slow, find and fix the N+1 queries",
+        "result": "Claude profiles the bottleneck and fixes the performance issues it finds."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/performance-optimization",
+    "author": "addyosmani",
+    "tags": [
+      "performance",
+      "profiling",
+      "n+1",
+      "web-vitals",
+      "optimization"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/performance-optimization/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 257,
+    "name": "documentation-and-adrs",
+    "summary": "Records architecture decisions and documentation, capturing the reasoning behind design choices and public API changes for future engineers and agents.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/documentation-and-adrs/.",
+        "command": "mkdir -p ~/.claude/skills/documentation-and-adrs && cp -R /tmp/addyosmani-agent-skills/skills/documentation-and-adrs/. ~/.claude/skills/documentation-and-adrs/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/documentation-and-adrs/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/documentation-and-adrs/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/documentation-and-adrs && cp -R /tmp/addyosmani-agent-skills/skills/documentation-and-adrs/. .claude/skills/documentation-and-adrs/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write an ADR for why we chose Postgres over MongoDB",
+        "result": "Claude documents the decision and its reasoning as an architecture decision record."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/documentation-and-adrs",
+    "author": "addyosmani",
+    "tags": [
+      "adr",
+      "documentation",
+      "architecture",
+      "decisions"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/documentation-and-adrs/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 258,
+    "name": "frontend-ui-engineering",
+    "summary": "Builds production-quality, accessible, responsive user interfaces, covering components, layouts, state management and WCAG requirements.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/frontend-ui-engineering/.",
+        "command": "mkdir -p ~/.claude/skills/frontend-ui-engineering && cp -R /tmp/addyosmani-agent-skills/skills/frontend-ui-engineering/. ~/.claude/skills/frontend-ui-engineering/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/frontend-ui-engineering/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/frontend-ui-engineering/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/frontend-ui-engineering && cp -R /tmp/addyosmani-agent-skills/skills/frontend-ui-engineering/. .claude/skills/frontend-ui-engineering/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build an accessible, responsive settings page component",
+        "result": "Claude builds the interface with accessible, responsive layouts and sound state handling."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/frontend-ui-engineering",
+    "author": "addyosmani",
+    "tags": [
+      "ui",
+      "accessibility",
+      "responsive",
+      "components",
+      "wcag"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/frontend-ui-engineering/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 259,
+    "name": "shipping-and-launch",
+    "summary": "Prepares production launches with a pre-launch checklist, monitoring setup, staged rollout planning and a rollback strategy.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/shipping-and-launch/.",
+        "command": "mkdir -p ~/.claude/skills/shipping-and-launch && cp -R /tmp/addyosmani-agent-skills/skills/shipping-and-launch/. ~/.claude/skills/shipping-and-launch/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/shipping-and-launch/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/shipping-and-launch/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/shipping-and-launch && cp -R /tmp/addyosmani-agent-skills/skills/shipping-and-launch/. .claude/skills/shipping-and-launch/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "What do we need in place before shipping this to production?",
+        "result": "Claude produces a pre-launch checklist with monitoring, staged rollout and rollback plans."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/shipping-and-launch",
+    "author": "addyosmani",
+    "tags": [
+      "deployment",
+      "launch",
+      "rollout",
+      "monitoring",
+      "rollback"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/shipping-and-launch/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 260,
+    "name": "spec-driven-development",
+    "summary": "Creates specs and PRDs before coding when requirements are vague, defining objectives and scope and decomposing large requirements into testable capabilities.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/spec-driven-development/.",
+        "command": "mkdir -p ~/.claude/skills/spec-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/spec-driven-development/. ~/.claude/skills/spec-driven-development/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/spec-driven-development/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/spec-driven-development/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/spec-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/spec-driven-development/. .claude/skills/spec-driven-development/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write a spec for a new notifications feature before we start coding",
+        "result": "Claude drafts a specification with objectives and scope before any implementation."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/spec-driven-development",
+    "author": "addyosmani",
+    "tags": [
+      "spec",
+      "prd",
+      "requirements",
+      "planning"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/spec-driven-development/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 261,
+    "name": "api-and-interface-design",
+    "summary": "Guides stable API and interface design for REST or GraphQL endpoints, module boundaries and type contracts between frontend and backend.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/api-and-interface-design/.",
+        "command": "mkdir -p ~/.claude/skills/api-and-interface-design && cp -R /tmp/addyosmani-agent-skills/skills/api-and-interface-design/. ~/.claude/skills/api-and-interface-design/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/api-and-interface-design/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/api-and-interface-design/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/api-and-interface-design && cp -R /tmp/addyosmani-agent-skills/skills/api-and-interface-design/. .claude/skills/api-and-interface-design/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Design a REST API for the orders service",
+        "result": "Claude designs a stable interface with clear contracts and boundaries."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/api-and-interface-design",
+    "author": "addyosmani",
+    "tags": [
+      "api",
+      "rest",
+      "graphql",
+      "interfaces",
+      "contracts"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/api-and-interface-design/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 262,
+    "name": "code-review-and-quality",
+    "summary": "Conducts multi-axis code review of diffs and pull requests, assessing quality across several dimensions before changes reach the main branch.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/code-review-and-quality/.",
+        "command": "mkdir -p ~/.claude/skills/code-review-and-quality && cp -R /tmp/addyosmani-agent-skills/skills/code-review-and-quality/. ~/.claude/skills/code-review-and-quality/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/code-review-and-quality/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/code-review-and-quality/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/code-review-and-quality && cp -R /tmp/addyosmani-agent-skills/skills/code-review-and-quality/. .claude/skills/code-review-and-quality/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review this pull request before I merge it",
+        "result": "Claude reviews the change across multiple quality dimensions and reports findings."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/code-review-and-quality",
+    "author": "addyosmani",
+    "tags": [
+      "code-review",
+      "pull-request",
+      "quality",
+      "diff"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/code-review-and-quality/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 263,
+    "name": "security-and-hardening",
+    "summary": "Hardens code against vulnerabilities such as the OWASP Top Ten, covering input handling, authentication, data storage, integrations and dependency audits.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/security-and-hardening/.",
+        "command": "mkdir -p ~/.claude/skills/security-and-hardening && cp -R /tmp/addyosmani-agent-skills/skills/security-and-hardening/. ~/.claude/skills/security-and-hardening/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/security-and-hardening/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/security-and-hardening/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/security-and-hardening && cp -R /tmp/addyosmani-agent-skills/skills/security-and-hardening/. .claude/skills/security-and-hardening/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit this login flow against the OWASP Top Ten",
+        "result": "Claude audits the code for vulnerabilities and hardens the weak points."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/security-and-hardening",
+    "author": "addyosmani",
+    "tags": [
+      "security",
+      "owasp",
+      "hardening",
+      "authentication",
+      "input-validation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/security-and-hardening/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 264,
+    "name": "observability-and-instrumentation",
+    "summary": "Instruments code with logging, metrics, tracing and alerting so production behavior is visible and diagnosable.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/observability-and-instrumentation/.",
+        "command": "mkdir -p ~/.claude/skills/observability-and-instrumentation && cp -R /tmp/addyosmani-agent-skills/skills/observability-and-instrumentation/. ~/.claude/skills/observability-and-instrumentation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/observability-and-instrumentation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/observability-and-instrumentation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/observability-and-instrumentation && cp -R /tmp/addyosmani-agent-skills/skills/observability-and-instrumentation/. .claude/skills/observability-and-instrumentation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add logging and metrics so we can see what the checkout service is doing",
+        "result": "Claude adds instrumentation that makes production behavior diagnosable."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/observability-and-instrumentation",
+    "author": "addyosmani",
+    "tags": [
+      "observability",
+      "logging",
+      "metrics",
+      "tracing",
+      "alerting"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/observability-and-instrumentation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 265,
+    "name": "constraint-driven-development",
+    "summary": "Records a project's quality bar in CONSTRAINTS.md after interviewing you, then watches the diff for weakened standards like new suppressions or skipped tests.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/constraint-driven-development/.",
+        "command": "mkdir -p ~/.claude/skills/constraint-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/constraint-driven-development/. ~/.claude/skills/constraint-driven-development/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/constraint-driven-development/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/constraint-driven-development/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/constraint-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/constraint-driven-development/. .claude/skills/constraint-driven-development/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Set up quality constraints for this project and keep the agent from lowering them",
+        "result": "Claude interviews you, writes CONSTRAINTS.md with thresholds, and watches diffs for a weakened bar."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/constraint-driven-development",
+    "author": "addyosmani",
+    "tags": [
+      "quality-bar",
+      "constraints",
+      "guardrails",
+      "linting"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/constraint-driven-development/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 266,
+    "name": "debugging-and-error-recovery",
+    "summary": "Guides systematic root-cause debugging when tests fail, builds break or behavior is unexpected, instead of guessing at fixes.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/debugging-and-error-recovery/.",
+        "command": "mkdir -p ~/.claude/skills/debugging-and-error-recovery && cp -R /tmp/addyosmani-agent-skills/skills/debugging-and-error-recovery/. ~/.claude/skills/debugging-and-error-recovery/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/debugging-and-error-recovery/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/debugging-and-error-recovery/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/debugging-and-error-recovery && cp -R /tmp/addyosmani-agent-skills/skills/debugging-and-error-recovery/. .claude/skills/debugging-and-error-recovery/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "The build broke and it worked yesterday, figure out why",
+        "result": "Claude works systematically to find the root cause and fix it."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/debugging-and-error-recovery",
+    "author": "addyosmani",
+    "tags": [
+      "debugging",
+      "root-cause",
+      "errors",
+      "troubleshooting"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/debugging-and-error-recovery/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 267,
+    "name": "doubt-driven-development",
+    "summary": "Subjects non-trivial decisions to fresh-context adversarial review before they stand, useful for high-stakes, unfamiliar or security-sensitive work.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/doubt-driven-development/.",
+        "command": "mkdir -p ~/.claude/skills/doubt-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/doubt-driven-development/. ~/.claude/skills/doubt-driven-development/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/doubt-driven-development/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/doubt-driven-development/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/doubt-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/doubt-driven-development/. .claude/skills/doubt-driven-development/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Cross-examine this auth migration plan for hidden failure modes",
+        "result": "Claude has a fresh-context adversarial review challenge the decision before proceeding."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/doubt-driven-development",
+    "author": "addyosmani",
+    "tags": [
+      "adversarial-review",
+      "assumptions",
+      "risk",
+      "correctness"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/doubt-driven-development/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 268,
+    "name": "git-workflow-and-versioning",
+    "summary": "Structures git practice for commits, branching, conflict resolution, atomic commits, pull requests, releases and semantic version bumps.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/git-workflow-and-versioning/.",
+        "command": "mkdir -p ~/.claude/skills/git-workflow-and-versioning && cp -R /tmp/addyosmani-agent-skills/skills/git-workflow-and-versioning/. ~/.claude/skills/git-workflow-and-versioning/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/git-workflow-and-versioning/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/git-workflow-and-versioning/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/git-workflow-and-versioning && cp -R /tmp/addyosmani-agent-skills/skills/git-workflow-and-versioning/. .claude/skills/git-workflow-and-versioning/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Split my messy working tree into clean atomic commits",
+        "result": "Claude organizes the changes into clean atomic commits following good git workflow."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/git-workflow-and-versioning",
+    "author": "addyosmani",
+    "tags": [
+      "git",
+      "commits",
+      "branching",
+      "pull-request",
+      "semver"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/git-workflow-and-versioning/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 269,
+    "name": "incremental-implementation",
+    "summary": "Delivers changes in thin, verifiable slices, helpful for multi-file features, feature-flag rollouts and tasks too big to land at once.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/incremental-implementation/.",
+        "command": "mkdir -p ~/.claude/skills/incremental-implementation && cp -R /tmp/addyosmani-agent-skills/skills/incremental-implementation/. ~/.claude/skills/incremental-implementation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/incremental-implementation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/incremental-implementation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/incremental-implementation && cp -R /tmp/addyosmani-agent-skills/skills/incremental-implementation/. .claude/skills/incremental-implementation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Implement this feature in small verifiable steps behind a feature flag",
+        "result": "Claude builds the change in thin slices and verifies each one."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/incremental-implementation",
+    "author": "addyosmani",
+    "tags": [
+      "incremental",
+      "feature-flags",
+      "slices",
+      "implementation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/incremental-implementation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 270,
+    "name": "source-driven-development",
+    "summary": "Grounds implementation decisions in official documentation, producing source-cited code free from outdated patterns.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/source-driven-development/.",
+        "command": "mkdir -p ~/.claude/skills/source-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/source-driven-development/. ~/.claude/skills/source-driven-development/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/source-driven-development/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/source-driven-development/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/source-driven-development && cp -R /tmp/addyosmani-agent-skills/skills/source-driven-development/. .claude/skills/source-driven-development/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Implement this with the framework's official recommended approach and cite the docs",
+        "result": "Claude checks official documentation first and writes source-cited code."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/source-driven-development",
+    "author": "addyosmani",
+    "tags": [
+      "documentation",
+      "official-docs",
+      "citations",
+      "frameworks"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/source-driven-development/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 271,
+    "name": "using-agent-skills",
+    "summary": "Acts as a meta-skill that helps discover and invoke the right agent skill or workflow for the work at hand when starting a session.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/using-agent-skills/.",
+        "command": "mkdir -p ~/.claude/skills/using-agent-skills && cp -R /tmp/addyosmani-agent-skills/skills/using-agent-skills/. ~/.claude/skills/using-agent-skills/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/using-agent-skills/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/using-agent-skills/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/using-agent-skills && cp -R /tmp/addyosmani-agent-skills/skills/using-agent-skills/. .claude/skills/using-agent-skills/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Which skill should I use for this task?",
+        "result": "Claude determines which agent skills apply to the work and invokes them."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/using-agent-skills",
+    "author": "addyosmani",
+    "tags": [
+      "meta-skill",
+      "skills",
+      "workflow",
+      "discovery"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/using-agent-skills/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 272,
+    "name": "context-engineering",
+    "summary": "Optimizes agent context setup, including rules files and project configuration, when starting sessions, switching tasks or when output quality degrades.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/context-engineering/.",
+        "command": "mkdir -p ~/.claude/skills/context-engineering && cp -R /tmp/addyosmani-agent-skills/skills/context-engineering/. ~/.claude/skills/context-engineering/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/context-engineering/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/context-engineering/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/context-engineering && cp -R /tmp/addyosmani-agent-skills/skills/context-engineering/. .claude/skills/context-engineering/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Output quality is dropping, help me set up better context for this project",
+        "result": "Claude tunes the context and rules files to improve agent output."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/context-engineering",
+    "author": "addyosmani",
+    "tags": [
+      "context",
+      "rules-files",
+      "agents",
+      "configuration"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/context-engineering/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 273,
+    "name": "deprecation-and-migration",
+    "summary": "Manages deprecation and migration of old systems, APIs and features, including zero-downtime database schema changes using expand/contract.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/deprecation-and-migration/.",
+        "command": "mkdir -p ~/.claude/skills/deprecation-and-migration && cp -R /tmp/addyosmani-agent-skills/skills/deprecation-and-migration/. ~/.claude/skills/deprecation-and-migration/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/deprecation-and-migration/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/deprecation-and-migration/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/deprecation-and-migration && cp -R /tmp/addyosmani-agent-skills/skills/deprecation-and-migration/. .claude/skills/deprecation-and-migration/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Rename a column in production without downtime",
+        "result": "Claude plans a staged migration using the expand/contract pattern."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/deprecation-and-migration",
+    "author": "addyosmani",
+    "tags": [
+      "deprecation",
+      "migration",
+      "expand-contract",
+      "sunset"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/deprecation-and-migration/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 274,
+    "name": "planning-and-task-breakdown",
+    "summary": "Breaks a spec or clear requirements into ordered, implementable tasks, estimating scope and spotting opportunities for parallel work.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/planning-and-task-breakdown/.",
+        "command": "mkdir -p ~/.claude/skills/planning-and-task-breakdown && cp -R /tmp/addyosmani-agent-skills/skills/planning-and-task-breakdown/. ~/.claude/skills/planning-and-task-breakdown/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/planning-and-task-breakdown/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/planning-and-task-breakdown/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/planning-and-task-breakdown && cp -R /tmp/addyosmani-agent-skills/skills/planning-and-task-breakdown/. .claude/skills/planning-and-task-breakdown/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Break this spec into ordered implementation tasks",
+        "result": "Claude produces an ordered task list with scope estimates and parallelizable work."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/planning-and-task-breakdown",
+    "author": "addyosmani",
+    "tags": [
+      "planning",
+      "tasks",
+      "estimation",
+      "breakdown"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/planning-and-task-breakdown/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 275,
+    "name": "interview-me",
+    "summary": "Interviews you one question at a time until about 95 percent confident of your underlying intent, for underspecified requests.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/interview-me/.",
+        "command": "mkdir -p ~/.claude/skills/interview-me && cp -R /tmp/addyosmani-agent-skills/skills/interview-me/. ~/.claude/skills/interview-me/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/interview-me/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/interview-me/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/interview-me && cp -R /tmp/addyosmani-agent-skills/skills/interview-me/. .claude/skills/interview-me/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Interview me about this app idea before building anything",
+        "result": "Claude asks one question at a time until it understands what you actually want."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/interview-me",
+    "author": "addyosmani",
+    "tags": [
+      "interview",
+      "requirements",
+      "clarification",
+      "intent"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/interview-me/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 276,
+    "name": "browser-testing-with-devtools",
+    "summary": "Tests in real browsers via Chrome DevTools MCP, inspecting the DOM, console errors, network requests and performance with runtime data.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/browser-testing-with-devtools/.",
+        "command": "mkdir -p ~/.claude/skills/browser-testing-with-devtools && cp -R /tmp/addyosmani-agent-skills/skills/browser-testing-with-devtools/. ~/.claude/skills/browser-testing-with-devtools/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/browser-testing-with-devtools/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/browser-testing-with-devtools/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/browser-testing-with-devtools && cp -R /tmp/addyosmani-agent-skills/skills/browser-testing-with-devtools/. .claude/skills/browser-testing-with-devtools/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Chrome DevTools MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Check the console errors and network requests on my login page",
+        "result": "Claude inspects the live page in the browser and reports runtime data."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/browser-testing-with-devtools",
+    "author": "addyosmani",
+    "tags": [
+      "browser",
+      "devtools",
+      "dom",
+      "network",
+      "debugging"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/browser-testing-with-devtools/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 277,
+    "name": "ci-cd-and-automation",
+    "summary": "Automates CI/CD pipeline setup, covering quality gates, test runners in CI and deployment strategies.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ci-cd-and-automation/.",
+        "command": "mkdir -p ~/.claude/skills/ci-cd-and-automation && cp -R /tmp/addyosmani-agent-skills/skills/ci-cd-and-automation/. ~/.claude/skills/ci-cd-and-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ci-cd-and-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ci-cd-and-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ci-cd-and-automation && cp -R /tmp/addyosmani-agent-skills/skills/ci-cd-and-automation/. .claude/skills/ci-cd-and-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Set up a CI pipeline that runs tests and deploys on merge",
+        "result": "Claude configures build and deployment pipelines with automated quality gates."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/ci-cd-and-automation",
+    "author": "addyosmani",
+    "tags": [
+      "ci-cd",
+      "pipelines",
+      "automation",
+      "deployment",
+      "quality-gates"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/ci-cd-and-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 278,
+    "name": "code-simplification",
+    "summary": "Simplifies code for clarity without changing behavior, reducing accumulated complexity that makes code hard to read or extend.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/addyosmani-agent-skills ] || git clone --depth 1 https://github.com/addyosmani/agent-skills.git /tmp/addyosmani-agent-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/code-simplification/.",
+        "command": "mkdir -p ~/.claude/skills/code-simplification && cp -R /tmp/addyosmani-agent-skills/skills/code-simplification/. ~/.claude/skills/code-simplification/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/code-simplification/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/code-simplification/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/code-simplification && cp -R /tmp/addyosmani-agent-skills/skills/code-simplification/. .claude/skills/code-simplification/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Simplify this function, it's gotten too complicated",
+        "result": "Claude refactors for clarity while keeping behavior unchanged."
+      }
+    ],
+    "source": "https://github.com/addyosmani/agent-skills/tree/main/skills/code-simplification",
+    "author": "addyosmani",
+    "tags": [
+      "simplification",
+      "readability",
+      "refactoring",
+      "complexity"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at addyosmani/agent-skills/skills/code-simplification/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 108,010 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 279,
+    "name": "antigravity-support",
+    "summary": "Answers questions and gives instructions about installing, setting up or migrating to the Antigravity CLI using its official documentation.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/antigravity-support/.",
+        "command": "mkdir -p ~/.claude/skills/antigravity-support && cp -R /tmp/google-gemini-gemini-cli/packages/core/src/skills/builtin/antigravity-support/. ~/.claude/skills/antigravity-support/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/antigravity-support/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/antigravity-support/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/antigravity-support && cp -R /tmp/google-gemini-gemini-cli/packages/core/src/skills/builtin/antigravity-support/. .claude/skills/antigravity-support/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How do I install and migrate to Antigravity CLI?",
+        "result": "Claude provides current requirements and commands from the official Antigravity CLI docs."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/packages/core/src/skills/builtin/antigravity-support",
+    "author": "google-gemini",
+    "tags": [
+      "antigravity",
+      "cli",
+      "setup",
+      "migration"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/packages/core/src/skills/builtin/antigravity-support/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 280,
+    "name": "code_explorer",
+    "summary": "Explores the repository to locate primary source files, coupled UI components and test files relevant to a bug report or feature request.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/code_explorer/.",
+        "command": "mkdir -p ~/.claude/skills/code_explorer && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/code_explorer/. ~/.claude/skills/code_explorer/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/code_explorer/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/code_explorer/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/code_explorer && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/code_explorer/. .claude/skills/code_explorer/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Find the source files and tests related to this bug report",
+        "result": "Claude searches the repository for the primary source, coupled UI components and test files."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/code_explorer",
+    "author": "google-gemini",
+    "tags": [
+      "code-search",
+      "triage",
+      "exploration",
+      "bug-reports"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/code_explorer/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 281,
+    "name": "effort",
+    "summary": "Estimates the implementation effort required to address a given issue.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/effort/.",
+        "command": "mkdir -p ~/.claude/skills/effort && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/effort/. ~/.claude/skills/effort/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/effort/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/effort/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/effort && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/effort/. .claude/skills/effort/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Estimate how much work it would take to fix this issue",
+        "result": "Claude estimates the implementation effort for the issue."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/effort",
+    "author": "google-gemini",
+    "tags": [
+      "estimation",
+      "effort",
+      "issues",
+      "triage"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/effort/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 282,
+    "name": "quality",
+    "summary": "Evaluates whether a GitHub issue is spam, empty, needs more information or is fine to proceed with.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/quality/.",
+        "command": "mkdir -p ~/.claude/skills/quality && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality/. ~/.claude/skills/quality/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/quality/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/quality/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/quality && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality/. .claude/skills/quality/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Check whether this GitHub issue is good enough to work on",
+        "result": "Claude classifies the issue as spam, empty, needing more information, or OK."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality",
+    "author": "google-gemini",
+    "tags": [
+      "github",
+      "issues",
+      "triage",
+      "spam"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 283,
+    "name": "spec_generator",
+    "summary": "Generates a structured Workable Spec JSON to guide a Developer Worker.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/spec_generator/.",
+        "command": "mkdir -p ~/.claude/skills/spec_generator && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/. ~/.claude/skills/spec_generator/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/spec_generator/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/spec_generator/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/spec_generator && cp -R /tmp/google-gemini-gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/. .claude/skills/spec_generator/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Generate a workable spec for this issue",
+        "result": "Claude produces a structured Workable Spec JSON for a developer worker."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator",
+    "author": "google-gemini",
+    "tags": [
+      "spec",
+      "json",
+      "planning",
+      "triage"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 284,
+    "name": "agent-tui",
+    "summary": "Drives terminal UI applications programmatically for testing, automation and inspection of interactive CLI behavior.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-tui/.",
+        "command": "mkdir -p ~/.claude/skills/agent-tui && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/agent-tui/. ~/.claude/skills/agent-tui/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-tui/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-tui/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-tui && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/agent-tui/. .claude/skills/agent-tui/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "agent-tui"
+    ],
+    "usage": [
+      {
+        "prompt": "Automate this TUI app and check its interactive behavior",
+        "result": "Claude drives the terminal application and inspects how it responds."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/agent-tui",
+    "author": "google-gemini",
+    "tags": [
+      "tui",
+      "terminal",
+      "automation",
+      "regression"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/agent-tui/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 285,
+    "name": "tui-tester",
+    "summary": "Provides expert guidance for testing Gemini CLI behavior and visual output using terminal automation.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/tui-tester/.",
+        "command": "mkdir -p ~/.claude/skills/tui-tester && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/tui-tester/. ~/.claude/skills/tui-tester/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/tui-tester/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/tui-tester/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/tui-tester && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/tui-tester/. .claude/skills/tui-tester/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Test how Gemini CLI renders this output in the terminal",
+        "result": "Claude uses terminal automation to check Gemini CLI behavior and visual output."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/tui-tester",
+    "author": "google-gemini",
+    "tags": [
+      "tui",
+      "gemini-cli",
+      "terminal",
+      "testing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/tui-tester/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 286,
+    "name": "critique",
+    "summary": "Audits and fixes repository scripts and GitHub Actions workflows to make them technically robust and secure.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/critique/.",
+        "command": "mkdir -p ~/.claude/skills/critique && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/critique/. ~/.claude/skills/critique/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/critique/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/critique/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/critique && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/critique/. .claude/skills/critique/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit our GitHub Actions workflows for robustness and security",
+        "result": "Claude reviews the scripts and workflows and fixes problems it finds."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/gemini-cli-bot/.gemini/skills/critique",
+    "author": "google-gemini",
+    "tags": [
+      "github-actions",
+      "workflows",
+      "scripts",
+      "audit",
+      "security"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/gemini-cli-bot/.gemini/skills/critique/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 287,
+    "name": "memory",
+    "summary": "Maintains persistent bot memory, syncing with earlier sessions through the Task Ledger and preserving decision logs.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/memory/.",
+        "command": "mkdir -p ~/.claude/skills/memory && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/memory/. ~/.claude/skills/memory/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/memory/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/memory/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/memory && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/memory/. .claude/skills/memory/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Sync with the previous session's task ledger and update the decision log",
+        "result": "Claude restores context from the Task Ledger and preserves the decision logs."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/gemini-cli-bot/.gemini/skills/memory",
+    "author": "google-gemini",
+    "tags": [
+      "memory",
+      "task-ledger",
+      "sessions",
+      "decision-log"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/gemini-cli-bot/.gemini/skills/memory/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 288,
+    "name": "metrics",
+    "summary": "Analyzes time-series repository health metrics, investigates root causes and proposes proactive workflow improvements.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/metrics/.",
+        "command": "mkdir -p ~/.claude/skills/metrics && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/metrics/. ~/.claude/skills/metrics/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/metrics/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/metrics/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/metrics && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/metrics/. .claude/skills/metrics/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Analyze our repo health metrics and suggest workflow improvements",
+        "result": "Claude examines the time-series metrics, investigates causes and proposes improvements."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/gemini-cli-bot/.gemini/skills/metrics",
+    "author": "google-gemini",
+    "tags": [
+      "metrics",
+      "repo-health",
+      "analysis",
+      "workflows"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/gemini-cli-bot/.gemini/skills/metrics/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 289,
+    "name": "prs",
+    "summary": "Manages the Git and GitHub pull request lifecycle, including staging changes, generating PR descriptions and handling branches.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/prs/.",
+        "command": "mkdir -p ~/.claude/skills/prs && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/prs/. ~/.claude/skills/prs/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/prs/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/prs/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/prs && cp -R /tmp/google-gemini-gemini-cli/tools/gemini-cli-bot/.gemini/skills/prs/. .claude/skills/prs/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Stage my changes and open a PR with a good description",
+        "result": "Claude stages the changes, manages the branch and generates the PR description."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/tools/gemini-cli-bot/.gemini/skills/prs",
+    "author": "google-gemini",
+    "tags": [
+      "pull-request",
+      "github",
+      "branches",
+      "git"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/tools/gemini-cli-bot/.gemini/skills/prs/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 290,
+    "name": "docs-writer",
+    "summary": "Applies when writing, reviewing or editing files in the /docs directory or any Markdown files in the repository.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/docs-writer/.",
+        "command": "mkdir -p ~/.claude/skills/docs-writer && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/docs-writer/. ~/.claude/skills/docs-writer/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/docs-writer/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/docs-writer/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/docs-writer && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/docs-writer/. .claude/skills/docs-writer/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Update the docs for the new config option",
+        "result": "Claude writes or edits the Markdown documentation following the skill's guidance."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/docs-writer",
+    "author": "google-gemini",
+    "tags": [
+      "docs",
+      "markdown",
+      "writing",
+      "editing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/docs-writer/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 291,
+    "name": "docs-changelog",
+    "summary": "Generates and formats changelog files for a new release from a version number and raw changelog data.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/docs-changelog/.",
+        "command": "mkdir -p ~/.claude/skills/docs-changelog && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/docs-changelog/. ~/.claude/skills/docs-changelog/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/docs-changelog/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/docs-changelog/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/docs-changelog && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/docs-changelog/. .claude/skills/docs-changelog/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Generate the changelog for version 1.4.0 from this raw data",
+        "result": "Claude formats a changelog file for the release from the provided data."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/docs-changelog",
+    "author": "google-gemini",
+    "tags": [
+      "changelog",
+      "release",
+      "docs",
+      "formatting"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/docs-changelog/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 292,
+    "name": "review-duplication",
+    "summary": "Investigates the codebase during code reviews for duplicated functionality, reinvented wheels or missed reuse of shared utilities.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/review-duplication/.",
+        "command": "mkdir -p ~/.claude/skills/review-duplication && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/review-duplication/. ~/.claude/skills/review-duplication/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/review-duplication/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/review-duplication/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/review-duplication && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/review-duplication/. .claude/skills/review-duplication/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Check this PR for duplicated functionality or code that should reuse existing utilities",
+        "result": "Claude searches the codebase for duplication and missed reuse of existing practices."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/review-duplication",
+    "author": "google-gemini",
+    "tags": [
+      "code-review",
+      "duplication",
+      "reuse",
+      "utilities"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/review-duplication/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 293,
+    "name": "ci",
+    "summary": "Monitors GitHub Actions workflows with fail-fast checks and verifies CI failures locally, discovering runs automatically from a branch name.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ci/.",
+        "command": "mkdir -p ~/.claude/skills/ci && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/ci/. ~/.claude/skills/ci/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ci/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ci/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ci && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/ci/. .claude/skills/ci/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GitHub Actions"
+    ],
+    "usage": [
+      {
+        "prompt": "Watch CI on my branch and tell me why it failed",
+        "result": "Claude finds the workflow runs for the branch, monitors them and verifies failures locally."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/ci",
+    "author": "google-gemini",
+    "tags": [
+      "ci",
+      "github-actions",
+      "monitoring",
+      "failures"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/ci/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 294,
+    "name": "behavioral-evals",
+    "summary": "Guides creating, running, fixing and promoting behavioral evaluations to verify agent decision logic and prompt steering.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/behavioral-evals/.",
+        "command": "mkdir -p ~/.claude/skills/behavioral-evals && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/behavioral-evals/. ~/.claude/skills/behavioral-evals/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/behavioral-evals/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/behavioral-evals/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/behavioral-evals && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/behavioral-evals/. .claude/skills/behavioral-evals/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add a behavioral eval for how the agent picks tools",
+        "result": "Claude helps create and run the eval and fix failures in agent decision logic."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/behavioral-evals",
+    "author": "google-gemini",
+    "tags": [
+      "evals",
+      "behavioral",
+      "agents",
+      "regression"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/behavioral-evals/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 295,
+    "name": "async-pr-review",
+    "summary": "Starts asynchronous pull request reviews, runs background checks on a PR and reports the status of a previously started review.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/async-pr-review/.",
+        "command": "mkdir -p ~/.claude/skills/async-pr-review && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/async-pr-review/. ~/.claude/skills/async-pr-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/async-pr-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/async-pr-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/async-pr-review && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/async-pr-review/. .claude/skills/async-pr-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Start an async review of PR 123 and check on it later",
+        "result": "Claude launches background checks on the PR and reports status when asked."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/async-pr-review",
+    "author": "google-gemini",
+    "tags": [
+      "pr-review",
+      "async",
+      "background",
+      "checks"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/async-pr-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 296,
+    "name": "string-reviewer",
+    "summary": "Reviews user-facing text and strings in the codebase for clarity, usefulness, brevity and style.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/string-reviewer/.",
+        "command": "mkdir -p ~/.claude/skills/string-reviewer && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/string-reviewer/. ~/.claude/skills/string-reviewer/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/string-reviewer/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/string-reviewer/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/string-reviewer && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/string-reviewer/. .claude/skills/string-reviewer/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review the user-facing error messages in this module",
+        "result": "Claude checks the strings against rules of clarity, usefulness, brevity and style."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/string-reviewer",
+    "author": "google-gemini",
+    "tags": [
+      "strings",
+      "copywriting",
+      "review",
+      "style"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/string-reviewer/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 297,
+    "name": "github-issue-creator",
+    "summary": "Creates GitHub issues of different types such as bugs and features using repository templates and proper labeling.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/github-issue-creator/.",
+        "command": "mkdir -p ~/.claude/skills/github-issue-creator && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/github-issue-creator/. ~/.claude/skills/github-issue-creator/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/github-issue-creator/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/github-issue-creator/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/github-issue-creator && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/github-issue-creator/. .claude/skills/github-issue-creator/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Create a GitHub issue for this bug",
+        "result": "Claude creates the issue from the right repository template with proper labels."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/github-issue-creator",
+    "author": "google-gemini",
+    "tags": [
+      "github",
+      "issues",
+      "templates",
+      "labels"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/github-issue-creator/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 298,
+    "name": "pr-address-comments",
+    "summary": "Helps address GitHub pull request comments on the current Gemini CLI branch.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/pr-address-comments/.",
+        "command": "mkdir -p ~/.claude/skills/pr-address-comments && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/pr-address-comments/. ~/.claude/skills/pr-address-comments/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/pr-address-comments/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/pr-address-comments/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/pr-address-comments && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/pr-address-comments/. .claude/skills/pr-address-comments/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "gh CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Address the review comments on my PR",
+        "result": "Claude works through the PR comments on the current branch."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/pr-address-comments",
+    "author": "google-gemini",
+    "tags": [
+      "pull-request",
+      "review-comments",
+      "github",
+      "gh"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/pr-address-comments/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 299,
+    "name": "pirate-skill",
+    "summary": "Makes Claude speak like a pirate.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/pirate-skill/.",
+        "command": "mkdir -p ~/.claude/skills/pirate-skill && cp -R /tmp/google-gemini-gemini-cli/packages/sdk/test-data/skills/pirate-skill/. ~/.claude/skills/pirate-skill/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/pirate-skill/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/pirate-skill/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/pirate-skill && cp -R /tmp/google-gemini-gemini-cli/packages/sdk/test-data/skills/pirate-skill/. .claude/skills/pirate-skill/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Talk like a pirate",
+        "result": "Claude responds in pirate speak."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/packages/sdk/test-data/skills/pirate-skill",
+    "author": "google-gemini",
+    "tags": [
+      "pirate",
+      "fun",
+      "style",
+      "test"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/packages/sdk/test-data/skills/pirate-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 300,
+    "name": "pr-creator",
+    "summary": "Creates pull requests that follow the repository's established templates and standards.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/pr-creator/.",
+        "command": "mkdir -p ~/.claude/skills/pr-creator && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/pr-creator/. ~/.claude/skills/pr-creator/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/pr-creator/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/pr-creator/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/pr-creator && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/pr-creator/. .claude/skills/pr-creator/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Open a pull request for this branch",
+        "result": "Claude creates the PR following the repository's templates and standards."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/pr-creator",
+    "author": "google-gemini",
+    "tags": [
+      "pull-request",
+      "templates",
+      "github",
+      "standards"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/pr-creator/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 301,
+    "name": "code-reviewer",
+    "summary": "Reviews local staged or working-tree changes and remote pull requests for correctness, maintainability, and adherence to project standards.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/google-gemini-gemini-cli ] || git clone --depth 1 https://github.com/google-gemini/gemini-cli.git /tmp/google-gemini-gemini-cli"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/code-reviewer/.",
+        "command": "mkdir -p ~/.claude/skills/code-reviewer && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/code-reviewer/. ~/.claude/skills/code-reviewer/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/code-reviewer/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/code-reviewer/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/code-reviewer && cp -R /tmp/google-gemini-gemini-cli/.gemini/skills/code-reviewer/. .claude/skills/code-reviewer/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review my staged changes before I commit",
+        "result": "Claude inspects the staged changes and reports issues around correctness, maintainability, and project standards."
+      }
+    ],
+    "source": "https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/code-reviewer",
+    "author": "google-gemini",
+    "tags": [
+      "code review",
+      "pull request",
+      "maintainability",
+      "standards"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at google-gemini/gemini-cli/.gemini/skills/code-reviewer/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 107,434 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 302,
+    "name": "honeycomb-tracing",
+    "summary": "Traces Paperclip runs, requests, and CI suites in Honeycomb to find traces, diagnose latency, configure OpenTelemetry, or add missing spans.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/honeycomb-tracing/.",
+        "command": "mkdir -p ~/.claude/skills/honeycomb-tracing && cp -R /tmp/paperclipai-paperclip/.agents/skills/honeycomb-tracing/. ~/.claude/skills/honeycomb-tracing/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/honeycomb-tracing/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/honeycomb-tracing/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/honeycomb-tracing && cp -R /tmp/paperclipai-paperclip/.agents/skills/honeycomb-tracing/. .claude/skills/honeycomb-tracing/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Honeycomb",
+      "OpenTelemetry"
+    ],
+    "usage": [
+      {
+        "prompt": "Find the Honeycomb trace for the slow request in the last CI run",
+        "result": "Claude locates the relevant traces in Honeycomb and helps diagnose the latency or add missing spans."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/honeycomb-tracing",
+    "author": "paperclipai",
+    "tags": [
+      "honeycomb",
+      "tracing",
+      "opentelemetry",
+      "latency"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/honeycomb-tracing/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 303,
+    "name": "verify-paperclip",
+    "summary": "Verifies Paperclip from a source checkout, npm install, or staging or production stack by driving real UI or CLI journeys and capturing evidence.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/verify-paperclip/.",
+        "command": "mkdir -p ~/.claude/skills/verify-paperclip && cp -R /tmp/paperclipai-paperclip/.agents/skills/verify-paperclip/. ~/.claude/skills/verify-paperclip/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/verify-paperclip/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/verify-paperclip/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/verify-paperclip && cp -R /tmp/paperclipai-paperclip/.agents/skills/verify-paperclip/. .claude/skills/verify-paperclip/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Verify the published Paperclip npm install works end to end",
+        "result": "Claude selects the environment and data state, runs real UI or CLI journeys, and captures evidence of the results."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/verify-paperclip",
+    "author": "paperclipai",
+    "tags": [
+      "verification",
+      "e2e",
+      "paperclip",
+      "evidence"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/verify-paperclip/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 304,
+    "name": "first-task",
+    "summary": "Guides a user through their first Paperclip task by clarifying their goal, proposing a plan or single task, and waiting for approval before acting.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/first-task/.",
+        "command": "mkdir -p ~/.claude/skills/first-task && cp -R /tmp/paperclipai-paperclip/server/src/onboarding-assets/first-task/skills/first-task/. ~/.claude/skills/first-task/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/first-task/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/first-task/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/first-task && cp -R /tmp/paperclipai-paperclip/server/src/onboarding-assets/first-task/skills/first-task/. .claude/skills/first-task/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/first-task I want to launch a newsletter",
+        "result": "Claude interprets the answer, clarifies the goal, proposes a plan or task, and waits for approval before hiring agents or executing work."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/server/src/onboarding-assets/first-task/skills/first-task",
+    "author": "paperclipai",
+    "tags": [
+      "onboarding",
+      "planning",
+      "paperclip",
+      "first task"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/server/src/onboarding-assets/first-task/skills/first-task/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 305,
+    "name": "paperclip-create-agent",
+    "summary": "Creates new Paperclip agents with governance-aware hiring: inspects adapter options, compares configs, drafts the agent prompt, and submits a hire request.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/paperclip-create-agent/.",
+        "command": "mkdir -p ~/.claude/skills/paperclip-create-agent && cp -R /tmp/paperclipai-paperclip/skills/paperclip-create-agent/. ~/.claude/skills/paperclip-create-agent/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/paperclip-create-agent/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/paperclip-create-agent/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/paperclip-create-agent && cp -R /tmp/paperclipai-paperclip/skills/paperclip-create-agent/. .claude/skills/paperclip-create-agent/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Hire a new QA agent in Paperclip",
+        "result": "Claude inspects adapter configuration options, compares existing agent configs, drafts the agent prompt and config, and submits a hire request."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/skills/paperclip-create-agent",
+    "author": "paperclipai",
+    "tags": [
+      "agents",
+      "hiring",
+      "paperclip",
+      "governance"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/skills/paperclip-create-agent/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 306,
+    "name": "fix-slow-queries",
+    "summary": "Diagnoses and fixes slow Paperclip PostgreSQL queries using Cloud and Neon evidence, local reproduction, comparisons, regression tests, and a PR.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/fix-slow-queries/.",
+        "command": "mkdir -p ~/.claude/skills/fix-slow-queries && cp -R /tmp/paperclipai-paperclip/.agents/skills/fix-slow-queries/. ~/.claude/skills/fix-slow-queries/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/fix-slow-queries/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/fix-slow-queries/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/fix-slow-queries && cp -R /tmp/paperclipai-paperclip/.agents/skills/fix-slow-queries/. .claude/skills/fix-slow-queries/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "PostgreSQL",
+      "Neon"
+    ],
+    "usage": [
+      {
+        "prompt": "This endpoint is slow, find and fix the costly database query",
+        "result": "Claude gathers Cloud and Neon evidence, reproduces locally, compares performance and results, adds regression tests, and opens a PR with passing checks."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/fix-slow-queries",
+    "author": "paperclipai",
+    "tags": [
+      "postgresql",
+      "slow queries",
+      "performance",
+      "neon"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/fix-slow-queries/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 307,
+    "name": "setup-code-maintenance-bot",
+    "summary": "Sets up a Paperclip agent and routine that applies a chosen code-maintenance skill to a repository and opens pull requests on a schedule or webhook.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/setup-code-maintenance-bot/.",
+        "command": "mkdir -p ~/.claude/skills/setup-code-maintenance-bot && cp -R /tmp/paperclipai-paperclip/.agents/skills/setup-code-maintenance-bot/. ~/.claude/skills/setup-code-maintenance-bot/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/setup-code-maintenance-bot/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/setup-code-maintenance-bot/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/setup-code-maintenance-bot && cp -R /tmp/paperclipai-paperclip/.agents/skills/setup-code-maintenance-bot/. .claude/skills/setup-code-maintenance-bot/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Set up a nightly code maintenance bot for this repo",
+        "result": "Claude configures a Paperclip agent and routine, using an existing agent or a new hire, that applies a maintenance skill and opens pull requests."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/setup-code-maintenance-bot",
+    "author": "paperclipai",
+    "tags": [
+      "maintenance bot",
+      "automation",
+      "pull requests",
+      "scheduling"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/setup-code-maintenance-bot/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 308,
+    "name": "create-verification-skill",
+    "summary": "Generates a project-local verification skill that drives your app the way a user does, across any language, framework, or platform.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/create-verification-skill/.",
+        "command": "mkdir -p ~/.claude/skills/create-verification-skill && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-verification-skill/. ~/.claude/skills/create-verification-skill/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/create-verification-skill/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/create-verification-skill/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/create-verification-skill && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-verification-skill/. .claude/skills/create-verification-skill/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/create-verification-skill for this repo",
+        "result": "Claude generates a project-local skill that exercises the app's UI, CLI, or service the way a user would to prove behavior."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/create-verification-skill",
+    "author": "paperclipai",
+    "tags": [
+      "verification",
+      "skill generation",
+      "ui testing",
+      "cli"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/create-verification-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 309,
+    "name": "maintain-storybook",
+    "summary": "Keeps Paperclip stories and the downstream catalog aligned with the feature map and production UI by reconciling drift and updating fixtures.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/maintain-storybook/.",
+        "command": "mkdir -p ~/.claude/skills/maintain-storybook && cp -R /tmp/paperclipai-paperclip/.agents/skills/maintain-storybook/. ~/.claude/skills/maintain-storybook/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/maintain-storybook/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/maintain-storybook/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/maintain-storybook && cp -R /tmp/paperclipai-paperclip/.agents/skills/maintain-storybook/. .claude/skills/maintain-storybook/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Storybook"
+    ],
+    "usage": [
+      {
+        "prompt": "Reconcile our Storybook stories with the current production UI",
+        "result": "Claude reconciles story drift, classifies prototypes, updates fixtures, and maintains feature coverage in the catalog."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/maintain-storybook",
+    "author": "paperclipai",
+    "tags": [
+      "storybook",
+      "stories",
+      "fixtures",
+      "ui"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/maintain-storybook/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 310,
+    "name": "maintain-verification-skill",
+    "summary": "Keeps a project's verification skill and its product and agent access maps aligned with current source and real evidence.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/maintain-verification-skill/.",
+        "command": "mkdir -p ~/.claude/skills/maintain-verification-skill && cp -R /tmp/paperclipai-paperclip/.agents/skills/maintain-verification-skill/. ~/.claude/skills/maintain-verification-skill/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/maintain-verification-skill/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/maintain-verification-skill/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/maintain-verification-skill && cp -R /tmp/paperclipai-paperclip/.agents/skills/maintain-verification-skill/. .claude/skills/maintain-verification-skill/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/maintain-verification-skill",
+        "result": "Claude audits the verify skill and reconciles feature and agent access coverage against the current source and real evidence."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/maintain-verification-skill",
+    "author": "paperclipai",
+    "tags": [
+      "verification",
+      "maintenance",
+      "audit",
+      "coverage"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/maintain-verification-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 311,
+    "name": "review-storybook",
+    "summary": "Reviews Paperclip stories for a feature or change using the Storybook catalog, production source, and browser tests, reporting each kind of evidence separately.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/review-storybook/.",
+        "command": "mkdir -p ~/.claude/skills/review-storybook && cp -R /tmp/paperclipai-paperclip/.agents/skills/review-storybook/. ~/.claude/skills/review-storybook/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/review-storybook/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/review-storybook/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/review-storybook && cp -R /tmp/paperclipai-paperclip/.agents/skills/review-storybook/. .claude/skills/review-storybook/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Storybook"
+    ],
+    "usage": [
+      {
+        "prompt": "Review the Storybook stories for the new settings page",
+        "result": "Claude checks the stories against the catalog, production source, and existing browser tests and reports component, mock, interaction, and visual evidence separately."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/review-storybook",
+    "author": "paperclipai",
+    "tags": [
+      "storybook",
+      "review",
+      "components",
+      "visual testing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/review-storybook/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 312,
+    "name": "create-external-bot-integration",
+    "summary": "Builds and qualifies external bots such as Dot in Paperclip, covering two-way work, identity, wakeup, Runner lifecycle, native tools, and recovery.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/create-external-bot-integration/.",
+        "command": "mkdir -p ~/.claude/skills/create-external-bot-integration && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-external-bot-integration/. ~/.claude/skills/create-external-bot-integration/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/create-external-bot-integration/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/create-external-bot-integration/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/create-external-bot-integration && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-external-bot-integration/. .claude/skills/create-external-bot-integration/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build an external bot integration for Paperclip like Dot",
+        "result": "Claude implements and qualifies the bot's two-way work, invitation, identity, wakeup, Runner lifecycle, native tools, and recovery paths."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/create-external-bot-integration",
+    "author": "paperclipai",
+    "tags": [
+      "bots",
+      "integration",
+      "runner",
+      "paperclip"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/create-external-bot-integration/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 313,
+    "name": "create-issue-interaction-ui",
+    "summary": "Adds a new Paperclip issue-thread interaction kind end to end, such as confirmation cards, checkbox confirmations, question prompts, or task suggestions.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/create-issue-interaction-ui/.",
+        "command": "mkdir -p ~/.claude/skills/create-issue-interaction-ui && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-issue-interaction-ui/. ~/.claude/skills/create-issue-interaction-ui/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/create-issue-interaction-ui/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/create-issue-interaction-ui/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/create-issue-interaction-ui && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-issue-interaction-ui/. .claude/skills/create-issue-interaction-ui/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add a new issue-thread interaction kind for approval cards",
+        "result": "Claude implements the new interaction kind end to end, following the pattern of cards like request_confirmation and suggest_tasks."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/create-issue-interaction-ui",
+    "author": "paperclipai",
+    "tags": [
+      "ui",
+      "issue thread",
+      "interaction cards",
+      "paperclip"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/create-issue-interaction-ui/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 314,
+    "name": "complain",
+    "summary": "Autonomously submits a brief, unstructured complaint about agent tooling or agent work in its raw voice, then continues the primary task without announcement.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/complain/.",
+        "command": "mkdir -p ~/.claude/skills/complain && cp -R /tmp/paperclipai-paperclip/skills/complain/. ~/.claude/skills/complain/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/complain/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/complain/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/complain && cp -R /tmp/paperclipai-paperclip/skills/complain/. .claude/skills/complain/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "The tool kept failing silently, send a complaint about it",
+        "result": "Claude submits a brief raw-voice complaint about the friction without asking for permission or previewing it, then continues the main task."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/skills/complain",
+    "author": "paperclipai",
+    "tags": [
+      "feedback",
+      "complaint",
+      "agent tooling",
+      "autonomous"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/skills/complain/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 315,
+    "name": "suggestion-box",
+    "summary": "Quietly submits a concrete improvement suggestion after noticing material, generalizable friction in agent work, then continues the primary task.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/suggestion-box/.",
+        "command": "mkdir -p ~/.claude/skills/suggestion-box && cp -R /tmp/paperclipai-paperclip/skills/suggestion-box/. ~/.claude/skills/suggestion-box/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/suggestion-box/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/suggestion-box/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/suggestion-box && cp -R /tmp/paperclipai-paperclip/skills/suggestion-box/. .claude/skills/suggestion-box/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Suggest a fix for the repeated setup friction we just hit",
+        "result": "Claude submits a concrete improvement suggestion without permission, preview, or announcement, then continues with the primary task."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/skills/suggestion-box",
+    "author": "paperclipai",
+    "tags": [
+      "feedback",
+      "suggestions",
+      "improvement",
+      "autonomous"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/skills/suggestion-box/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 316,
+    "name": "delegate-work",
+    "summary": "Delegates user-requested work to an existing Paperclip agent with a durable task reference and clear execution expectations.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/delegate-work/.",
+        "command": "mkdir -p ~/.claude/skills/delegate-work && cp -R /tmp/paperclipai-paperclip/integrations/assistant-plugins/claude/paperclip/skills/delegate-work/. ~/.claude/skills/delegate-work/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/delegate-work/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/delegate-work/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/delegate-work && cp -R /tmp/paperclipai-paperclip/integrations/assistant-plugins/claude/paperclip/skills/delegate-work/. .claude/skills/delegate-work/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Hand this refactor off to my Paperclip engineer agent",
+        "result": "Claude delegates the work to the existing Paperclip agent and records a durable task reference with clear execution expectations."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/integrations/assistant-plugins/claude/paperclip/skills/delegate-work",
+    "author": "paperclipai",
+    "tags": [
+      "delegation",
+      "agents",
+      "tasks",
+      "paperclip"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/integrations/assistant-plugins/claude/paperclip/skills/delegate-work/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 317,
+    "name": "follow-up-results",
+    "summary": "Finds progress or deliverables from earlier Paperclip work and adds user-requested feedback with human attribution.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/follow-up-results/.",
+        "command": "mkdir -p ~/.claude/skills/follow-up-results && cp -R /tmp/paperclipai-paperclip/integrations/assistant-plugins/claude/paperclip/skills/follow-up-results/. ~/.claude/skills/follow-up-results/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/follow-up-results/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/follow-up-results/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/follow-up-results && cp -R /tmp/paperclipai-paperclip/integrations/assistant-plugins/claude/paperclip/skills/follow-up-results/. .claude/skills/follow-up-results/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "What came out of the report I delegated yesterday? Add my feedback.",
+        "result": "Claude finds the progress or deliverables from the earlier Paperclip work and posts the feedback attributed to the human."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/integrations/assistant-plugins/claude/paperclip/skills/follow-up-results",
+    "author": "paperclipai",
+    "tags": [
+      "follow-up",
+      "feedback",
+      "deliverables",
+      "paperclip"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/integrations/assistant-plugins/claude/paperclip/skills/follow-up-results/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 318,
+    "name": "review-my-team",
+    "summary": "Reviews a connected Paperclip team's agents, tasks, blockers, and pending approvals to summarize what needs attention.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/review-my-team/.",
+        "command": "mkdir -p ~/.claude/skills/review-my-team && cp -R /tmp/paperclipai-paperclip/integrations/assistant-plugins/claude/paperclip/skills/review-my-team/. ~/.claude/skills/review-my-team/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/review-my-team/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/review-my-team/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/review-my-team && cp -R /tmp/paperclipai-paperclip/integrations/assistant-plugins/claude/paperclip/skills/review-my-team/. .claude/skills/review-my-team/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "What needs my attention on my Paperclip team?",
+        "result": "Claude reviews the team's agents, tasks, blockers, and pending approvals and summarizes what needs attention."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/integrations/assistant-plugins/claude/paperclip/skills/review-my-team",
+    "author": "paperclipai",
+    "tags": [
+      "team summary",
+      "blockers",
+      "approvals",
+      "paperclip"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/integrations/assistant-plugins/claude/paperclip/skills/review-my-team/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 319,
+    "name": "paperclip-converting-plans-to-tasks",
+    "summary": "Decides whether Paperclip work needs delegation and connects justified tasks with owners and real dependencies when turning an authorized plan into work.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/paperclip-converting-plans-to-tasks/.",
+        "command": "mkdir -p ~/.claude/skills/paperclip-converting-plans-to-tasks && cp -R /tmp/paperclipai-paperclip/skills/paperclip-converting-plans-to-tasks/. ~/.claude/skills/paperclip-converting-plans-to-tasks/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/paperclip-converting-plans-to-tasks/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/paperclip-converting-plans-to-tasks/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/paperclip-converting-plans-to-tasks && cp -R /tmp/paperclipai-paperclip/skills/paperclip-converting-plans-to-tasks/. .claude/skills/paperclip-converting-plans-to-tasks/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Turn the approved plan into Paperclip tasks",
+        "result": "Claude decides which work needs delegation and creates tasks with owners and real dependencies."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/skills/paperclip-converting-plans-to-tasks",
+    "author": "paperclipai",
+    "tags": [
+      "planning",
+      "tasks",
+      "delegation",
+      "dependencies"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/skills/paperclip-converting-plans-to-tasks/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 320,
+    "name": "task-planning",
+    "summary": "Writes or revises a useful Paperclip plan with a clear outcome and verification, resolving uncertainty before execution.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/task-planning/.",
+        "command": "mkdir -p ~/.claude/skills/task-planning && cp -R /tmp/paperclipai-paperclip/packages/skills-catalog/catalog/bundled/paperclip-operations/task-planning/. ~/.claude/skills/task-planning/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/task-planning/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/task-planning/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/task-planning && cp -R /tmp/paperclipai-paperclip/packages/skills-catalog/catalog/bundled/paperclip-operations/task-planning/. .claude/skills/task-planning/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write a plan for migrating our job queue",
+        "result": "Claude drafts a Paperclip plan with a clear outcome and verification steps, resolving uncertainties before execution."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/packages/skills-catalog/catalog/bundled/paperclip-operations/task-planning",
+    "author": "paperclipai",
+    "tags": [
+      "planning",
+      "task planning",
+      "verification",
+      "paperclip"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/packages/skills-catalog/catalog/bundled/paperclip-operations/task-planning/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 321,
+    "name": "add-product-e2e-eval",
+    "summary": "Adds or extends a Paperclip full-stack runner E2E workflow, fixture, matcher, or report evidence path for local or Daytona execution.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/add-product-e2e-eval/.",
+        "command": "mkdir -p ~/.claude/skills/add-product-e2e-eval && cp -R /tmp/paperclipai-paperclip/.agents/skills/add-product-e2e-eval/. ~/.claude/skills/add-product-e2e-eval/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/add-product-e2e-eval/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/add-product-e2e-eval/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/add-product-e2e-eval && cp -R /tmp/paperclipai-paperclip/.agents/skills/add-product-e2e-eval/. .claude/skills/add-product-e2e-eval/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Daytona"
+    ],
+    "usage": [
+      {
+        "prompt": "Add a product E2E eval workflow for the onboarding flow",
+        "result": "Claude adds or extends the full-stack runner workflow, fixture, matcher, or report evidence path for local or Daytona execution."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/add-product-e2e-eval",
+    "author": "paperclipai",
+    "tags": [
+      "e2e",
+      "evals",
+      "fixtures",
+      "daytona"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/add-product-e2e-eval/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 322,
+    "name": "add-runner-eval",
+    "summary": "Adds or extends a Paperclip Runner protocol evaluation definition, roster, assertion, or report fixture with provenance and narrow validation.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/add-runner-eval/.",
+        "command": "mkdir -p ~/.claude/skills/add-runner-eval && cp -R /tmp/paperclipai-paperclip/.agents/skills/add-runner-eval/. ~/.claude/skills/add-runner-eval/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/add-runner-eval/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/add-runner-eval/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/add-runner-eval && cp -R /tmp/paperclipai-paperclip/.agents/skills/add-runner-eval/. .claude/skills/add-runner-eval/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add a new Runner eval with an assertion for wakeup behavior",
+        "result": "Claude adds or extends the Runner protocol evaluation definition, roster, assertion, or report fixture with provenance and narrow validation."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/add-runner-eval",
+    "author": "paperclipai",
+    "tags": [
+      "evals",
+      "runner",
+      "assertions",
+      "fixtures"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/add-runner-eval/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 323,
+    "name": "paperclip-evals",
+    "summary": "Chooses, inspects, validates, and reports Paperclip Runner or Product E2E evaluations while preserving evidence, provenance, cost, and failure classification.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/paperclip-evals/.",
+        "command": "mkdir -p ~/.claude/skills/paperclip-evals && cp -R /tmp/paperclipai-paperclip/.agents/skills/paperclip-evals/. ~/.claude/skills/paperclip-evals/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/paperclip-evals/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/paperclip-evals/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/paperclip-evals && cp -R /tmp/paperclipai-paperclip/.agents/skills/paperclip-evals/. .claude/skills/paperclip-evals/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run the Paperclip evals and report the failures",
+        "result": "Claude selects and validates the relevant evaluations and reports results while preserving evidence, provenance, cost, and failure classification."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/paperclip-evals",
+    "author": "paperclipai",
+    "tags": [
+      "evals",
+      "reporting",
+      "provenance",
+      "e2e"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/paperclip-evals/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 324,
+    "name": "create-agent-adapter",
+    "summary": "Creates or modifies Paperclip agent adapters across server, UI, and CLI surfaces for new CLI agents, API agents, custom processes, or adapter packages.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/create-agent-adapter/.",
+        "command": "mkdir -p ~/.claude/skills/create-agent-adapter && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-agent-adapter/. ~/.claude/skills/create-agent-adapter/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/create-agent-adapter/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/create-agent-adapter/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/create-agent-adapter && cp -R /tmp/paperclipai-paperclip/.agents/skills/create-agent-adapter/. .claude/skills/create-agent-adapter/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add a Paperclip adapter for a new CLI agent",
+        "result": "Claude creates the adapter across the server, UI, and CLI surfaces."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/create-agent-adapter",
+    "author": "paperclipai",
+    "tags": [
+      "adapters",
+      "agents",
+      "cli",
+      "paperclip"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/create-agent-adapter/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 325,
+    "name": "prepare-paperclip-pr",
+    "summary": "Prepares a Paperclip branch for a pull request with commits, a template-based PR body, and checks.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/prepare-paperclip-pr/.",
+        "command": "mkdir -p ~/.claude/skills/prepare-paperclip-pr && cp -R /tmp/paperclipai-paperclip/.agents/skills/prepare-paperclip-pr/. ~/.claude/skills/prepare-paperclip-pr/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/prepare-paperclip-pr/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/prepare-paperclip-pr/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/prepare-paperclip-pr && cp -R /tmp/paperclipai-paperclip/.agents/skills/prepare-paperclip-pr/. .claude/skills/prepare-paperclip-pr/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Get this branch ready for a PR",
+        "result": "Claude prepares the commits, fills in the PR template body, and runs the checks."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/.agents/skills/prepare-paperclip-pr",
+    "author": "paperclipai",
+    "tags": [
+      "pull request",
+      "commits",
+      "git",
+      "checks"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/.agents/skills/prepare-paperclip-pr/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 326,
+    "name": "agentmail",
+    "summary": "Uses an assigned AgentMail inbox to read email tasks, send or reply when explicitly asked, and check delivery.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/paperclipai-paperclip ] || git clone --depth 1 https://github.com/paperclipai/paperclip.git /tmp/paperclipai-paperclip"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agentmail/.",
+        "command": "mkdir -p ~/.claude/skills/agentmail && cp -R /tmp/paperclipai-paperclip/skills/agentmail/. ~/.claude/skills/agentmail/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agentmail/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agentmail/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agentmail && cp -R /tmp/paperclipai-paperclip/skills/agentmail/. .claude/skills/agentmail/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "AgentMail"
+    ],
+    "usage": [
+      {
+        "prompt": "Check my AgentMail inbox for new tasks and reply to the latest one",
+        "result": "Claude reads the email tasks in the assigned inbox, sends the reply when explicitly asked, and checks delivery."
+      }
+    ],
+    "source": "https://github.com/paperclipai/paperclip/tree/master/skills/agentmail",
+    "author": "paperclipai",
+    "tags": [
+      "email",
+      "agentmail",
+      "inbox",
+      "delivery"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at paperclipai/paperclip/skills/agentmail/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 103,867 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 327,
+    "name": "animate",
+    "summary": "Implements purposeful interface animations covering easing, springs, interruption, exits, and reduced motion on existing components or an accepted UI brief.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/animate/.",
+        "command": "mkdir -p ~/.claude/skills/animate && cp -R /tmp/nexu-io-open-design/skills/animate/. ~/.claude/skills/animate/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/animate/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/animate/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/animate && cp -R /tmp/nexu-io-open-design/skills/animate/. .claude/skills/animate/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Add a smooth exit animation to this modal with reduced-motion support",
+        "result": "Claude implements purposeful animation on the component, handling easing, interruption, exits, and reduced motion."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/animate",
+    "author": "nexu-io",
+    "tags": [
+      "animation",
+      "easing",
+      "springs",
+      "reduced motion"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/animate/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 328,
+    "name": "gsap-core",
+    "summary": "Guides use of the core GSAP API including gsap.to, from, fromTo, easing, duration, stagger, defaults, and gsap.matchMedia for responsive animation.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-core/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-core && cp -R /tmp/nexu-io-open-design/skills/gsap-core/. ~/.claude/skills/gsap-core/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-core/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-core/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-core && cp -R /tmp/nexu-io-open-design/skills/gsap-core/. .claude/skills/gsap-core/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP"
+    ],
+    "usage": [
+      {
+        "prompt": "Animate these cards in with a GSAP stagger",
+        "result": "Claude writes GSAP tweens using the core API with easing, duration, and stagger, and uses gsap.matchMedia for responsive or reduced-motion cases."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-core",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "animation",
+      "tweens",
+      "easing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-core/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 329,
+    "name": "gsap-frameworks",
+    "summary": "Guides GSAP animation in Vue, Svelte, and other non-React frameworks, covering lifecycle, scoped selectors, and cleanup on unmount.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-frameworks/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-frameworks && cp -R /tmp/nexu-io-open-design/skills/gsap-frameworks/. ~/.claude/skills/gsap-frameworks/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-frameworks/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-frameworks/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-frameworks && cp -R /tmp/nexu-io-open-design/skills/gsap-frameworks/. .claude/skills/gsap-frameworks/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP"
+    ],
+    "usage": [
+      {
+        "prompt": "Add a GSAP animation to my Svelte component with proper cleanup",
+        "result": "Claude sets up GSAP within the framework lifecycle, scopes selectors, and cleans up on unmount."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-frameworks",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "vue",
+      "svelte",
+      "animation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-frameworks/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 330,
+    "name": "gsap-performance",
+    "summary": "Optimizes GSAP animations for performance by preferring transforms, avoiding layout thrashing, using will-change sensibly, and batching.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-performance/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-performance && cp -R /tmp/nexu-io-open-design/skills/gsap-performance/. ~/.claude/skills/gsap-performance/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-performance/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-performance/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-performance && cp -R /tmp/nexu-io-open-design/skills/gsap-performance/. .claude/skills/gsap-performance/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP"
+    ],
+    "usage": [
+      {
+        "prompt": "My GSAP animation is janky, make it run at 60fps",
+        "result": "Claude applies performance practices such as using transforms, avoiding layout thrashing, will-change, and batching to reduce jank."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-performance",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "performance",
+      "animation",
+      "fps"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-performance/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 331,
+    "name": "gsap-plugins",
+    "summary": "Guides use of GSAP plugins such as ScrollToPlugin, ScrollSmoother, Flip, Draggable, SplitText, and CustomEase, including registration.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-plugins/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-plugins && cp -R /tmp/nexu-io-open-design/skills/gsap-plugins/. ~/.claude/skills/gsap-plugins/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-plugins/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-plugins/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-plugins && cp -R /tmp/nexu-io-open-design/skills/gsap-plugins/. .claude/skills/gsap-plugins/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP"
+    ],
+    "usage": [
+      {
+        "prompt": "Use the GSAP Flip plugin to animate this layout change",
+        "result": "Claude registers the needed GSAP plugin and implements the effect following the plugin's API."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-plugins",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "plugins",
+      "flip",
+      "draggable"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-plugins/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 332,
+    "name": "gsap-react",
+    "summary": "Guides GSAP animation in React and Next.js using the useGSAP hook, refs, gsap.context, and cleanup on unmount.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-react/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-react && cp -R /tmp/nexu-io-open-design/skills/gsap-react/. ~/.claude/skills/gsap-react/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-react/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-react/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-react && cp -R /tmp/nexu-io-open-design/skills/gsap-react/. .claude/skills/gsap-react/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP",
+      "React"
+    ],
+    "usage": [
+      {
+        "prompt": "Animate this React component with GSAP and clean up on unmount",
+        "result": "Claude uses the useGSAP hook with refs and gsap.context so animations are scoped and cleaned up properly."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-react",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "react",
+      "usegsap",
+      "animation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-react/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 333,
+    "name": "gsap-scrolltrigger",
+    "summary": "Guides scroll-linked animation with GSAP ScrollTrigger, including pinning, scrub, triggers, and parallax effects.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-scrolltrigger/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-scrolltrigger && cp -R /tmp/nexu-io-open-design/skills/gsap-scrolltrigger/. ~/.claude/skills/gsap-scrolltrigger/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-scrolltrigger/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-scrolltrigger/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-scrolltrigger && cp -R /tmp/nexu-io-open-design/skills/gsap-scrolltrigger/. .claude/skills/gsap-scrolltrigger/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP"
+    ],
+    "usage": [
+      {
+        "prompt": "Pin this section and scrub an animation as the user scrolls",
+        "result": "Claude builds the effect with GSAP ScrollTrigger using pinning, scrub, and triggers."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-scrolltrigger",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "scrolltrigger",
+      "scroll animation",
+      "parallax"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-scrolltrigger/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 334,
+    "name": "gsap-timeline",
+    "summary": "Guides sequencing animations with GSAP timelines, including the position parameter, nesting, and playback control.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-timeline/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-timeline && cp -R /tmp/nexu-io-open-design/skills/gsap-timeline/. ~/.claude/skills/gsap-timeline/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-timeline/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-timeline/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-timeline && cp -R /tmp/nexu-io-open-design/skills/gsap-timeline/. .claude/skills/gsap-timeline/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP"
+    ],
+    "usage": [
+      {
+        "prompt": "Sequence these intro animations with a GSAP timeline",
+        "result": "Claude builds a gsap.timeline using position parameters and nesting to choreograph the keyframes and control playback."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-timeline",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "timeline",
+      "sequencing",
+      "animation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-timeline/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 335,
+    "name": "gsap-utils",
+    "summary": "Guides use of gsap.utils helpers such as clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, and pipe.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/gsap-utils/.",
+        "command": "mkdir -p ~/.claude/skills/gsap-utils && cp -R /tmp/nexu-io-open-design/skills/gsap-utils/. ~/.claude/skills/gsap-utils/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/gsap-utils/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/gsap-utils/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/gsap-utils && cp -R /tmp/nexu-io-open-design/skills/gsap-utils/. .claude/skills/gsap-utils/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "GSAP"
+    ],
+    "usage": [
+      {
+        "prompt": "Use gsap.utils to map scroll position to a rotation value",
+        "result": "Claude applies the appropriate gsap.utils helpers like mapRange and clamp to the task."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/gsap-utils",
+    "author": "nexu-io",
+    "tags": [
+      "gsap",
+      "utils",
+      "helpers",
+      "maprange"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/gsap-utils/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 336,
+    "name": "huashu-art-motion",
+    "summary": "Assists art animation and explainer tasks with 35 art-style recipes, 9 explainer grammars, storyboarding, and deterministic Canvas drawing tools.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/huashu-art-motion/.",
+        "command": "mkdir -p ~/.claude/skills/huashu-art-motion && cp -R /tmp/nexu-io-open-design/skills/huashu-art-motion/. ~/.claude/skills/huashu-art-motion/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/huashu-art-motion/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/huashu-art-motion/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/huashu-art-motion && cp -R /tmp/nexu-io-open-design/skills/huashu-art-motion/. .claude/skills/huashu-art-motion/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make an explainer animation in a hand-drawn art style",
+        "result": "Claude picks an art-style recipe and explainer grammar, storyboards the piece, and draws it with the deterministic Canvas tools on the host timeline."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/huashu-art-motion",
+    "author": "nexu-io",
+    "tags": [
+      "art animation",
+      "canvas",
+      "storyboard",
+      "explainer"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/huashu-art-motion/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 337,
+    "name": "motion-design",
+    "summary": "Applies motion craft to an active task by refining the brief, beat map, visual continuity, typography, pacing, and timeline implementation.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/motion-design/.",
+        "command": "mkdir -p ~/.claude/skills/motion-design && cp -R /tmp/nexu-io-open-design/skills/motion-design/. ~/.claude/skills/motion-design/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/motion-design/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/motion-design/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/motion-design && cp -R /tmp/nexu-io-open-design/skills/motion-design/. .claude/skills/motion-design/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Improve the pacing and continuity of this motion graphics piece",
+        "result": "Claude refines the brief and beat map and improves continuity, typography, pacing, and timeline implementation within the host task."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/motion-design",
+    "author": "nexu-io",
+    "tags": [
+      "motion design",
+      "timeline",
+      "pacing",
+      "typography"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/motion-design/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 338,
+    "name": "motion-lab",
+    "summary": "Finds, selects, and adapts motion effects for a web page or component from a library of 160 HTML/CSS/JS cases covering basic, text, and interactive effects.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/motion-lab/.",
+        "command": "mkdir -p ~/.claude/skills/motion-lab && cp -R /tmp/nexu-io-open-design/skills/motion-lab/. ~/.claude/skills/motion-lab/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/motion-lab/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/motion-lab/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/motion-lab && cp -R /tmp/nexu-io-open-design/skills/motion-lab/. .claude/skills/motion-lab/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Find a text reveal effect for my hero section and adapt it",
+        "result": "Claude searches the 160-case motion library, picks a fitting effect, and adapts its HTML, CSS, and JS to the page."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/motion-lab",
+    "author": "nexu-io",
+    "tags": [
+      "motion",
+      "css",
+      "effects",
+      "web animation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/motion-lab/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 339,
+    "name": "oil-motion",
+    "summary": "Processes video and image sequences and compiles scroll-, pointer-, drag-, and state-driven web motion using bundled local media scripts and a runtime.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/oil-motion/.",
+        "command": "mkdir -p ~/.claude/skills/oil-motion && cp -R /tmp/nexu-io-open-design/skills/oil-motion/. ~/.claude/skills/oil-motion/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/oil-motion/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/oil-motion/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/oil-motion && cp -R /tmp/nexu-io-open-design/skills/oil-motion/. .claude/skills/oil-motion/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Turn this video into a scroll-driven frame sequence animation",
+        "result": "Claude processes the video into frames with the bundled local scripts and compiles scroll-driven web motion using the included runtime."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/oil-motion",
+    "author": "nexu-io",
+    "tags": [
+      "video",
+      "scroll animation",
+      "frame sequence",
+      "web motion"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/oil-motion/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 340,
+    "name": "ui-animation",
+    "summary": "Implements, reviews, and measures UI motion, reconstructing easing, springs, and gestures from a recording with bundled frame and curve-fitting tools.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ui-animation/.",
+        "command": "mkdir -p ~/.claude/skills/ui-animation && cp -R /tmp/nexu-io-open-design/skills/ui-animation/. ~/.claude/skills/ui-animation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ui-animation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ui-animation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ui-animation && cp -R /tmp/nexu-io-open-design/skills/ui-animation/. .claude/skills/ui-animation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Recreate the easing from this screen recording in CSS",
+        "result": "Claude extracts frames, tracks motion, fits curves to reconstruct the easing, and implements the UI motion."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/ui-animation",
+    "author": "nexu-io",
+    "tags": [
+      "ui animation",
+      "easing",
+      "springs",
+      "motion analysis"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/ui-animation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 341,
+    "name": "od-next-strategy",
+    "summary": "Serves as the bundled OD Next V2 strategy entrypoint for request-led planning and Build execution.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/od-next-strategy/.",
+        "command": "mkdir -p ~/.claude/skills/od-next-strategy && cp -R /tmp/nexu-io-open-design/plugins/_official/scenarios/od-next-strategy/. ~/.claude/skills/od-next-strategy/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/od-next-strategy/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/od-next-strategy/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/od-next-strategy && cp -R /tmp/nexu-io-open-design/plugins/_official/scenarios/od-next-strategy/. .claude/skills/od-next-strategy/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Plan and build a landing page design with OD Next",
+        "result": "Claude uses the OD Next V2 strategy entrypoint to plan from the request and then execute the Build."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/scenarios/od-next-strategy",
+    "author": "nexu-io",
+    "tags": [
+      "planning",
+      "strategy",
+      "open design",
+      "build"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/plugins/_official/scenarios/od-next-strategy/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 342,
+    "name": "discovery-question-form",
+    "summary": "Presents a structured clarification form to resolve unresolved material requirements before work proceeds.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/discovery-question-form/.",
+        "command": "mkdir -p ~/.claude/skills/discovery-question-form && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/discovery-question-form/. ~/.claude/skills/discovery-question-form/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/discovery-question-form/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/discovery-question-form/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/discovery-question-form && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/discovery-question-form/. .claude/skills/discovery-question-form/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "The brief is vague, ask me what you need before starting",
+        "result": "Claude presents a structured form to clarify the unresolved material requirements."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/atoms/discovery-question-form",
+    "author": "nexu-io",
+    "tags": [
+      "clarification",
+      "requirements",
+      "form",
+      "discovery"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/plugins/_official/atoms/discovery-question-form/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 343,
+    "name": "od-next-media-inputs",
+    "summary": "Prepares required media inputs within an existing OD Next plan by reusing capability evidence, acquiring and measuring assets, and resolving asynchronous jobs.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/od-next-media-inputs/.",
+        "command": "mkdir -p ~/.claude/skills/od-next-media-inputs && cp -R /tmp/nexu-io-open-design/skills/od-next-media-inputs/. ~/.claude/skills/od-next-media-inputs/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/od-next-media-inputs/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/od-next-media-inputs/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/od-next-media-inputs && cp -R /tmp/nexu-io-open-design/skills/od-next-media-inputs/. .claude/skills/od-next-media-inputs/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Prepare the media assets this OD Next plan needs",
+        "result": "Claude reuses capability evidence, acquires and measures assets, and resolves asynchronous jobs without dropping required content or lowering quality standards."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/od-next-media-inputs",
+    "author": "nexu-io",
+    "tags": [
+      "media",
+      "assets",
+      "planning",
+      "open design"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/od-next-media-inputs/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 344,
+    "name": "critique-theater",
+    "summary": "Reviews a design artifact across five dimensions including craft, brand, accessibility, and copy, then fixes shortfalls before handoff.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/critique-theater/.",
+        "command": "mkdir -p ~/.claude/skills/critique-theater && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/critique-theater/. ~/.claude/skills/critique-theater/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/critique-theater/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/critique-theater/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/critique-theater && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/critique-theater/. .claude/skills/critique-theater/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Critique this design and fix what falls short",
+        "result": "Claude scores the artifact against craft, brand, accessibility, and copy, then fixes the weak areas before handing it over."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/atoms/critique-theater",
+    "author": "nexu-io",
+    "tags": [
+      "design review",
+      "accessibility",
+      "critique",
+      "quality"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/plugins/_official/atoms/critique-theater/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 345,
+    "name": "direction-picker",
+    "summary": "Resolves the visual direction at the plan stage from the brief and design system without asking the user.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/direction-picker/.",
+        "command": "mkdir -p ~/.claude/skills/direction-picker && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/direction-picker/. ~/.claude/skills/direction-picker/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/direction-picker/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/direction-picker/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/direction-picker && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/direction-picker/. .claude/skills/direction-picker/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Pick a visual direction for this brief",
+        "result": "Claude resolves the visual direction from the brief and design system during planning, without asking the user."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/atoms/direction-picker",
+    "author": "nexu-io",
+    "tags": [
+      "design direction",
+      "planning",
+      "design system",
+      "visual"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/plugins/_official/atoms/direction-picker/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 346,
+    "name": "todo-write",
+    "summary": "Creates a TodoWrite-driven plan that the agent commits to before starting generation.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/todo-write/.",
+        "command": "mkdir -p ~/.claude/skills/todo-write && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/todo-write/. ~/.claude/skills/todo-write/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/todo-write/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/todo-write/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/todo-write && cp -R /tmp/nexu-io-open-design/plugins/_official/atoms/todo-write/. .claude/skills/todo-write/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make a todo plan before you generate anything",
+        "result": "Claude writes a TodoWrite-driven plan it commits to before generation begins."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/atoms/todo-write",
+    "author": "nexu-io",
+    "tags": [
+      "todo",
+      "planning",
+      "todowrite",
+      "tasks"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/plugins/_official/atoms/todo-write/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 347,
+    "name": "web-clone",
+    "summary": "Provides a website-cloning method: get real source, pick a path, reverse engineer, scaffold, and swap in content for static, framework, and WebGL sites.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/web-clone/.",
+        "command": "mkdir -p ~/.claude/skills/web-clone && cp -R /tmp/nexu-io-open-design/skills/web-clone/. ~/.claude/skills/web-clone/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/web-clone/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/web-clone/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/web-clone && cp -R /tmp/nexu-io-open-design/skills/web-clone/. .claude/skills/web-clone/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Clone this website's WebGL effect and put my content in it",
+        "result": "Claude gets the real source, picks the right path for the site type, reverse engineers it, builds the project, replaces the content, and verifies any executable code from secondhand AI analysis."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/web-clone",
+    "author": "nexu-io",
+    "tags": [
+      "web clone",
+      "reverse engineering",
+      "webgl",
+      "scaffolding"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/web-clone/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 348,
+    "name": "ad-creative",
+    "summary": "Generates and iterates ad creative such as headlines, descriptions, and primary text for paid social and search campaigns.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ad-creative/.",
+        "command": "mkdir -p ~/.claude/skills/ad-creative && cp -R /tmp/nexu-io-open-design/skills/ad-creative/. ~/.claude/skills/ad-creative/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ad-creative/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ad-creative/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ad-creative && cp -R /tmp/nexu-io-open-design/skills/ad-creative/. .claude/skills/ad-creative/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write five headline variations for our paid social ad",
+        "result": "Claude generates ad headlines, descriptions, and primary text and iterates on them."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/ad-creative",
+    "author": "nexu-io",
+    "tags": [
+      "ads",
+      "copywriting",
+      "headlines",
+      "marketing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/ad-creative/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 349,
+    "name": "agent-browser",
+    "summary": "Automates the browser from a CLI to navigate pages, fill forms, click buttons, take screenshots, extract page data, and test web apps.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-browser/.",
+        "command": "mkdir -p ~/.claude/skills/agent-browser && cp -R /tmp/nexu-io-open-design/skills/agent-browser/. ~/.claude/skills/agent-browser/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-browser/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-browser/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-browser && cp -R /tmp/nexu-io-open-design/skills/agent-browser/. .claude/skills/agent-browser/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Open the preview, fill out the signup form, and take a screenshot",
+        "result": "Claude uses the browser automation CLI to navigate, fill the form, click through, and capture a screenshot."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/agent-browser",
+    "author": "nexu-io",
+    "tags": [
+      "browser automation",
+      "screenshots",
+      "web testing",
+      "cli"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/agent-browser/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 350,
+    "name": "ai-music-album",
+    "summary": "Produces an AI music album through its full lifecycle: concept, lyric drafting, track sequencing, and export.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ai-music-album/.",
+        "command": "mkdir -p ~/.claude/skills/ai-music-album && cp -R /tmp/nexu-io-open-design/skills/ai-music-album/. ~/.claude/skills/ai-music-album/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ai-music-album/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ai-music-album/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ai-music-album && cp -R /tmp/nexu-io-open-design/skills/ai-music-album/. .claude/skills/ai-music-album/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Help me produce a concept album for our brand soundtrack",
+        "result": "Claude walks through concept, lyric drafting, track sequencing, and export of the album."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/ai-music-album",
+    "author": "nexu-io",
+    "tags": [
+      "music",
+      "album",
+      "lyrics",
+      "audio"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/ai-music-album/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 351,
+    "name": "apple-hig",
+    "summary": "Applies Apple Human Interface Guidelines across iOS, macOS, visionOS, watchOS and tvOS, covering foundations, components, patterns, inputs and technologies.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/nexu-io-open-design ] || git clone --depth 1 https://github.com/nexu-io/open-design.git /tmp/nexu-io-open-design"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/apple-hig/.",
+        "command": "mkdir -p ~/.claude/skills/apple-hig && cp -R /tmp/nexu-io-open-design/skills/apple-hig/. ~/.claude/skills/apple-hig/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/apple-hig/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/apple-hig/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/apple-hig && cp -R /tmp/nexu-io-open-design/skills/apple-hig/. .claude/skills/apple-hig/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Review my SwiftUI settings screen against Apple's Human Interface Guidelines for iOS.",
+        "result": "Claude consults the relevant HIG skill for the platform and component and suggests changes that match Apple's guidelines."
+      }
+    ],
+    "source": "https://github.com/nexu-io/open-design/tree/main/skills/apple-hig",
+    "author": "nexu-io",
+    "tags": [
+      "apple",
+      "hig",
+      "ios",
+      "design",
+      "ui"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at nexu-io/open-design/skills/apple-hig/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 102,076 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 352,
+    "name": "build-and-release",
+    "summary": "Automates building a coding task and then releasing it, chaining the full build and release workflow end to end.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:build-and-release. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build and release the new export feature end to end.",
+        "result": "Claude runs the full automated build workflow for the task and then carries it through the release process."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/build-and-release",
+    "author": "thedotmack",
+    "tags": [
+      "automation",
+      "build",
+      "release",
+      "workflow"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/build-and-release/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 353,
+    "name": "build",
+    "summary": "Automates a coding task end to end by combining the make-plan, do and babysit workflows.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:build. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build the CSV import feature, plan it, implement it and watch the PR through.",
+        "result": "Claude plans the task with make-plan, executes it with do, and monitors the result with babysit."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/build",
+    "author": "thedotmack",
+    "tags": [
+      "automation",
+      "planning",
+      "workflow",
+      "build"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/build/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 354,
+    "name": "childhood",
+    "summary": "Monitors a shipped release after merge or deployment, verifying published packages, production behavior and late CI or user reports until clean.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:childhood. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Watch the 2.4.0 release and make sure the published package and production look healthy.",
+        "result": "Claude verifies published packages, production behavior and installed plugins and tracks late CI or user reports until the window is clean."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/childhood",
+    "author": "thedotmack",
+    "tags": [
+      "release",
+      "monitoring",
+      "deployment",
+      "verification"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/childhood/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 355,
+    "name": "release",
+    "summary": "Automates a full release by running the version-bump workflow followed by post-release monitoring with childhood.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:release. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Cut a new release of the plugin.",
+        "result": "Claude runs version-bump to ship the release and then childhood to babysit it after publication."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/release",
+    "author": "thedotmack",
+    "tags": [
+      "release",
+      "automation",
+      "versioning",
+      "workflow"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/release/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 356,
+    "name": "make-plan",
+    "summary": "Creates a detailed, phased implementation plan, including documentation discovery, for features or multi-step tasks before they are executed.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:make-plan. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make a plan for adding OAuth login to the app.",
+        "result": "Claude researches the relevant documentation and writes a phased implementation plan ready to execute with the do skill."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/make-plan",
+    "author": "thedotmack",
+    "tags": [
+      "planning",
+      "implementation",
+      "phases",
+      "documentation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/make-plan/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 357,
+    "name": "mem-setup",
+    "summary": "Configures the claude-mem-cowork plugin credentials, including cmem.ai Connect values, so claude-mem can pair and sync cloud memory in Cowork.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem-cowork@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem-cowork:mem-setup. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "cmem.ai account"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up claude-mem in Cowork with my cmem key.",
+        "result": "Claude configures the plugin credentials from the cmem.ai Connect values (sync token, user id and SyncHub URL) you provide."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/cowork/skills/mem-setup",
+    "author": "thedotmack",
+    "tags": [
+      "claude-mem",
+      "setup",
+      "cowork",
+      "sync"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/cowork/skills/mem-setup/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem-cowork)."
+  },
+  {
+    "rank": 358,
+    "name": "wowerpoint",
+    "summary": "Turns a single document into a kawaii NotebookLM-style slide deck of narrative slides.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:wowerpoint. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Wowerpoint this report.",
+        "result": "Claude renders the document as a narrative slide deck in the NotebookLM style."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/wowerpoint",
+    "author": "thedotmack",
+    "tags": [
+      "slides",
+      "presentation",
+      "notebooklm",
+      "document"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/wowerpoint/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 359,
+    "name": "version-bump",
+    "summary": "Automates semantic versioning and releases of Claude Code plugins: version bumps, build checks, git tags, GitHub releases and changelogs.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:version-bump. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Bump the plugin version to the next minor release.",
+        "result": "Claude increments versions across package.json and the plugin manifests, verifies the build, tags it, creates the GitHub release and generates the changelog."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/version-bump",
+    "author": "thedotmack",
+    "tags": [
+      "versioning",
+      "release",
+      "changelog",
+      "npm",
+      "plugins"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/version-bump/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 360,
+    "name": "screenpipe",
+    "summary": "Searches screen and audio history recorded by Screenpipe and can save selected context into claude-mem.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:screenpipe. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Screenpipe"
+    ],
+    "usage": [
+      {
+        "prompt": "What was on my screen during yesterday's design meeting? Save the key points to memory.",
+        "result": "Claude searches the Screenpipe history for the activity or meeting and optionally stores selected context in claude-mem."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/screenpipe",
+    "author": "thedotmack",
+    "tags": [
+      "screenpipe",
+      "search",
+      "memory",
+      "recall"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/screenpipe/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 361,
+    "name": "Agent Cost Report",
+    "summary": "Produces an estimated agent cost report for a period from Claude Code transcript token counts priced at OpenRouter list prices, as HTML or PDF.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/thedotmack-claude-mem ] || git clone --depth 1 https://github.com/thedotmack/claude-mem.git /tmp/thedotmack-claude-mem"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-cost-report/.",
+        "command": "mkdir -p ~/.claude/skills/agent-cost-report && cp -R /tmp/thedotmack-claude-mem/claude-mem-cursor/skills/agent-cost-report/. ~/.claude/skills/agent-cost-report/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-cost-report/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-cost-report/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-cost-report && cp -R /tmp/thedotmack-claude-mem/claude-mem-cursor/skills/agent-cost-report/. .claude/skills/agent-cost-report/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Give me an agent cost report for the last 7 days.",
+        "result": "Claude measures tokens from Claude Code transcripts, prices them at OpenRouter list prices (estimated) and builds a timing-style report."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/claude-mem-cursor/skills/agent-cost-report",
+    "author": "thedotmack",
+    "tags": [
+      "cost",
+      "tokens",
+      "report",
+      "analytics"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/claude-mem-cursor/skills/agent-cost-report/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 362,
+    "name": "ccs-align",
+    "summary": "Runs the CCS Align seat's hourly cycle, checking the local claude-mem worker and pulling observations into a seat-owned cache with exclude marks.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:ccs-align. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "claude-mem worker"
+    ],
+    "usage": [
+      {
+        "prompt": "Run the CCS Align hourly cycle.",
+        "result": "Claude verifies the local worker is healthy, pulls observations through search, timeline and get_observations, and updates the middle cache and exclude marks."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/ccs-align",
+    "author": "thedotmack",
+    "tags": [
+      "claude-mem",
+      "observations",
+      "cache",
+      "maintenance"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/ccs-align/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 363,
+    "name": "cloud-sync",
+    "summary": "Sets up or checks claude-mem cloud sync with cmem.ai Pro so memory databases can be backed up or synced to an account.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:cloud-sync. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "cmem.ai Pro account"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up cloud sync for my memories.",
+        "result": "Claude configures or checks cloud sync between the local claude-mem database and the user's cmem.ai account."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/cloud-sync",
+    "author": "thedotmack",
+    "tags": [
+      "claude-mem",
+      "cloud-sync",
+      "backup",
+      "setup"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/cloud-sync/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 364,
+    "name": "handoff",
+    "summary": "Generates a HANDOFF.md capturing goal, current state, files touched, failed attempts and next steps so a fresh session can resume the work.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:handoff. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "This session is getting long, write a handoff so I can continue fresh.",
+        "result": "Claude writes a HANDOFF.md recording the goal, state, touched files, failed attempts and next steps for a new Claude session."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/handoff",
+    "author": "thedotmack",
+    "tags": [
+      "handoff",
+      "context",
+      "session",
+      "notes"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/handoff/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 365,
+    "name": "how-it-works",
+    "summary": "Explains how claude-mem captures observations, when memory injection happens and where its data lives.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:how-it-works. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How does claude-mem work?",
+        "result": "Claude explains how observations are captured, when memory is injected and where the data is stored."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/how-it-works",
+    "author": "thedotmack",
+    "tags": [
+      "claude-mem",
+      "explainer",
+      "memory",
+      "help"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/how-it-works/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 366,
+    "name": "mode-creator",
+    "summary": "Creates, installs, activates and verifies custom claude-mem modes with domain-specific observation types, concept tags and optional Telegram alerts.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:mode-creator. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Telegram bot (optional)"
+    ],
+    "usage": [
+      {
+        "prompt": "Create a custom claude-mem mode for tracking my ML experiments.",
+        "result": "Claude walks through creating the mode, installing and activating it, restarting the worker and verifying startup context."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/mode-creator",
+    "author": "thedotmack",
+    "tags": [
+      "claude-mem",
+      "modes",
+      "customization",
+      "telegram"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/mode-creator/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 367,
+    "name": "timeline-report",
+    "summary": "Generates a narrative 'Journey Into [Project]' report analyzing a project's entire development history from the claude-mem timeline.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:timeline-report. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write a timeline report of this project's history.",
+        "result": "Claude reads the claude-mem timeline and produces a narrative report of the project's whole development journey."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/timeline-report",
+    "author": "thedotmack",
+    "tags": [
+      "timeline",
+      "report",
+      "history",
+      "claude-mem"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/timeline-report/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 368,
+    "name": "mem-search",
+    "summary": "Searches claude-mem's cross-session memory to find work from previous sessions and answer whether something was already solved.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/thedotmack-claude-mem ] || git clone --depth 1 https://github.com/thedotmack/claude-mem.git /tmp/thedotmack-claude-mem"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/mem-search/.",
+        "command": "mkdir -p ~/.claude/skills/mem-search && cp -R /tmp/thedotmack-claude-mem/claude-mem-cursor/skills/mem-search/. ~/.claude/skills/mem-search/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/mem-search/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/mem-search/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/mem-search && cp -R /tmp/thedotmack-claude-mem/claude-mem-cursor/skills/mem-search/. .claude/skills/mem-search/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Did we already solve the flaky login test last time?",
+        "result": "Claude searches stored memory from earlier sessions and reports how the problem was handled."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/claude-mem-cursor/skills/mem-search",
+    "author": "thedotmack",
+    "tags": [
+      "memory",
+      "search",
+      "claude-mem",
+      "history"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/claude-mem-cursor/skills/mem-search/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 369,
+    "name": "claude-mem-install",
+    "summary": "Guides installing claude-mem on Cursor, choosing a local or remote worker and local host-login or remote cmem.ai inference.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/thedotmack-claude-mem ] || git clone --depth 1 https://github.com/thedotmack/claude-mem.git /tmp/thedotmack-claude-mem"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/claude-mem-install/.",
+        "command": "mkdir -p ~/.claude/skills/claude-mem-install && cp -R /tmp/thedotmack-claude-mem/claude-mem-cursor/skills/install/. ~/.claude/skills/claude-mem-install/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/claude-mem-install/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/claude-mem-install/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/claude-mem-install && cp -R /tmp/thedotmack-claude-mem/claude-mem-cursor/skills/install/. .claude/skills/claude-mem-install/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Cursor"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up claude-mem on Cursor.",
+        "result": "Claude walks through installing claude-mem on Cursor with the chosen local or remote worker and observer setup."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/claude-mem-cursor/skills/install",
+    "author": "thedotmack",
+    "tags": [
+      "claude-mem",
+      "cursor",
+      "install",
+      "setup"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/claude-mem-cursor/skills/install/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 370,
+    "name": "host-observer",
+    "summary": "Fulfills claude-mem observer jobs on Grok Bot by replying only with skip_summary or a single full observation XML.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/thedotmack-claude-mem ] || git clone --depth 1 https://github.com/thedotmack/claude-mem.git /tmp/thedotmack-claude-mem"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/host-observer/.",
+        "command": "mkdir -p ~/.claude/skills/host-observer && cp -R /tmp/thedotmack-claude-mem/claude-mem-grok-bot/skills/host-observer/. ~/.claude/skills/host-observer/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/host-observer/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/host-observer/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/host-observer && cp -R /tmp/thedotmack-claude-mem/claude-mem-grok-bot/skills/host-observer/. .claude/skills/host-observer/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Grok Bot"
+    ],
+    "usage": [
+      {
+        "prompt": "Handle this claude-mem observer job.",
+        "result": "Claude replies with only skip_summary or one full observation XML and no prose."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/claude-mem-grok-bot/skills/host-observer",
+    "author": "thedotmack",
+    "tags": [
+      "claude-mem",
+      "observer",
+      "grok",
+      "xml"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/claude-mem-grok-bot/skills/host-observer/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 371,
+    "name": "weekly-digests",
+    "summary": "Generates a serial week-by-week narrative digest of a project's claude-mem timeline, with one chapter per ISO week produced by consecutive subagents.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:weekly-digests. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Create weekly digests of this project's history.",
+        "result": "Claude splits the timeline into per-ISO-week files and runs one subagent per week to write each chapter, passing carry-forward context along."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/weekly-digests",
+    "author": "thedotmack",
+    "tags": [
+      "digest",
+      "timeline",
+      "weekly",
+      "narrative"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/weekly-digests/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 372,
+    "name": "what-the",
+    "summary": "Gives a plain-English breakdown of something technical, covering the who, what, where, why and when.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:what-the. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "What the is this webhook retry logic doing?",
+        "result": "Claude explains the technical item in plain English, covering who, what, where, why and when."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/what-the",
+    "author": "thedotmack",
+    "tags": [
+      "explainer",
+      "plain-english",
+      "learning",
+      "summary"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/what-the/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 373,
+    "name": "standup",
+    "summary": "Facilitates a read-only standup across git worktrees, branches or PRs to compare changes and produce one consolidation plan.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:standup. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run a standup across my open worktrees and branches.",
+        "result": "Claude compares the changes without modifying anything and produces a single consolidation plan."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/standup",
+    "author": "thedotmack",
+    "tags": [
+      "standup",
+      "worktrees",
+      "branches",
+      "planning"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/standup/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 374,
+    "name": "smart-explore",
+    "summary": "Searches code structure efficiently using tree-sitter AST parsing instead of reading whole files, to find functions and understand a codebase with fewer tokens.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:smart-explore. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "tree-sitter"
+    ],
+    "usage": [
+      {
+        "prompt": "Find where the payment handler is defined and outline the module.",
+        "result": "Claude uses AST-based structural search to locate functions and outline code without reading full files."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/smart-explore",
+    "author": "thedotmack",
+    "tags": [
+      "code-search",
+      "tree-sitter",
+      "ast",
+      "exploration"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/smart-explore/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 375,
+    "name": "oh-my-issues",
+    "summary": "Clusters a GitHub issue backlog by root cause into plan-master issues, redirects child issues with a standard comment and bundles fix PRs that close clusters.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:oh-my-issues. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "GitHub"
+    ],
+    "usage": [
+      {
+        "prompt": "Triage our open issues and cluster them by root cause.",
+        "result": "Claude groups the issues into a few plan-master issues, comments on the children to redirect them and bundles architectural-fix PRs."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/oh-my-issues",
+    "author": "thedotmack",
+    "tags": [
+      "github",
+      "issues",
+      "triage",
+      "clustering"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/oh-my-issues/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 376,
+    "name": "design-is",
+    "summary": "Audits a design against Dieter Rams' ten principles of good design and hands off a make-plan prompt for a new design, refinement or redesign.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add thedotmack/claude-mem"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install claude-mem@thedotmack"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for claude-mem:design-is. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit this dashboard against Rams' design principles.",
+        "result": "Claude critiques the design against the ten principles and produces a /make-plan prompt for the chosen outcome."
+      }
+    ],
+    "source": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/design-is",
+    "author": "thedotmack",
+    "tags": [
+      "design",
+      "audit",
+      "rams",
+      "ux",
+      "critique"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at thedotmack/claude-mem/plugin/skills/design-is/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 101,521 stars); installable via the thedotmack marketplace (plugin claude-mem)."
+  },
+  {
+    "rank": 377,
+    "name": "agent-reach",
+    "summary": "Researches topics and reads content across internet platforms such as Xiaohongshu, Twitter/X, Bilibili and Reddit when the user wants to search or shares a URL.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/panniantong-agent-reach ] || git clone --depth 1 https://github.com/Panniantong/Agent-Reach.git /tmp/panniantong-agent-reach"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-reach/.",
+        "command": "mkdir -p ~/.claude/skills/agent-reach && cp -R /tmp/panniantong-agent-reach/agent_reach/skill/. ~/.claude/skills/agent-reach/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-reach/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-reach/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-reach && cp -R /tmp/panniantong-agent-reach/agent_reach/skill/. .claude/skills/agent-reach/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "帮我调研一下 this new AI tool and see what people on Reddit say.",
+        "result": "Claude searches across the relevant platforms and gathers what people are saying about the topic."
+      }
+    ],
+    "source": "https://github.com/Panniantong/Agent-Reach/tree/main/agent_reach/skill",
+    "author": "Panniantong",
+    "tags": [
+      "research",
+      "search",
+      "web",
+      "social-media"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Panniantong/Agent-Reach/agent_reach/skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,907 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 378,
+    "name": "design-taste-frontend",
+    "summary": "Provides anti-generic frontend art direction for websites, drawn from curated gallery sites, covering composition, type, palette and section blueprints.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:design-taste-frontend. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Design a landing page for my startup that does not look like generic AI output.",
+        "result": "Claude picks a researched direction and applies strict rules for composition, typography and palette to the page."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill",
+    "author": "Leonxlnx",
+    "tags": [
+      "design",
+      "art-direction",
+      "landing-page",
+      "typography"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/taste-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 379,
+    "name": "design-taste-frontend-v2-experimental",
+    "summary": "Preserves the experimental v2 dial-driven taste-skill with anti-slop frontend rules for landing pages and portfolios, for projects needing its exact behavior.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:design-taste-frontend-v2-experimental. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Use the experimental taste skill to build my portfolio page.",
+        "result": "Claude applies the older dial-driven anti-slop frontend rules to the page."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill-v2-experimental",
+    "author": "Leonxlnx",
+    "tags": [
+      "design",
+      "legacy",
+      "landing-page",
+      "portfolio"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/taste-skill-v2-experimental/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 380,
+    "name": "brandkit",
+    "summary": "Generates premium brand-kit images such as brand-guidelines boards, logo systems and identity decks across many styles from minimalist to luxury.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:brandkit. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Create a brand kit board for my developer tool in a dark-tech style.",
+        "result": "Claude generates high-end brand-guidelines imagery and identity presentations in the requested style."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit",
+    "author": "Leonxlnx",
+    "tags": [
+      "branding",
+      "logo",
+      "image-generation",
+      "identity"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/brandkit/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 381,
+    "name": "design-taste-frontend-v1",
+    "summary": "Preserves the original v1 taste-skill for projects that depend on its exact frontend design behavior.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:design-taste-frontend-v1. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Use the original taste-skill v1 for this page.",
+        "result": "Claude applies the v1 taste-skill's frontend design rules for backward compatibility."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill-v1",
+    "author": "Leonxlnx",
+    "tags": [
+      "design",
+      "legacy",
+      "frontend",
+      "ui"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/taste-skill-v1/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 382,
+    "name": "redesign-existing-projects",
+    "summary": "Upgrades existing websites and apps to premium quality by auditing the design, spotting generic AI patterns and applying high-end standards.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:redesign-existing-projects. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Redesign my existing site so it looks less generic.",
+        "result": "Claude audits the current design, identifies generic patterns and applies premium design standards while keeping functionality intact."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill",
+    "author": "Leonxlnx",
+    "tags": [
+      "redesign",
+      "audit",
+      "ui",
+      "css"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/redesign-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 383,
+    "name": "gpt-taste",
+    "summary": "Enforces elite UX/UI and GSAP motion rules: randomized layouts, AIDA page structure, wide editorial type, bento grids and ScrollTrigger animations.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:gpt-taste. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "GSAP",
+      "Python"
+    ],
+    "usage": [
+      {
+        "prompt": "Build an animated landing page with GSAP scroll effects.",
+        "result": "Claude builds the page following strict AIDA structure, bento grid, typography and GSAP ScrollTrigger rules."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill",
+    "author": "Leonxlnx",
+    "tags": [
+      "gsap",
+      "animation",
+      "ux",
+      "layout",
+      "scrolltrigger"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/gpt-tasteskill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 384,
+    "name": "minimalist-ui",
+    "summary": "Builds clean editorial-style interfaces with a warm monochrome palette, typographic contrast, flat bento grids and muted pastels, without gradients.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:minimalist-ui. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make this page minimalist and editorial.",
+        "result": "Claude applies a flat, warm monochrome style with strong typography, bento grids and muted pastels."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/minimalist-skill",
+    "author": "Leonxlnx",
+    "tags": [
+      "minimalist",
+      "ui",
+      "editorial",
+      "design"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/minimalist-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 385,
+    "name": "stitch-design-taste",
+    "summary": "Generates agent-friendly DESIGN.md files for Google Stitch that enforce premium, anti-generic UI standards for typography, color, layout and motion.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:stitch-design-taste. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Google Stitch"
+    ],
+    "usage": [
+      {
+        "prompt": "Write a DESIGN.md for Google Stitch for my app.",
+        "result": "Claude produces a DESIGN.md specifying strict typography, calibrated color, asymmetric layouts and micro-motion."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill",
+    "author": "Leonxlnx",
+    "tags": [
+      "stitch",
+      "design-system",
+      "design-md",
+      "ui"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/stitch-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 386,
+    "name": "imagegen-frontend-web",
+    "summary": "Directs image generation of premium website design references, producing one separate horizontal image for every page section.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:imagegen-frontend-web. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Generate design reference images for each section of my 8-section landing page.",
+        "result": "Claude generates one separate horizontal image per section, so eight sections produce eight images."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web",
+    "author": "Leonxlnx",
+    "tags": [
+      "image-generation",
+      "web-design",
+      "landing-page",
+      "mockup"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/imagegen-frontend-web/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 387,
+    "name": "imagegen-frontend-mobile",
+    "summary": "Generates premium, app-native mobile screen concepts and flows for iOS, Android and cross-platform products with consistent hierarchy and palettes.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:imagegen-frontend-mobile. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Generate screen concepts for a fitness tracking app.",
+        "result": "Claude creates multi-screen concept images with consistent hierarchy, readable text and a controlled palette."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile",
+    "author": "Leonxlnx",
+    "tags": [
+      "mobile",
+      "image-generation",
+      "app-design",
+      "ios",
+      "android"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/imagegen-frontend-mobile/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 388,
+    "name": "image-to-code",
+    "summary": "Generates design images for a website first, analyzes them closely, then implements the site to match them as closely as possible.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:image-to-code. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Codex"
+    ],
+    "usage": [
+      {
+        "prompt": "Design and build a pricing page that matches the generated mockups.",
+        "result": "Claude generates the design images, analyzes them in depth and then implements the website to match."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill",
+    "author": "Leonxlnx",
+    "tags": [
+      "image-to-code",
+      "web",
+      "design",
+      "implementation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/image-to-code-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 389,
+    "name": "high-end-visual-design",
+    "summary": "Teaches high-end agency-style web design with exact fonts, spacing, shadows, card structures and animations, avoiding cheap or generic defaults.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:high-end-visual-design. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Make my website feel expensive and high-end.",
+        "result": "Claude applies specific font, spacing, shadow, card and animation standards and avoids common generic defaults."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill",
+    "author": "Leonxlnx",
+    "tags": [
+      "design",
+      "typography",
+      "animation",
+      "premium"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/soft-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 390,
+    "name": "industrial-brutalist-ui",
+    "summary": "Creates raw, mechanical interfaces fusing Swiss typography with military terminal aesthetics, suited to data-heavy dashboards, portfolios and editorial sites.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Leonxlnx/taste-skill"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install taste-skill@taste-skill"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for taste-skill:industrial-brutalist-ui. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build a brutalist dashboard that looks like a declassified blueprint.",
+        "result": "Claude applies rigid grids, extreme type scale contrast, utilitarian color and analog degradation effects."
+      }
+    ],
+    "source": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill",
+    "author": "Leonxlnx",
+    "tags": [
+      "brutalist",
+      "ui",
+      "dashboard",
+      "typography"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Leonxlnx/taste-skill/skills/brutalist-skill/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 98,646 stars); installable via the taste-skill marketplace (plugin taste-skill)."
+  },
+  {
+    "rank": 391,
+    "name": "playwright-dev",
+    "summary": "Explains how to develop Playwright itself, including adding APIs, MCP tools, CLI commands and vendored dependencies.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-dev/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-dev && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-dev/. ~/.claude/skills/playwright-dev/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-dev/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-dev/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-dev && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-dev/. .claude/skills/playwright-dev/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Playwright"
+    ],
+    "usage": [
+      {
+        "prompt": "How do I add a new MCP tool to Playwright?",
+        "result": "Claude follows the Playwright development guidance to add the API, tool or CLI command."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/.claude/skills/playwright-dev",
+    "author": "microsoft",
+    "tags": [
+      "playwright",
+      "contributing",
+      "mcp",
+      "cli"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/.claude/skills/playwright-dev/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 392,
+    "name": "playwright-cli",
+    "summary": "Automates browser interactions, tests web pages and works with Playwright tests through the Playwright CLI.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-cli/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-cli && cp -R /tmp/microsoft-playwright/packages/playwright-core/src/tools/skills/playwright-cli/. ~/.claude/skills/playwright-cli/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-cli/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-cli/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-cli && cp -R /tmp/microsoft-playwright/packages/playwright-core/src/tools/skills/playwright-cli/. .claude/skills/playwright-cli/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Playwright"
+    ],
+    "usage": [
+      {
+        "prompt": "Open the login page and test the sign-in flow with Playwright.",
+        "result": "Claude drives the browser through the Playwright CLI to interact with the page and work with Playwright tests."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/packages/playwright-core/src/tools/skills/playwright-cli",
+    "author": "microsoft",
+    "tags": [
+      "playwright",
+      "browser",
+      "automation",
+      "testing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/packages/playwright-core/src/tools/skills/playwright-cli/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 393,
+    "name": "playwright-triage",
+    "summary": "Triages Playwright bug reports by reproducing the problem from the information in a GitHub issue or new comment.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-triage/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-triage && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-triage/. ~/.claude/skills/playwright-triage/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-triage/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-triage/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-triage && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-triage/. .claude/skills/playwright-triage/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Playwright",
+      "GitHub"
+    ],
+    "usage": [
+      {
+        "prompt": "Triage this Playwright issue and try to reproduce it.",
+        "result": "Claude reproduces the bug from the details in the issue to verify the report."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/.claude/skills/playwright-triage",
+    "author": "microsoft",
+    "tags": [
+      "playwright",
+      "triage",
+      "bug",
+      "github"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/.claude/skills/playwright-triage/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 394,
+    "name": "playwright-trace",
+    "summary": "Inspects Playwright trace files from the command line, listing actions and viewing requests, console output, errors, snapshots and screenshots.",
+    "category": "Debugging",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-trace/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-trace && cp -R /tmp/microsoft-playwright/packages/playwright-core/src/tools/skills/playwright-trace/. ~/.claude/skills/playwright-trace/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-trace/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-trace/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-trace && cp -R /tmp/microsoft-playwright/packages/playwright-core/src/tools/skills/playwright-trace/. .claude/skills/playwright-trace/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Playwright"
+    ],
+    "usage": [
+      {
+        "prompt": "Look at this Playwright trace and tell me why the test failed.",
+        "result": "Claude lists the trace's actions and examines requests, console, errors, snapshots and screenshots."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/packages/playwright-core/src/tools/skills/playwright-trace",
+    "author": "microsoft",
+    "tags": [
+      "playwright",
+      "trace",
+      "cli",
+      "debugging"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/packages/playwright-core/src/tools/skills/playwright-trace/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 395,
+    "name": "playwright-cherry-pick",
+    "summary": "Cherry-picks a commit or PR from main into a release branch and retitles it in the cherry-pick format with the original PR number and title.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-cherry-pick/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-cherry-pick && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-cherry-pick/. ~/.claude/skills/playwright-cherry-pick/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-cherry-pick/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-cherry-pick/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-cherry-pick && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-cherry-pick/. .claude/skills/playwright-cherry-pick/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Git"
+    ],
+    "usage": [
+      {
+        "prompt": "Cherry-pick PR 1234 into release-1.50.",
+        "result": "Claude cherry-picks the change onto the release branch and retitles it as cherry-pick(#1234): original title."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/.claude/skills/playwright-cherry-pick",
+    "author": "microsoft",
+    "tags": [
+      "cherry-pick",
+      "backport",
+      "release",
+      "git"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/.claude/skills/playwright-cherry-pick/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 396,
+    "name": "playwright-component-testing",
+    "summary": "Sets up Playwright component testing with a story gallery, scaffolding stories and a gallery dev page driven by the built-in mount fixture.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-component-testing/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-component-testing && cp -R /tmp/microsoft-playwright/packages/playwright-core/src/tools/skills/playwright-component-testing/. ~/.claude/skills/playwright-component-testing/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-component-testing/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-component-testing/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-component-testing && cp -R /tmp/microsoft-playwright/packages/playwright-core/src/tools/skills/playwright-component-testing/. .claude/skills/playwright-component-testing/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Playwright"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up Playwright component tests for my React components.",
+        "result": "Claude scaffolds stories and a gallery dev page using the built-in mount fixture, without a dedicated component-testing runtime."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/packages/playwright-core/src/tools/skills/playwright-component-testing",
+    "author": "microsoft",
+    "tags": [
+      "playwright",
+      "component-testing",
+      "react",
+      "vue",
+      "stories"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/packages/playwright-core/src/tools/skills/playwright-component-testing/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 397,
+    "name": "playwright-test-results",
+    "summary": "Queries Playwright CI test results from an aggregated DuckDB database to answer questions about flaky tests, failure rates, slow tests and per-run results.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-test-results/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-test-results && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-test-results/. ~/.claude/skills/playwright-test-results/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-test-results/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-test-results/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-test-results && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-test-results/. .claude/skills/playwright-test-results/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "DuckDB"
+    ],
+    "usage": [
+      {
+        "prompt": "Which Playwright tests have been the flakiest this month?",
+        "result": "Claude queries the aggregated DuckDB results to report flaky tests, failure rates and slow tests without digging through artifacts."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/.claude/skills/playwright-test-results",
+    "author": "microsoft",
+    "tags": [
+      "playwright",
+      "ci",
+      "duckdb",
+      "flaky-tests"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/.claude/skills/playwright-test-results/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 398,
+    "name": "playwright-devops",
+    "summary": "Supports Playwright DevOps work such as CI failure analysis, workflow debugging and release operations.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/microsoft-playwright ] || git clone --depth 1 https://github.com/microsoft/playwright.git /tmp/microsoft-playwright"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/playwright-devops/.",
+        "command": "mkdir -p ~/.claude/skills/playwright-devops && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-devops/. ~/.claude/skills/playwright-devops/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/playwright-devops/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/playwright-devops/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/playwright-devops && cp -R /tmp/microsoft-playwright/.claude/skills/playwright-devops/. .claude/skills/playwright-devops/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Playwright"
+    ],
+    "usage": [
+      {
+        "prompt": "Why did the Playwright CI workflow fail on the last run?",
+        "result": "Claude analyzes the CI failure and debugs the workflow or release operation."
+      }
+    ],
+    "source": "https://github.com/microsoft/playwright/tree/main/.claude/skills/playwright-devops",
+    "author": "microsoft",
+    "tags": [
+      "playwright",
+      "ci",
+      "workflows",
+      "release"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at microsoft/playwright/.claude/skills/playwright-devops/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 97,979 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 399,
+    "name": "jira-tickets",
+    "summary": "Reads and updates Jira tickets through Orca's saved Jira connections, treating ticket content as untrusted data.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/jira-tickets/.",
+        "command": "mkdir -p ~/.claude/skills/jira-tickets && cp -R /tmp/stablyai-orca/skills/jira-tickets/. ~/.claude/skills/jira-tickets/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/jira-tickets/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/jira-tickets/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/jira-tickets && cp -R /tmp/stablyai-orca/skills/jira-tickets/. .claude/skills/jira-tickets/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca",
+      "Jira"
+    ],
+    "usage": [
+      {
+        "prompt": "Pull up ticket PROJ-42 and update it with my progress.",
+        "result": "Claude reads the Jira ticket and updates it through Orca's saved connection, treating its text as untrusted data."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/jira-tickets",
+    "author": "stablyai",
+    "tags": [
+      "jira",
+      "tickets",
+      "orca",
+      "project-management"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/jira-tickets/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 400,
+    "name": "orca-jira",
+    "summary": "Handles Jira issue work through Orca's CLI: JQL search, workflow transitions, completion comments with PR links and follow-up issues.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orca-jira/.",
+        "command": "mkdir -p ~/.claude/skills/orca-jira && cp -R /tmp/stablyai-orca/skills/orca-jira/. ~/.claude/skills/orca-jira/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orca-jira/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orca-jira/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orca-jira && cp -R /tmp/stablyai-orca/skills/orca-jira/. .claude/skills/orca-jira/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca CLI",
+      "Jira"
+    ],
+    "usage": [
+      {
+        "prompt": "Move PROJ-42 to In Review and comment with the PR link.",
+        "result": "Claude uses Orca's CLI to transition the issue and post a completion comment with the PR link."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/orca-jira",
+    "author": "stablyai",
+    "tags": [
+      "jira",
+      "jql",
+      "orca",
+      "workflow"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/orca-jira/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 401,
+    "name": "orca-chat-visuals",
+    "summary": "Shows charts, diagrams, tables, reports or mockups inline in an Orca chat as an HTML page when a visual helps explain an answer.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orca-chat-visuals/.",
+        "command": "mkdir -p ~/.claude/skills/orca-chat-visuals && cp -R /tmp/stablyai-orca/resources/native-chat-visuals/skills/orca-chat-visuals/. ~/.claude/skills/orca-chat-visuals/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orca-chat-visuals/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orca-chat-visuals/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orca-chat-visuals && cp -R /tmp/stablyai-orca/resources/native-chat-visuals/skills/orca-chat-visuals/. .claude/skills/orca-chat-visuals/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca",
+      "ORCA_CHAT_SCRATCH_DIR environment variable"
+    ],
+    "usage": [
+      {
+        "prompt": "Show me a chart of these build times in the chat",
+        "result": "Claude renders the chart as an inline HTML page in the Orca chat."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/resources/native-chat-visuals/skills/orca-chat-visuals",
+    "author": "stablyai",
+    "tags": [
+      "orca",
+      "chat",
+      "visuals",
+      "charts",
+      "diagrams"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/resources/native-chat-visuals/skills/orca-chat-visuals/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 402,
+    "name": "computer-use",
+    "summary": "Drives the GUI of visible local app windows through the orca computer command, using accessibility trees, clicks, typing, menus, dialogs and screenshots.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/computer-use/.",
+        "command": "mkdir -p ~/.claude/skills/computer-use && cp -R /tmp/stablyai-orca/skills/computer-use/. ~/.claude/skills/computer-use/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/computer-use/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/computer-use/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/computer-use && cp -R /tmp/stablyai-orca/skills/computer-use/. .claude/skills/computer-use/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca"
+    ],
+    "usage": [
+      {
+        "prompt": "Click through the Settings dialog in the open app window and screenshot it",
+        "result": "Claude uses orca computer to inspect the window, click and type, and capture screenshots."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/computer-use",
+    "author": "stablyai",
+    "tags": [
+      "orca",
+      "gui",
+      "automation",
+      "desktop",
+      "screenshots"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/computer-use/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 403,
+    "name": "linear-tickets",
+    "summary": "Handles Linear ticket work through Orca's CLI, including updating states, searching issues, posting completion comments and creating follow-up tickets.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/linear-tickets/.",
+        "command": "mkdir -p ~/.claude/skills/linear-tickets && cp -R /tmp/stablyai-orca/skills/linear-tickets/. ~/.claude/skills/linear-tickets/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/linear-tickets/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/linear-tickets/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/linear-tickets && cp -R /tmp/stablyai-orca/skills/linear-tickets/. .claude/skills/linear-tickets/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca CLI",
+      "Linear"
+    ],
+    "usage": [
+      {
+        "prompt": "Finish this Linear ticket and add the PR link as a completion comment",
+        "result": "Claude uses the Orca CLI to comment on the ticket and move it through workflow states."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/linear-tickets",
+    "author": "stablyai",
+    "tags": [
+      "linear",
+      "tickets",
+      "orca",
+      "issues"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/linear-tickets/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 404,
+    "name": "orca-cli",
+    "summary": "Operates Orca-managed worktrees, terminals, repos, automations and the embedded browser through the orca CLI, including spawning agents in child worktrees.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orca-cli/.",
+        "command": "mkdir -p ~/.claude/skills/orca-cli && cp -R /tmp/stablyai-orca/skills/orca-cli/. ~/.claude/skills/orca-cli/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orca-cli/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orca-cli/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orca-cli && cp -R /tmp/stablyai-orca/skills/orca-cli/. .claude/skills/orca-cli/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Spawn a child worktree for this task and start an agent in it",
+        "result": "Claude uses the orca CLI to create the worktree and manage its terminals."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/orca-cli",
+    "author": "stablyai",
+    "tags": [
+      "orca",
+      "worktree",
+      "cli",
+      "terminals"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/orca-cli/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 405,
+    "name": "orca-emulator",
+    "summary": "Controls a booted iOS Simulator from inside Orca with taps, gestures, typing, hardware buttons, rotation and accessibility tree inspection.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orca-emulator/.",
+        "command": "mkdir -p ~/.claude/skills/orca-emulator && cp -R /tmp/stablyai-orca/skills/orca-emulator/. ~/.claude/skills/orca-emulator/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orca-emulator/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orca-emulator/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orca-emulator && cp -R /tmp/stablyai-orca/skills/orca-emulator/. .claude/skills/orca-emulator/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca",
+      "iOS Simulator"
+    ],
+    "usage": [
+      {
+        "prompt": "Tap the login button in the iOS simulator and check the screen",
+        "result": "Claude drives the booted Apple Simulator and inspects its accessibility tree for evidence."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/orca-emulator",
+    "author": "stablyai",
+    "tags": [
+      "ios",
+      "simulator",
+      "orca",
+      "mobile"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/orca-emulator/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 406,
+    "name": "orca-emulator-android",
+    "summary": "Controls Android emulators and phones from inside Orca over adb, covering AVD boot, taps, swipes, typing, app install and launch, and permissions.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orca-emulator-android/.",
+        "command": "mkdir -p ~/.claude/skills/orca-emulator-android && cp -R /tmp/stablyai-orca/skills/orca-emulator-android/. ~/.claude/skills/orca-emulator-android/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orca-emulator-android/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orca-emulator-android/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orca-emulator-android && cp -R /tmp/stablyai-orca/skills/orca-emulator-android/. .claude/skills/orca-emulator-android/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca",
+      "adb"
+    ],
+    "usage": [
+      {
+        "prompt": "Boot the Android emulator and install the debug build",
+        "result": "Claude uses adb to boot the AVD, install the app and drive it from Orca."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/orca-emulator-android",
+    "author": "stablyai",
+    "tags": [
+      "android",
+      "adb",
+      "emulator",
+      "orca"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/orca-emulator-android/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 407,
+    "name": "orca-linear",
+    "summary": "Handles Linear ticket work through Orca's CLI, including updating states, searching issues, posting completion comments and creating follow-up tickets.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orca-linear/.",
+        "command": "mkdir -p ~/.claude/skills/orca-linear && cp -R /tmp/stablyai-orca/skills/orca-linear/. ~/.claude/skills/orca-linear/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orca-linear/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orca-linear/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orca-linear && cp -R /tmp/stablyai-orca/skills/orca-linear/. .claude/skills/orca-linear/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca CLI",
+      "Linear"
+    ],
+    "usage": [
+      {
+        "prompt": "Search Linear for open bugs on this feature and move mine to In Review",
+        "result": "Claude uses the Orca CLI to search Linear and update the ticket state."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/orca-linear",
+    "author": "stablyai",
+    "tags": [
+      "linear",
+      "tickets",
+      "orca",
+      "workflow"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/orca-linear/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 408,
+    "name": "orca-per-workspace-env",
+    "summary": "Sets up, reviews and debugs Orca per-workspace environment recipes, the disposable runtimes created fresh for each workspace, including orca.yaml entries.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orca-per-workspace-env/.",
+        "command": "mkdir -p ~/.claude/skills/orca-per-workspace-env && cp -R /tmp/stablyai-orca/skills/orca-per-workspace-env/. ~/.claude/skills/orca-per-workspace-env/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orca-per-workspace-env/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orca-per-workspace-env/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orca-per-workspace-env && cp -R /tmp/stablyai-orca/skills/orca-per-workspace-env/. .claude/skills/orca-per-workspace-env/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca"
+    ],
+    "usage": [
+      {
+        "prompt": "Fix the environmentRecipes entry in orca.yaml for my cloud sandbox",
+        "result": "Claude reviews and corrects the recipe and validates it end to end."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/orca-per-workspace-env",
+    "author": "stablyai",
+    "tags": [
+      "orca",
+      "environment",
+      "recipes",
+      "sandbox"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/orca-per-workspace-env/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 409,
+    "name": "orchestration",
+    "summary": "Coordinates supervised Orca workers with threaded messages, task dispatch, task DAGs, decision gates and coordinator loops across multiple agents.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/stablyai-orca ] || git clone --depth 1 https://github.com/stablyai/orca.git /tmp/stablyai-orca"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/orchestration/.",
+        "command": "mkdir -p ~/.claude/skills/orchestration && cp -R /tmp/stablyai-orca/skills/orchestration/. ~/.claude/skills/orchestration/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/orchestration/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/orchestration/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/orchestration && cp -R /tmp/stablyai-orca/skills/orchestration/. .claude/skills/orchestration/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Orca"
+    ],
+    "usage": [
+      {
+        "prompt": "Split this refactor across three workers and wait for each to finish",
+        "result": "Claude dispatches tasks to Orca workers and tracks their completion and escalations."
+      }
+    ],
+    "source": "https://github.com/stablyai/orca/tree/main/skills/orchestration",
+    "author": "stablyai",
+    "tags": [
+      "orchestration",
+      "agents",
+      "orca",
+      "tasks"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at stablyai/orca/skills/orchestration/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 95,954 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 410,
+    "name": "understand",
+    "summary": "Analyzes a codebase to produce an interactive knowledge graph showing its architecture, components and relationships.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/understand",
+        "result": "Claude analyzes the codebase and builds an interactive knowledge graph of its components."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand",
+    "author": "Egonex-AI",
+    "tags": [
+      "codebase",
+      "knowledge-graph",
+      "architecture",
+      "analysis"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 411,
+    "name": "understand-onboard",
+    "summary": "Generates an onboarding guide for new team members joining a project.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-onboard. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Write an onboarding guide for new developers on this repo",
+        "result": "Claude produces an onboarding guide for the project."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-onboard",
+    "author": "Egonex-AI",
+    "tags": [
+      "onboarding",
+      "guide",
+      "documentation",
+      "team"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-onboard/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 412,
+    "name": "understand-chat",
+    "summary": "Answers questions about a codebase and explains code by using its knowledge graph.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-chat. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "How does authentication flow through this codebase?",
+        "result": "Claude answers the question using the codebase knowledge graph."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-chat",
+    "author": "Egonex-AI",
+    "tags": [
+      "codebase",
+      "questions",
+      "knowledge-graph",
+      "explain"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-chat/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 413,
+    "name": "understand-diff",
+    "summary": "Analyzes git diffs or pull requests to show what changed, which components are affected and what risks they carry.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-diff. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Analyze this PR and tell me which components it affects",
+        "result": "Claude analyzes the diff and reports changes, affected components and risks."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-diff",
+    "author": "Egonex-AI",
+    "tags": [
+      "diff",
+      "pull-request",
+      "impact",
+      "risk"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-diff/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 414,
+    "name": "understand-domain",
+    "summary": "Extracts business domain knowledge from a codebase and generates an interactive domain flow graph, standalone or from an existing knowledge graph.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-domain. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Extract the business domain flows from this codebase",
+        "result": "Claude scans the code and generates an interactive domain flow graph."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-domain",
+    "author": "Egonex-AI",
+    "tags": [
+      "domain",
+      "business",
+      "flow-graph"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-domain/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 415,
+    "name": "understand-explain",
+    "summary": "Gives a deep-dive explanation of a specific file, function or module in the codebase.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-explain. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Explain src/auth/session.ts in depth",
+        "result": "Claude provides a detailed explanation of the requested file or function."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-explain",
+    "author": "Egonex-AI",
+    "tags": [
+      "explain",
+      "code",
+      "deep-dive",
+      "module"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-explain/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 416,
+    "name": "understand-dashboard",
+    "summary": "Launches an interactive web dashboard that visualizes a codebase's knowledge graph.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-dashboard. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Open the dashboard for this codebase's knowledge graph",
+        "result": "Claude launches the interactive web dashboard showing the graph."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-dashboard",
+    "author": "Egonex-AI",
+    "tags": [
+      "dashboard",
+      "visualization",
+      "knowledge-graph",
+      "web"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-dashboard/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 417,
+    "name": "understand-figma",
+    "summary": "Analyzes a Figma file through the Figma REST API and generates an interactive design knowledge graph of pages, screens, components, instances and design tokens.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-figma. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "Figma REST API"
+    ],
+    "usage": [
+      {
+        "prompt": "Analyze this Figma file and build a design knowledge graph",
+        "result": "Claude reads the file via the Figma REST API and generates a design dashboard graph."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-figma",
+    "author": "Egonex-AI",
+    "tags": [
+      "figma",
+      "design",
+      "knowledge-graph",
+      "tokens"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-figma/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 418,
+    "name": "understand-knowledge",
+    "summary": "Analyzes a Karpathy-pattern LLM wiki knowledge base and builds an interactive knowledge graph with entity extraction, implicit relationships and topic clusters.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add Egonex-AI/Understand-Anything"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install understand-anything@understand-anything"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for understand-anything:understand-knowledge. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build a knowledge graph from my LLM wiki folder",
+        "result": "Claude extracts entities and relationships and generates an interactive graph with topic clusters."
+      }
+    ],
+    "source": "https://github.com/Egonex-AI/Understand-Anything/tree/main/understand-anything-plugin/skills/understand-knowledge",
+    "author": "Egonex-AI",
+    "tags": [
+      "wiki",
+      "knowledge-graph",
+      "entities",
+      "clustering"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at Egonex-AI/Understand-Anything/understand-anything-plugin/skills/understand-knowledge/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 86,852 stars); installable via the understand-anything marketplace (plugin understand-anything)."
+  },
+  {
+    "rank": 419,
+    "name": "archify",
+    "summary": "Creates validated architecture, workflow, sequence, data-flow, ERD, class and timeline diagrams as standalone HTML with themes and image, SVG or WebM export.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/tt-a1i-archify ] || git clone --depth 1 https://github.com/tt-a1i/archify.git /tmp/tt-a1i-archify"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/archify/.",
+        "command": "mkdir -p ~/.claude/skills/archify && cp -R /tmp/tt-a1i-archify/archify/. ~/.claude/skills/archify/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/archify/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/archify/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/archify && cp -R /tmp/tt-a1i-archify/archify/. .claude/skills/archify/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Draw an architecture diagram of this repo's request flow",
+        "result": "Claude creates a validated interactive HTML diagram, inspecting the repository for evidence."
+      }
+    ],
+    "source": "https://github.com/tt-a1i/archify/tree/main/archify",
+    "author": "tt-a1i",
+    "tags": [
+      "diagrams",
+      "architecture",
+      "html",
+      "mermaid"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at tt-a1i/archify/archify/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 85,165 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 420,
+    "name": "archify-tuning",
+    "summary": "Improves Archify diagram accuracy, visual quality and authoring speed by testing layout, routing, diagnostics and acceptance-rule changes against real diagrams.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/tt-a1i-archify ] || git clone --depth 1 https://github.com/tt-a1i/archify.git /tmp/tt-a1i-archify"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/archify-tuning/.",
+        "command": "mkdir -p ~/.claude/skills/archify-tuning && cp -R /tmp/tt-a1i-archify/.agents/skills/archify-tuning/. ~/.claude/skills/archify-tuning/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/archify-tuning/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/archify-tuning/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/archify-tuning && cp -R /tmp/tt-a1i-archify/.agents/skills/archify-tuning/. .claude/skills/archify-tuning/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Evaluate whether this routing change improves Archify diagram quality",
+        "result": "Claude tests the change against actual diagrams and agent traces to judge the effect."
+      }
+    ],
+    "source": "https://github.com/tt-a1i/archify/tree/main/.agents/skills/archify-tuning",
+    "author": "tt-a1i",
+    "tags": [
+      "archify",
+      "tuning",
+      "diagrams",
+      "evaluation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at tt-a1i/archify/.agents/skills/archify-tuning/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 85,165 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 421,
+    "name": "simplify-codebase",
+    "summary": "Audits or carries out evidence-backed codebase simplification, removing dead code, duplicate state, redundant layers and other accidental complexity.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/tt-a1i-archify ] || git clone --depth 1 https://github.com/tt-a1i/archify.git /tmp/tt-a1i-archify"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/simplify-codebase/.",
+        "command": "mkdir -p ~/.claude/skills/simplify-codebase && cp -R /tmp/tt-a1i-archify/.agents/skills/simplify-codebase/. ~/.claude/skills/simplify-codebase/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/simplify-codebase/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/simplify-codebase/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/simplify-codebase && cp -R /tmp/tt-a1i-archify/.agents/skills/simplify-codebase/. .claude/skills/simplify-codebase/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit this codebase for dead code and redundant abstractions",
+        "result": "Claude finds evidence-backed accidental complexity and proposes or makes the deletions."
+      }
+    ],
+    "source": "https://github.com/tt-a1i/archify/tree/main/.agents/skills/simplify-codebase",
+    "author": "tt-a1i",
+    "tags": [
+      "simplify",
+      "dead-code",
+      "cleanup",
+      "audit"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at tt-a1i/archify/.agents/skills/simplify-codebase/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 85,165 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 422,
+    "name": "test-value",
+    "summary": "Improves test value by auditing slow, flaky, redundant or brittle tests and choosing tests scoped to the affected behavior.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/tt-a1i-archify ] || git clone --depth 1 https://github.com/tt-a1i/archify.git /tmp/tt-a1i-archify"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/test-value/.",
+        "command": "mkdir -p ~/.claude/skills/test-value && cp -R /tmp/tt-a1i-archify/.agents/skills/test-value/. ~/.claude/skills/test-value/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/test-value/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/test-value/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/test-value && cp -R /tmp/tt-a1i-archify/.agents/skills/test-value/. .claude/skills/test-value/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Audit our slow and flaky tests and tell me which are worth keeping",
+        "result": "Claude reviews the tests for cost and value and recommends which to fix, merge or drop."
+      }
+    ],
+    "source": "https://github.com/tt-a1i/archify/tree/main/.agents/skills/test-value",
+    "author": "tt-a1i",
+    "tags": [
+      "tests",
+      "flaky",
+      "audit",
+      "coverage"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at tt-a1i/archify/.agents/skills/test-value/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 85,165 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 423,
+    "name": "archify-review",
+    "summary": "Reviews Archify issues, PRs and code through value, cost and impact to support evidence-based maintenance decisions.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/tt-a1i-archify ] || git clone --depth 1 https://github.com/tt-a1i/archify.git /tmp/tt-a1i-archify"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/archify-review/.",
+        "command": "mkdir -p ~/.claude/skills/archify-review && cp -R /tmp/tt-a1i-archify/.agents/skills/archify-review/. ~/.claude/skills/archify-review/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/archify-review/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/archify-review/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/archify-review && cp -R /tmp/tt-a1i-archify/.agents/skills/archify-review/. .claude/skills/archify-review/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Triage this Archify issue and weigh its value against cost",
+        "result": "Claude assesses the issue or PR on value, cost and impact and gives a maintenance recommendation."
+      }
+    ],
+    "source": "https://github.com/tt-a1i/archify/tree/main/.agents/skills/archify-review",
+    "author": "tt-a1i",
+    "tags": [
+      "review",
+      "triage",
+      "pull-request",
+      "archify"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at tt-a1i/archify/.agents/skills/archify-review/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 85,165 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 424,
+    "name": "pr-triage",
+    "summary": "Audits open pull requests, deep-reviews selected ones, and drafts and posts review comments, with language and PR-number arguments.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/rtk-ai-rtk ] || git clone --depth 1 https://github.com/rtk-ai/rtk.git /tmp/rtk-ai-rtk"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/pr-triage/.",
+        "command": "mkdir -p ~/.claude/skills/pr-triage && cp -R /tmp/rtk-ai-rtk/.claude/skills/pr-triage/. ~/.claude/skills/pr-triage/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/pr-triage/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/pr-triage/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/pr-triage && cp -R /tmp/rtk-ai-rtk/.claude/skills/pr-triage/. .claude/skills/pr-triage/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/pr-triage 42 57 en",
+        "result": "Claude deep-reviews PRs 42 and 57 in English and drafts review comments to post."
+      }
+    ],
+    "source": "https://github.com/rtk-ai/rtk/tree/develop/.claude/skills/pr-triage",
+    "author": "rtk-ai",
+    "tags": [
+      "pull-requests",
+      "triage",
+      "review",
+      "comments"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at rtk-ai/rtk/.claude/skills/pr-triage/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 83,824 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 425,
+    "name": "tdd-rust",
+    "summary": "Applies a Red-Green-Refactor TDD workflow to RTK filter development in Rust, with real fixtures, token-savings assertions and insta snapshot tests.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/rtk-ai-rtk ] || git clone --depth 1 https://github.com/rtk-ai/rtk.git /tmp/rtk-ai-rtk"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/tdd-rust/.",
+        "command": "mkdir -p ~/.claude/skills/tdd-rust && cp -R /tmp/rtk-ai-rtk/.claude/skills/tdd-rust/. ~/.claude/skills/tdd-rust/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/tdd-rust/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/tdd-rust/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/tdd-rust && cp -R /tmp/rtk-ai-rtk/.claude/skills/tdd-rust/. .claude/skills/tdd-rust/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "insta"
+    ],
+    "usage": [
+      {
+        "prompt": "Implement a new RTK filter for git log output using TDD",
+        "result": "Claude writes failing tests first with real fixtures and snapshots, then implements and refactors."
+      }
+    ],
+    "source": "https://github.com/rtk-ai/rtk/tree/develop/.claude/skills/tdd-rust",
+    "author": "rtk-ai",
+    "tags": [
+      "tdd",
+      "rust",
+      "snapshot",
+      "fixtures"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at rtk-ai/rtk/.claude/skills/tdd-rust/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 83,824 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 426,
+    "name": "issue-triage",
+    "summary": "Audits open issues, categorizes them, detects duplicates, cross-references PRs, assesses risk and posts comments, with language and issue-number arguments.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/rtk-ai-rtk ] || git clone --depth 1 https://github.com/rtk-ai/rtk.git /tmp/rtk-ai-rtk"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/issue-triage/.",
+        "command": "mkdir -p ~/.claude/skills/issue-triage && cp -R /tmp/rtk-ai-rtk/.claude/skills/issue-triage/. ~/.claude/skills/issue-triage/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/issue-triage/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/issue-triage/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/issue-triage && cp -R /tmp/rtk-ai-rtk/.claude/skills/issue-triage/. .claude/skills/issue-triage/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/issue-triage all en",
+        "result": "Claude analyzes all open issues in English, flags duplicates and risks, and prepares comments."
+      }
+    ],
+    "source": "https://github.com/rtk-ai/rtk/tree/develop/.claude/skills/issue-triage",
+    "author": "rtk-ai",
+    "tags": [
+      "issues",
+      "triage",
+      "duplicates",
+      "risk"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at rtk-ai/rtk/.claude/skills/issue-triage/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 83,824 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 427,
+    "name": "design-patterns",
+    "summary": "Applies Rust design patterns such as Newtype, Builder, RAII, trait objects and state machines to RTK CLI filter modules.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/rtk-ai-rtk ] || git clone --depth 1 https://github.com/rtk-ai/rtk.git /tmp/rtk-ai-rtk"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/design-patterns/.",
+        "command": "mkdir -p ~/.claude/skills/design-patterns && cp -R /tmp/rtk-ai-rtk/.claude/skills/design-patterns/. ~/.claude/skills/design-patterns/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/design-patterns/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/design-patterns/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/design-patterns && cp -R /tmp/rtk-ai-rtk/.claude/skills/design-patterns/. .claude/skills/design-patterns/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Design a new filter module using the Builder and Newtype patterns",
+        "result": "Claude structures the module with the appropriate Rust design patterns."
+      }
+    ],
+    "source": "https://github.com/rtk-ai/rtk/tree/develop/.claude/skills/design-patterns",
+    "author": "rtk-ai",
+    "tags": [
+      "rust",
+      "design-patterns",
+      "builder",
+      "raii"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at rtk-ai/rtk/.claude/skills/design-patterns/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 83,824 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 428,
+    "name": "rtk-tdd",
+    "summary": "Enforces Red-Green-Refactor TDD for Rust development with idiomatic testing patterns using anyhow, thiserror, cfg(test) and Arrange-Act-Assert.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/rtk-ai-rtk ] || git clone --depth 1 https://github.com/rtk-ai/rtk.git /tmp/rtk-ai-rtk"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/rtk-tdd/.",
+        "command": "mkdir -p ~/.claude/skills/rtk-tdd && cp -R /tmp/rtk-ai-rtk/.claude/skills/rtk-tdd/. ~/.claude/skills/rtk-tdd/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/rtk-tdd/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/rtk-tdd/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/rtk-tdd && cp -R /tmp/rtk-ai-rtk/.claude/skills/rtk-tdd/. .claude/skills/rtk-tdd/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Fix this parsing bug using TDD",
+        "result": "Claude writes a failing Rust test first, then fixes the code and refactors."
+      }
+    ],
+    "source": "https://github.com/rtk-ai/rtk/tree/develop/.claude/skills/rtk-tdd",
+    "author": "rtk-ai",
+    "tags": [
+      "tdd",
+      "rust",
+      "unit-tests",
+      "arrange-act-assert"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at rtk-ai/rtk/.claude/skills/rtk-tdd/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 83,824 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 429,
+    "name": "rtk-triage",
+    "summary": "Runs issue and PR triage in parallel, cross-references them for double coverage, security gaps, P0 issues without PRs and conflicts, and saves a report.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/rtk-ai-rtk ] || git clone --depth 1 https://github.com/rtk-ai/rtk.git /tmp/rtk-ai-rtk"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/rtk-triage/.",
+        "command": "mkdir -p ~/.claude/skills/rtk-triage && cp -R /tmp/rtk-ai-rtk/.claude/skills/rtk-triage/. ~/.claude/skills/rtk-triage/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/rtk-triage/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/rtk-triage/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/rtk-triage && cp -R /tmp/rtk-ai-rtk/.claude/skills/rtk-triage/. .claude/skills/rtk-triage/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "/rtk-triage en save",
+        "result": "Claude runs both triages, cross-references results and saves the report to claudedocs."
+      }
+    ],
+    "source": "https://github.com/rtk-ai/rtk/tree/develop/.claude/skills/rtk-triage",
+    "author": "rtk-ai",
+    "tags": [
+      "triage",
+      "issues",
+      "pull-requests",
+      "report"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at rtk-ai/rtk/.claude/skills/rtk-triage/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 83,824 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 430,
+    "name": "agent-builder",
+    "summary": "Designs and builds AI agents for any domain, covering agent architecture, agentic patterns, capabilities, subagents, planning and skill mechanisms.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/shareai-lab-learn-claude-code ] || git clone --depth 1 https://github.com/shareAI-lab/learn-claude-code.git /tmp/shareai-lab-learn-claude-code"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-builder/.",
+        "command": "mkdir -p ~/.claude/skills/agent-builder && cp -R /tmp/shareai-lab-learn-claude-code/skills/agent-builder/. ~/.claude/skills/agent-builder/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-builder/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-builder/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-builder && cp -R /tmp/shareai-lab-learn-claude-code/skills/agent-builder/. .claude/skills/agent-builder/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Help me design an AI agent that triages support tickets",
+        "result": "Claude helps design the agent's architecture, capabilities, planning and subagents."
+      }
+    ],
+    "source": "https://github.com/shareAI-lab/learn-claude-code/tree/main/skills/agent-builder",
+    "author": "shareAI-lab",
+    "tags": [
+      "agents",
+      "ai",
+      "architecture",
+      "subagents"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at shareAI-lab/learn-claude-code/skills/agent-builder/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 78,770 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 431,
+    "name": "omni-auth",
+    "summary": "Manages API key authentication and session tokens for the OmniRoute API, including Bearer tokens, session cookies and login requirements.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-auth/.",
+        "command": "mkdir -p ~/.claude/skills/omni-auth && cp -R /tmp/diegosouzapw-omniroute/skills/omni-auth/. ~/.claude/skills/omni-auth/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-auth/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-auth/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-auth && cp -R /tmp/diegosouzapw-omniroute/skills/omni-auth/. .claude/skills/omni-auth/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Authenticate to OmniRoute with my API key and get a session cookie",
+        "result": "Claude authenticates requests via Bearer token and obtains session cookies."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-auth",
+    "author": "diegosouzapw",
+    "tags": [
+      "authentication",
+      "api-key",
+      "session",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-auth/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 432,
+    "name": "omni-providers",
+    "summary": "Manages provider connections, API keys, OAuth flows and connection tests through the OmniRoute REST API.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-providers/.",
+        "command": "mkdir -p ~/.claude/skills/omni-providers && cp -R /tmp/diegosouzapw-omniroute/skills/omni-providers/. ~/.claude/skills/omni-providers/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-providers/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-providers/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-providers && cp -R /tmp/diegosouzapw-omniroute/skills/omni-providers/. .claude/skills/omni-providers/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Add a new provider connection and test it",
+        "result": "Claude uses the REST API to add the provider and run a connection test."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-providers",
+    "author": "diegosouzapw",
+    "tags": [
+      "providers",
+      "api",
+      "omniroute",
+      "oauth"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-providers/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 433,
+    "name": "omni-settings",
+    "summary": "Reads and updates OmniRoute global settings such as system prompts, thinking budget, IP filters, payload rules and require-login configuration.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-settings/.",
+        "command": "mkdir -p ~/.claude/skills/omni-settings && cp -R /tmp/diegosouzapw-omniroute/skills/omni-settings/. ~/.claude/skills/omni-settings/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-settings/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-settings/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-settings && cp -R /tmp/diegosouzapw-omniroute/skills/omni-settings/. .claude/skills/omni-settings/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Turn on require-login and set an IP filter in OmniRoute",
+        "result": "Claude reads the current settings and updates them as requested."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-settings",
+    "author": "diegosouzapw",
+    "tags": [
+      "settings",
+      "config",
+      "omniroute",
+      "filters"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-settings/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 434,
+    "name": "cli-backup-sync",
+    "summary": "Backs up and restores OmniRoute data from the CLI, including incremental snapshots, cloud sync, backup schedules and restores from archives.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cli-backup-sync/.",
+        "command": "mkdir -p ~/.claude/skills/cli-backup-sync && cp -R /tmp/diegosouzapw-omniroute/skills/cli-backup-sync/. ~/.claude/skills/cli-backup-sync/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cli-backup-sync/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cli-backup-sync/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cli-backup-sync && cp -R /tmp/diegosouzapw-omniroute/skills/cli-backup-sync/. .claude/skills/cli-backup-sync/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Take an incremental snapshot and sync it to cloud storage",
+        "result": "Claude triggers the snapshot from the CLI and syncs it to cloud storage."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/cli-backup-sync",
+    "author": "diegosouzapw",
+    "tags": [
+      "backup",
+      "restore",
+      "sync",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/cli-backup-sync/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 435,
+    "name": "omni-models",
+    "summary": "Queries available AI models across configured OmniRoute providers, resolving aliases and browsing the full model catalog.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-models/.",
+        "command": "mkdir -p ~/.claude/skills/omni-models && cp -R /tmp/diegosouzapw-omniroute/skills/omni-models/. ~/.claude/skills/omni-models/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-models/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-models/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-models && cp -R /tmp/diegosouzapw-omniroute/skills/omni-models/. .claude/skills/omni-models/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "List all models available from my configured providers",
+        "result": "Claude queries OmniRoute and lists models, aliases and provider variants."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-models",
+    "author": "diegosouzapw",
+    "tags": [
+      "models",
+      "catalog",
+      "aliases",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-models/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 436,
+    "name": "omni-api-keys",
+    "summary": "Creates, lists, rotates and revokes OmniRoute API keys, controlling per-key scopes, spending limits and expiration.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-api-keys/.",
+        "command": "mkdir -p ~/.claude/skills/omni-api-keys && cp -R /tmp/diegosouzapw-omniroute/skills/omni-api-keys/. ~/.claude/skills/omni-api-keys/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-api-keys/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-api-keys/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-api-keys && cp -R /tmp/diegosouzapw-omniroute/skills/omni-api-keys/. .claude/skills/omni-api-keys/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Rotate the API key for the staging service and set a spending limit",
+        "result": "Claude rotates the key and configures its scopes, limits and expiration."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-api-keys",
+    "author": "diegosouzapw",
+    "tags": [
+      "api-keys",
+      "rotate",
+      "scopes",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-api-keys/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 437,
+    "name": "cli-keys",
+    "summary": "Creates, lists, rotates and revokes OmniRoute API keys from the CLI, manages provider OAuth flows and inspects key scopes and expiration.",
+    "category": "Security",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cli-keys/.",
+        "command": "mkdir -p ~/.claude/skills/cli-keys && cp -R /tmp/diegosouzapw-omniroute/skills/cli-keys/. ~/.claude/skills/cli-keys/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cli-keys/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cli-keys/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cli-keys && cp -R /tmp/diegosouzapw-omniroute/skills/cli-keys/. .claude/skills/cli-keys/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Revoke the old key from the CLI and show scopes for the rest",
+        "result": "Claude runs the CLI to revoke the key and inspect the remaining keys' scopes and expiration."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/cli-keys",
+    "author": "diegosouzapw",
+    "tags": [
+      "api-keys",
+      "cli",
+      "oauth",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/cli-keys/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 438,
+    "name": "cli-serve",
+    "summary": "Starts, stops and restarts the OmniRoute server from the CLI, managing daemon mode, ports, auto-recovery, system tray integration and the dashboard shortcut.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cli-serve/.",
+        "command": "mkdir -p ~/.claude/skills/cli-serve && cp -R /tmp/diegosouzapw-omniroute/skills/cli-serve/. ~/.claude/skills/cli-serve/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cli-serve/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cli-serve/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cli-serve && cp -R /tmp/diegosouzapw-omniroute/skills/cli-serve/. .claude/skills/cli-serve/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute CLI"
+    ],
+    "usage": [
+      {
+        "prompt": "Restart the OmniRoute server on port 3000 in daemon mode",
+        "result": "Claude restarts the server through the CLI with the requested port and daemon settings."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/cli-serve",
+    "author": "diegosouzapw",
+    "tags": [
+      "server",
+      "daemon",
+      "cli",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/cli-serve/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 439,
+    "name": "omni-budget",
+    "summary": "Configures spending limits, token quotas and rate-limit policies per API key or globally, and inspects current consumption to enforce cost controls.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-budget/.",
+        "command": "mkdir -p ~/.claude/skills/omni-budget && cp -R /tmp/diegosouzapw-omniroute/skills/omni-budget/. ~/.claude/skills/omni-budget/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-budget/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-budget/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-budget && cp -R /tmp/diegosouzapw-omniroute/skills/omni-budget/. .claude/skills/omni-budget/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Set a monthly token quota for this API key and show current usage",
+        "result": "Claude configures the quota and reports current consumption."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-budget",
+    "author": "diegosouzapw",
+    "tags": [
+      "budget",
+      "quotas",
+      "rate-limit",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-budget/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 440,
+    "name": "omni-cache",
+    "summary": "Manages the OmniRoute LLM response cache, showing statistics, clearing entries, setting TTL policies and tuning semantic-similarity thresholds.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-cache/.",
+        "command": "mkdir -p ~/.claude/skills/omni-cache && cp -R /tmp/diegosouzapw-omniroute/skills/omni-cache/. ~/.claude/skills/omni-cache/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-cache/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-cache/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-cache && cp -R /tmp/diegosouzapw-omniroute/skills/omni-cache/. .claude/skills/omni-cache/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Show cache stats and clear the stale entries",
+        "result": "Claude views cache statistics and clears entries as requested."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-cache",
+    "author": "diegosouzapw",
+    "tags": [
+      "cache",
+      "ttl",
+      "llm",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-cache/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 441,
+    "name": "omni-combos-routing",
+    "summary": "Creates and manages OmniRoute routing combos with 19 strategies, configures fallback chains, tests routing outcomes and retrieves combo metrics.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-combos-routing/.",
+        "command": "mkdir -p ~/.claude/skills/omni-combos-routing && cp -R /tmp/diegosouzapw-omniroute/skills/omni-combos-routing/. ~/.claude/skills/omni-combos-routing/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-combos-routing/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-combos-routing/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-combos-routing && cp -R /tmp/diegosouzapw-omniroute/skills/omni-combos-routing/. .claude/skills/omni-combos-routing/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Create a weighted routing combo with a fallback chain and test it",
+        "result": "Claude sets up the combo with fallbacks and tests the routing outcome."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-combos-routing",
+    "author": "diegosouzapw",
+    "tags": [
+      "routing",
+      "combos",
+      "fallback",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-combos-routing/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 442,
+    "name": "omni-compression",
+    "summary": "Configures RTK, Caveman and stacked prompt compression modes, language packs and custom rules, and tests token reduction.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-compression/.",
+        "command": "mkdir -p ~/.claude/skills/omni-compression && cp -R /tmp/diegosouzapw-omniroute/skills/omni-compression/. ~/.claude/skills/omni-compression/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-compression/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-compression/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-compression && cp -R /tmp/diegosouzapw-omniroute/skills/omni-compression/. .claude/skills/omni-compression/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Enable stacked compression and test it on a sample prompt",
+        "result": "Claude configures the compression mode and tests the resulting token reduction."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-compression",
+    "author": "diegosouzapw",
+    "tags": [
+      "compression",
+      "tokens",
+      "prompts",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-compression/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 443,
+    "name": "omni-context-rtk",
+    "summary": "Configures RTK filters, context engineering rules and context relay settings, testing compression on real prompt samples and managing transformation pipelines.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-context-rtk/.",
+        "command": "mkdir -p ~/.claude/skills/omni-context-rtk && cp -R /tmp/diegosouzapw-omniroute/skills/omni-context-rtk/. ~/.claude/skills/omni-context-rtk/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-context-rtk/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-context-rtk/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-context-rtk && cp -R /tmp/diegosouzapw-omniroute/skills/omni-context-rtk/. .claude/skills/omni-context-rtk/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Add an RTK filter rule and test it with a real prompt sample",
+        "result": "Claude configures the filter and tests compression on the sample."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-context-rtk",
+    "author": "diegosouzapw",
+    "tags": [
+      "context",
+      "rtk",
+      "filters",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-context-rtk/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 444,
+    "name": "omni-db-backups",
+    "summary": "Triggers system backups, restores from backup files and manages the OmniRoute SQLite database lifecycle with export, import and incremental snapshots.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-db-backups/.",
+        "command": "mkdir -p ~/.claude/skills/omni-db-backups && cp -R /tmp/diegosouzapw-omniroute/skills/omni-db-backups/. ~/.claude/skills/omni-db-backups/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-db-backups/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-db-backups/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-db-backups && cp -R /tmp/diegosouzapw-omniroute/skills/omni-db-backups/. .claude/skills/omni-db-backups/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute",
+      "SQLite"
+    ],
+    "usage": [
+      {
+        "prompt": "Back up the OmniRoute database and restore from last night's file",
+        "result": "Claude triggers the backup and restores from the specified backup file."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-db-backups",
+    "author": "diegosouzapw",
+    "tags": [
+      "database",
+      "backup",
+      "restore",
+      "sqlite"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-db-backups/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 445,
+    "name": "omni-mcp",
+    "summary": "Connects to the OmniRoute MCP server and its 110 tools over SSE, stdio or HTTP, covering routing, cache, compression, memory, providers and audit tools.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-mcp/.",
+        "command": "mkdir -p ~/.claude/skills/omni-mcp && cp -R /tmp/diegosouzapw-omniroute/skills/omni-mcp/. ~/.claude/skills/omni-mcp/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-mcp/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-mcp/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-mcp && cp -R /tmp/diegosouzapw-omniroute/skills/omni-mcp/. .claude/skills/omni-mcp/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Connect to the OmniRoute MCP server over stdio",
+        "result": "Claude connects to the MCP server and uses its tools within the permission scopes."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-mcp",
+    "author": "diegosouzapw",
+    "tags": [
+      "mcp",
+      "server",
+      "tools",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-mcp/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 446,
+    "name": "omni-resilience",
+    "summary": "Monitors provider health, circuit-breaker states, latency percentiles and budget alerts, and inspects connection cooldowns and model lockouts in real time.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-resilience/.",
+        "command": "mkdir -p ~/.claude/skills/omni-resilience && cp -R /tmp/diegosouzapw-omniroute/skills/omni-resilience/. ~/.claude/skills/omni-resilience/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-resilience/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-resilience/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-resilience && cp -R /tmp/diegosouzapw-omniroute/skills/omni-resilience/. .claude/skills/omni-resilience/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Which providers are tripped on circuit breakers right now?",
+        "result": "Claude inspects provider health, latency metrics, cooldowns and lockouts."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-resilience",
+    "author": "diegosouzapw",
+    "tags": [
+      "monitoring",
+      "health",
+      "circuit-breaker",
+      "latency"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-resilience/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 447,
+    "name": "omni-sync-cloud",
+    "summary": "Synchronises OmniRoute configuration, provider connections and settings to and from cloud storage, and manages cloud worker auth and remote backup targets.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-sync-cloud/.",
+        "command": "mkdir -p ~/.claude/skills/omni-sync-cloud && cp -R /tmp/diegosouzapw-omniroute/skills/omni-sync-cloud/. ~/.claude/skills/omni-sync-cloud/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-sync-cloud/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-sync-cloud/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-sync-cloud && cp -R /tmp/diegosouzapw-omniroute/skills/omni-sync-cloud/. .claude/skills/omni-sync-cloud/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Sync my OmniRoute settings to cloud storage",
+        "result": "Claude pushes the configuration and connections to the cloud target."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-sync-cloud",
+    "author": "diegosouzapw",
+    "tags": [
+      "sync",
+      "cloud",
+      "config",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-sync-cloud/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 448,
+    "name": "omni-usage-logs",
+    "summary": "Accesses detailed OmniRoute call logs and usage analytics, filtering by provider, model, time, status and cost, exporting logs and aggregating token usage.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-usage-logs/.",
+        "command": "mkdir -p ~/.claude/skills/omni-usage-logs && cp -R /tmp/diegosouzapw-omniroute/skills/omni-usage-logs/. ~/.claude/skills/omni-usage-logs/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-usage-logs/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-usage-logs/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-usage-logs && cp -R /tmp/diegosouzapw-omniroute/skills/omni-usage-logs/. .claude/skills/omni-usage-logs/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Show failed calls to one provider this week and total token usage",
+        "result": "Claude filters the logs, aggregates token usage and can export the results."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-usage-logs",
+    "author": "diegosouzapw",
+    "tags": [
+      "logs",
+      "usage",
+      "analytics",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-usage-logs/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 449,
+    "name": "omni-version-manager",
+    "summary": "Installs, starts, stops, restarts and updates embedded services such as 9Router and CLIProxyAPI, monitors their status and logs, and configures auto-start.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-version-manager/.",
+        "command": "mkdir -p ~/.claude/skills/omni-version-manager && cp -R /tmp/diegosouzapw-omniroute/skills/omni-version-manager/. ~/.claude/skills/omni-version-manager/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-version-manager/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-version-manager/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-version-manager && cp -R /tmp/diegosouzapw-omniroute/skills/omni-version-manager/. .claude/skills/omni-version-manager/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute",
+      "9Router",
+      "CLIProxyAPI"
+    ],
+    "usage": [
+      {
+        "prompt": "Update CLIProxyAPI and enable auto-start",
+        "result": "Claude updates the service, checks its status and logs, and configures auto-start."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-version-manager",
+    "author": "diegosouzapw",
+    "tags": [
+      "services",
+      "install",
+      "update",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-version-manager/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 450,
+    "name": "omni-webhooks",
+    "summary": "Registers, lists, tests and removes OmniRoute webhook endpoints, configures event subscriptions and manages delivery retries.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-webhooks/.",
+        "command": "mkdir -p ~/.claude/skills/omni-webhooks && cp -R /tmp/diegosouzapw-omniroute/skills/omni-webhooks/. ~/.claude/skills/omni-webhooks/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-webhooks/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-webhooks/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-webhooks && cp -R /tmp/diegosouzapw-omniroute/skills/omni-webhooks/. .claude/skills/omni-webhooks/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "OmniRoute"
+    ],
+    "usage": [
+      {
+        "prompt": "Register a webhook for request.failed events and test it",
+        "result": "Claude registers the endpoint, subscribes it to the event and sends a test delivery."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-webhooks",
+    "author": "diegosouzapw",
+    "tags": [
+      "webhooks",
+      "events",
+      "retries",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-webhooks/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 451,
+    "name": "cli-eval",
+    "summary": "Creates and runs evaluation suites from the CLI, shows live benchmark progress and scorecards, and compares model performance in CI workflows.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cli-eval/.",
+        "command": "mkdir -p ~/.claude/skills/cli-eval && cp -R /tmp/diegosouzapw-omniroute/skills/cli-eval/. ~/.claude/skills/cli-eval/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cli-eval/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cli-eval/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cli-eval && cp -R /tmp/diegosouzapw-omniroute/skills/cli-eval/. .claude/skills/cli-eval/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Create an eval suite and compare how two models score on it",
+        "result": "Creates and runs the evaluation suite from the CLI, then shows the scorecard comparing model performance."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/cli-eval",
+    "author": "diegosouzapw",
+    "tags": [
+      "eval",
+      "benchmark",
+      "cli",
+      "models",
+      "ci"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/cli-eval/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 452,
+    "name": "cli-providers",
+    "summary": "Manages provider connections from the CLI, including listing, adding, testing and validating providers, rotating API keys and viewing per-provider metrics.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cli-providers/.",
+        "command": "mkdir -p ~/.claude/skills/cli-providers && cp -R /tmp/diegosouzapw-omniroute/skills/cli-providers/. ~/.claude/skills/cli-providers/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cli-providers/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cli-providers/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cli-providers && cp -R /tmp/diegosouzapw-omniroute/skills/cli-providers/. .claude/skills/cli-providers/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Test all my configured providers and rotate the key for one of them",
+        "result": "Runs the provider test commands from the CLI and rotates the API key for the chosen provider."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/cli-providers",
+    "author": "diegosouzapw",
+    "tags": [
+      "providers",
+      "cli",
+      "api-keys",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/cli-providers/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 453,
+    "name": "omni-agents-a2a",
+    "summary": "Interacts with OmniRoute over the JSON-RPC 2.0 agent-to-agent protocol using its six built-in skills such as smart routing, quota management and cost analysis.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-agents-a2a/.",
+        "command": "mkdir -p ~/.claude/skills/omni-agents-a2a && cp -R /tmp/diegosouzapw-omniroute/skills/omni-agents-a2a/. ~/.claude/skills/omni-agents-a2a/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-agents-a2a/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-agents-a2a/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-agents-a2a && cp -R /tmp/diegosouzapw-omniroute/skills/omni-agents-a2a/. .claude/skills/omni-agents-a2a/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Ask OmniRoute for a health report and cost analysis over A2A",
+        "result": "Calls the OmniRoute A2A endpoint using the health-report and cost-analysis skills."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-agents-a2a",
+    "author": "diegosouzapw",
+    "tags": [
+      "a2a",
+      "json-rpc",
+      "routing",
+      "agents",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-agents-a2a/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 454,
+    "name": "omni-inference",
+    "summary": "Uses OmniRoute's OpenAI-compatible endpoints for chat completions, embeddings, images, audio, moderations, rerank and the Responses API.",
+    "category": "Backend",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/omni-inference/.",
+        "command": "mkdir -p ~/.claude/skills/omni-inference && cp -R /tmp/diegosouzapw-omniroute/skills/omni-inference/. ~/.claude/skills/omni-inference/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/omni-inference/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/omni-inference/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/omni-inference && cp -R /tmp/diegosouzapw-omniroute/skills/omni-inference/. .claude/skills/omni-inference/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Call the OmniRoute chat completions endpoint and generate embeddings for these texts",
+        "result": "Sends requests to the OpenAI-compatible chat completions and embeddings endpoints."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/omni-inference",
+    "author": "diegosouzapw",
+    "tags": [
+      "openai-compatible",
+      "inference",
+      "embeddings",
+      "api",
+      "omniroute"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/omni-inference/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 455,
+    "name": "cli-batches",
+    "summary": "Submits and monitors batch inference jobs from the CLI, manages batch input files, retrieves results and wires batch pipelines into CI/CD.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/diegosouzapw-omniroute ] || git clone --depth 1 https://github.com/diegosouzapw/OmniRoute.git /tmp/diegosouzapw-omniroute"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/cli-batches/.",
+        "command": "mkdir -p ~/.claude/skills/cli-batches && cp -R /tmp/diegosouzapw-omniroute/skills/cli-batches/. ~/.claude/skills/cli-batches/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/cli-batches/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/cli-batches/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/cli-batches && cp -R /tmp/diegosouzapw-omniroute/skills/cli-batches/. .claude/skills/cli-batches/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Submit this file as a batch inference job and check on its status",
+        "result": "Uploads the file, submits the batch job from the CLI and monitors it until results can be retrieved."
+      }
+    ],
+    "source": "https://github.com/diegosouzapw/OmniRoute/tree/release/v3.8.52/skills/cli-batches",
+    "author": "diegosouzapw",
+    "tags": [
+      "batch",
+      "inference",
+      "cli",
+      "ci-cd",
+      "files"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at diegosouzapw/OmniRoute/skills/cli-batches/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,913 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 456,
+    "name": "-21risk-automation",
+    "summary": "Automates 21risk tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/21risk-automation/.",
+        "command": "mkdir -p ~/.claude/skills/21risk-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/-21risk-automation/. ~/.claude/skills/21risk-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/21risk-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/21risk-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/21risk-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/-21risk-automation/. .claude/skills/21risk-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in 21risk for me",
+        "result": "Searches Rube MCP for the current 21risk tool schemas first, then runs the requested 21risk actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/-21risk-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "21risk",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/-21risk-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 457,
+    "name": "-2chat-automation",
+    "summary": "Automates 2chat tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/2chat-automation/.",
+        "command": "mkdir -p ~/.claude/skills/2chat-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/-2chat-automation/. ~/.claude/skills/2chat-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/2chat-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/2chat-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/2chat-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/-2chat-automation/. .claude/skills/2chat-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in 2chat for me",
+        "result": "Searches Rube MCP for the current 2chat tool schemas first, then runs the requested 2chat actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/-2chat-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "2chat",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/-2chat-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 458,
+    "name": "ably-automation",
+    "summary": "Automates Ably tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ably-automation/.",
+        "command": "mkdir -p ~/.claude/skills/ably-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/ably-automation/. ~/.claude/skills/ably-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ably-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ably-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ably-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/ably-automation/. .claude/skills/ably-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Ably for me",
+        "result": "Searches Rube MCP for the current Ably tool schemas first, then runs the requested Ably actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/ably-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "ably",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/ably-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 459,
+    "name": "abstract-automation",
+    "summary": "Automates Abstract tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/abstract-automation/.",
+        "command": "mkdir -p ~/.claude/skills/abstract-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/abstract-automation/. ~/.claude/skills/abstract-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/abstract-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/abstract-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/abstract-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/abstract-automation/. .claude/skills/abstract-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Abstract for me",
+        "result": "Searches Rube MCP for the current Abstract tool schemas first, then runs the requested Abstract actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/abstract-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "abstract",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/abstract-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 460,
+    "name": "abuselpdb-automation",
+    "summary": "Automates Abuselpdb tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/abuselpdb-automation/.",
+        "command": "mkdir -p ~/.claude/skills/abuselpdb-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/abuselpdb-automation/. ~/.claude/skills/abuselpdb-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/abuselpdb-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/abuselpdb-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/abuselpdb-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/abuselpdb-automation/. .claude/skills/abuselpdb-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Abuselpdb for me",
+        "result": "Searches Rube MCP for the current Abuselpdb tool schemas first, then runs the requested Abuselpdb actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/abuselpdb-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "abuselpdb",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/abuselpdb-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 461,
+    "name": "abyssale-automation",
+    "summary": "Automates Abyssale tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/abyssale-automation/.",
+        "command": "mkdir -p ~/.claude/skills/abyssale-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/abyssale-automation/. ~/.claude/skills/abyssale-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/abyssale-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/abyssale-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/abyssale-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/abyssale-automation/. .claude/skills/abyssale-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Abyssale for me",
+        "result": "Searches Rube MCP for the current Abyssale tool schemas first, then runs the requested Abyssale actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/abyssale-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "abyssale",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/abyssale-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 462,
+    "name": "accelo-automation",
+    "summary": "Automates Accelo tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/accelo-automation/.",
+        "command": "mkdir -p ~/.claude/skills/accelo-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/accelo-automation/. ~/.claude/skills/accelo-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/accelo-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/accelo-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/accelo-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/accelo-automation/. .claude/skills/accelo-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Accelo for me",
+        "result": "Searches Rube MCP for the current Accelo tool schemas first, then runs the requested Accelo actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/accelo-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "accelo",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/accelo-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 463,
+    "name": "accredible-certificates-automation",
+    "summary": "Automates Accredible Certificates tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/accredible-certificates-automation/.",
+        "command": "mkdir -p ~/.claude/skills/accredible-certificates-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/accredible-certificates-automation/. ~/.claude/skills/accredible-certificates-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/accredible-certificates-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/accredible-certificates-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/accredible-certificates-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/accredible-certificates-automation/. .claude/skills/accredible-certificates-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Accredible Certificates for me",
+        "result": "Searches Rube MCP for the current Accredible Certificates tool schemas first, then runs the requested Accredible Certificates actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/accredible-certificates-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "accredible certificates",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/accredible-certificates-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 464,
+    "name": "acculynx-automation",
+    "summary": "Automates Acculynx tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/acculynx-automation/.",
+        "command": "mkdir -p ~/.claude/skills/acculynx-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/acculynx-automation/. ~/.claude/skills/acculynx-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/acculynx-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/acculynx-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/acculynx-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/acculynx-automation/. .claude/skills/acculynx-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Acculynx for me",
+        "result": "Searches Rube MCP for the current Acculynx tool schemas first, then runs the requested Acculynx actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/acculynx-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "acculynx",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/acculynx-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 465,
+    "name": "active-campaign-automation",
+    "summary": "Automates ActiveCampaign tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/active-campaign-automation/.",
+        "command": "mkdir -p ~/.claude/skills/active-campaign-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/active-campaign-automation/. ~/.claude/skills/active-campaign-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/active-campaign-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/active-campaign-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/active-campaign-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/active-campaign-automation/. .claude/skills/active-campaign-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in ActiveCampaign for me",
+        "result": "Searches Rube MCP for the current ActiveCampaign tool schemas first, then runs the requested ActiveCampaign actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/active-campaign-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "activecampaign",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/active-campaign-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 466,
+    "name": "addresszen-automation",
+    "summary": "Automates Addresszen tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/addresszen-automation/.",
+        "command": "mkdir -p ~/.claude/skills/addresszen-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/addresszen-automation/. ~/.claude/skills/addresszen-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/addresszen-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/addresszen-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/addresszen-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/addresszen-automation/. .claude/skills/addresszen-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Addresszen for me",
+        "result": "Searches Rube MCP for the current Addresszen tool schemas first, then runs the requested Addresszen actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/addresszen-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "addresszen",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/addresszen-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 467,
+    "name": "adobe-automation",
+    "summary": "Automates Adobe tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/adobe-automation/.",
+        "command": "mkdir -p ~/.claude/skills/adobe-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/adobe-automation/. ~/.claude/skills/adobe-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/adobe-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/adobe-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/adobe-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/adobe-automation/. .claude/skills/adobe-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Adobe for me",
+        "result": "Searches Rube MCP for the current Adobe tool schemas first, then runs the requested Adobe actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/adobe-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "adobe",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/adobe-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 468,
+    "name": "adrapid-automation",
+    "summary": "Automates Adrapid tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/adrapid-automation/.",
+        "command": "mkdir -p ~/.claude/skills/adrapid-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/adrapid-automation/. ~/.claude/skills/adrapid-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/adrapid-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/adrapid-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/adrapid-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/adrapid-automation/. .claude/skills/adrapid-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Adrapid for me",
+        "result": "Searches Rube MCP for the current Adrapid tool schemas first, then runs the requested Adrapid actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/adrapid-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "adrapid",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/adrapid-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 469,
+    "name": "adyntel-automation",
+    "summary": "Automates Adyntel tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/adyntel-automation/.",
+        "command": "mkdir -p ~/.claude/skills/adyntel-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/adyntel-automation/. ~/.claude/skills/adyntel-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/adyntel-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/adyntel-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/adyntel-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/adyntel-automation/. .claude/skills/adyntel-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Adyntel for me",
+        "result": "Searches Rube MCP for the current Adyntel tool schemas first, then runs the requested Adyntel actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/adyntel-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "adyntel",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/adyntel-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 470,
+    "name": "aero-workflow-automation",
+    "summary": "Automates Aero Workflow tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/aero-workflow-automation/.",
+        "command": "mkdir -p ~/.claude/skills/aero-workflow-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/aero-workflow-automation/. ~/.claude/skills/aero-workflow-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/aero-workflow-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/aero-workflow-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/aero-workflow-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/aero-workflow-automation/. .claude/skills/aero-workflow-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Aero Workflow for me",
+        "result": "Searches Rube MCP for the current Aero Workflow tool schemas first, then runs the requested Aero Workflow actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/aero-workflow-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "aero workflow",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/aero-workflow-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 471,
+    "name": "aeroleads-automation",
+    "summary": "Automates Aeroleads tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/aeroleads-automation/.",
+        "command": "mkdir -p ~/.claude/skills/aeroleads-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/aeroleads-automation/. ~/.claude/skills/aeroleads-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/aeroleads-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/aeroleads-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/aeroleads-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/aeroleads-automation/. .claude/skills/aeroleads-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Aeroleads for me",
+        "result": "Searches Rube MCP for the current Aeroleads tool schemas first, then runs the requested Aeroleads actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/aeroleads-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "aeroleads",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/aeroleads-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 472,
+    "name": "affinda-automation",
+    "summary": "Automates Affinda tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/affinda-automation/.",
+        "command": "mkdir -p ~/.claude/skills/affinda-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/affinda-automation/. ~/.claude/skills/affinda-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/affinda-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/affinda-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/affinda-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/affinda-automation/. .claude/skills/affinda-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Affinda for me",
+        "result": "Searches Rube MCP for the current Affinda tool schemas first, then runs the requested Affinda actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/affinda-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "affinda",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/affinda-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 473,
+    "name": "affinity-automation",
+    "summary": "Automates Affinity tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/affinity-automation/.",
+        "command": "mkdir -p ~/.claude/skills/affinity-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/affinity-automation/. ~/.claude/skills/affinity-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/affinity-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/affinity-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/affinity-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/affinity-automation/. .claude/skills/affinity-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Affinity for me",
+        "result": "Searches Rube MCP for the current Affinity tool schemas first, then runs the requested Affinity actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/affinity-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "affinity",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/affinity-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 474,
+    "name": "agencyzoom-automation",
+    "summary": "Automates Agencyzoom tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agencyzoom-automation/.",
+        "command": "mkdir -p ~/.claude/skills/agencyzoom-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agencyzoom-automation/. ~/.claude/skills/agencyzoom-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agencyzoom-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agencyzoom-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agencyzoom-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agencyzoom-automation/. .claude/skills/agencyzoom-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Agencyzoom for me",
+        "result": "Searches Rube MCP for the current Agencyzoom tool schemas first, then runs the requested Agencyzoom actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/agencyzoom-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "agencyzoom",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/agencyzoom-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 475,
+    "name": "agent-mail-automation",
+    "summary": "Automates Agent Mail tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agent-mail-automation/.",
+        "command": "mkdir -p ~/.claude/skills/agent-mail-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agent-mail-automation/. ~/.claude/skills/agent-mail-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agent-mail-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agent-mail-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agent-mail-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agent-mail-automation/. .claude/skills/agent-mail-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Agent Mail for me",
+        "result": "Searches Rube MCP for the current Agent Mail tool schemas first, then runs the requested Agent Mail actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/agent-mail-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "agent mail",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/agent-mail-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 476,
+    "name": "agentql-automation",
+    "summary": "Automates Agentql tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agentql-automation/.",
+        "command": "mkdir -p ~/.claude/skills/agentql-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agentql-automation/. ~/.claude/skills/agentql-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agentql-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agentql-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agentql-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agentql-automation/. .claude/skills/agentql-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Agentql for me",
+        "result": "Searches Rube MCP for the current Agentql tool schemas first, then runs the requested Agentql actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/agentql-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "agentql",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/agentql-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 477,
+    "name": "agenty-automation",
+    "summary": "Automates Agenty tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agenty-automation/.",
+        "command": "mkdir -p ~/.claude/skills/agenty-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agenty-automation/. ~/.claude/skills/agenty-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agenty-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agenty-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agenty-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agenty-automation/. .claude/skills/agenty-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Agenty for me",
+        "result": "Searches Rube MCP for the current Agenty tool schemas first, then runs the requested Agenty actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/agenty-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "agenty",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/agenty-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 478,
+    "name": "agiled-automation",
+    "summary": "Automates Agiled tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agiled-automation/.",
+        "command": "mkdir -p ~/.claude/skills/agiled-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agiled-automation/. ~/.claude/skills/agiled-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agiled-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agiled-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agiled-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agiled-automation/. .claude/skills/agiled-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Agiled for me",
+        "result": "Searches Rube MCP for the current Agiled tool schemas first, then runs the requested Agiled actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/agiled-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "agiled",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/agiled-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 479,
+    "name": "agility-cms-automation",
+    "summary": "Automates Agility CMS tasks through the Composio Rube MCP server, searching for current tool schemas before running actions.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/agility-cms-automation/.",
+        "command": "mkdir -p ~/.claude/skills/agility-cms-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agility-cms-automation/. ~/.claude/skills/agility-cms-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/agility-cms-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/agility-cms-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/agility-cms-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/agility-cms-automation/. .claude/skills/agility-cms-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Rube MCP server"
+    ],
+    "usage": [
+      {
+        "prompt": "Use Rube MCP to automate a task in Agility CMS for me",
+        "result": "Searches Rube MCP for the current Agility CMS tool schemas first, then runs the requested Agility CMS actions."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/agility-cms-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "agility cms",
+      "composio",
+      "rube-mcp",
+      "automation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/agility-cms-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 480,
+    "name": "Ahrefs Automation",
+    "summary": "Automates SEO research with Ahrefs through Composio, covering backlinks, keywords, domain metrics history, organic rankings and batch URL analysis.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "Clone the source repository to a temporary folder (skipped if it is already there). Steps assume a POSIX shell such as bash or zsh.",
+        "command": "[ -d /tmp/composiohq-awesome-claude-skills ] || git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/composiohq-awesome-claude-skills"
+      },
+      {
+        "step": "Copy the skill folder into your personal skills directory as ~/.claude/skills/ahrefs-automation/.",
+        "command": "mkdir -p ~/.claude/skills/ahrefs-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/ahrefs-automation/. ~/.claude/skills/ahrefs-automation/"
+      },
+      {
+        "step": "Check SKILL.md starts with YAML front matter containing name and description (already present upstream).",
+        "command": "head -n 5 ~/.claude/skills/ahrefs-automation/SKILL.md"
+      },
+      {
+        "step": "Optional: for a project-scoped install, copy it into .claude/skills/ahrefs-automation/ in your repository instead.",
+        "command": "mkdir -p .claude/skills/ahrefs-automation && cp -R /tmp/composiohq-awesome-claude-skills/composio-skills/ahrefs-automation/. .claude/skills/ahrefs-automation/"
+      },
+      {
+        "step": "Restart Claude Code so the new skill is discovered.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in",
+      "git"
+    ],
+    "dependencies": [
+      "Composio Ahrefs integration"
+    ],
+    "usage": [
+      {
+        "prompt": "Analyze the backlink profile of example.com with Ahrefs",
+        "result": "Uses the Composio Ahrefs integration to analyze the domain's backlink profile."
+      }
+    ],
+    "source": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/composio-skills/ahrefs-automation",
+    "author": "ComposioHQ",
+    "tags": [
+      "ahrefs",
+      "seo",
+      "backlinks",
+      "keywords",
+      "composio"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ComposioHQ/awesome-claude-skills/composio-skills/ahrefs-automation/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 77,350 stars); installable by copying the skill folder."
+  },
+  {
+    "rank": 481,
+    "name": "adr-verify",
+    "summary": "Reads back the ADR pattern and edge namespaces, flags dangling references, supersede cycles and unknown statuses, and exits with an error on cycles.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-adr@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-adr:adr-verify. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Verify my ADR graph for dangling references and cycles",
+        "result": "Reads the adr-patterns and adr-edges namespaces, reports dangling refs, supersede cycles and unknown statuses, and exits 1 on cycles."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-adr/skills/adr-verify",
+    "author": "ruvnet",
+    "tags": [
+      "adr",
+      "verification",
+      "decisions",
+      "ruflo"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-adr/skills/adr-verify/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-adr)."
+  },
+  {
+    "rank": 482,
+    "name": "chat-format",
+    "summary": "Formats chat messages in a local model's template such as llama3, mistral, chatml, phi or gemma, and routes queries over a small WASM HNSW pattern index.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-ruvllm@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-ruvllm:chat-format. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Format these messages in the llama3 chat template for my local runtime",
+        "result": "Formats the messages in the llama3 template and can route queries over the small WASM HNSW pattern index."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-ruvllm/skills/chat-format",
+    "author": "ruvnet",
+    "tags": [
+      "prompts",
+      "chat-template",
+      "local-llm",
+      "hnsw"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-ruvllm/skills/chat-format/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-ruvllm)."
+  },
+  {
+    "rank": 483,
+    "name": "intelligence-transfer",
+    "summary": "Copies learned patterns from another local project or browses, downloads and publishes them through the IPFS pattern marketplace.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-intelligence@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-intelligence:intelligence-transfer. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Copy the learned patterns from my old project into this new one",
+        "result": "Copies the learned patterns from the older local project so the new project starts with them."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-intelligence/skills/intelligence-transfer",
+    "author": "ruvnet",
+    "tags": [
+      "patterns",
+      "ipfs",
+      "transfer",
+      "ruflo"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-intelligence/skills/intelligence-transfer/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-intelligence)."
+  },
+  {
+    "rank": 484,
+    "name": "kg-traverse",
+    "summary": "Runs a pathfinder traversal of the knowledge graph starting from a seed entity.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-knowledge-graph@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-knowledge-graph:kg-traverse. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Traverse the knowledge graph starting from the AuthService entity",
+        "result": "Runs a pathfinder traversal of the knowledge graph from the given seed entity."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-knowledge-graph/skills/kg-traverse",
+    "author": "ruvnet",
+    "tags": [
+      "knowledge-graph",
+      "traversal",
+      "pathfinder",
+      "ruflo"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-knowledge-graph/skills/kg-traverse/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-knowledge-graph)."
+  },
+  {
+    "rank": 485,
+    "name": "llm-config",
+    "summary": "Configures RuVLLM local inference helpers by generating a config and creating and adapting in-process MicroLoRA and SONA instances from quality signals.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-ruvllm@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-ruvllm:llm-config. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Set up RuVLLM for local air-gapped inference",
+        "result": "Generates a RuVLLM config and creates in-process MicroLoRA and SONA instances that adapt from quality signals."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-ruvllm/skills/llm-config",
+    "author": "ruvnet",
+    "tags": [
+      "ruvllm",
+      "local-inference",
+      "microlora",
+      "sona",
+      "config"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-ruvllm/skills/llm-config/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-ruvllm)."
+  },
+  {
+    "rank": 486,
+    "name": "neural-train",
+    "summary": "Trains SONA and MicroLoRA neural patterns from successful task completions, running the distill and consolidate phases of the four-step pipeline.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-intelligence@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-intelligence:neural-train. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Train neural patterns from my recent successful tasks",
+        "result": "Trains SONA and MicroLoRA patterns from successful completions, running the DISTILL and CONSOLIDATE phases."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-intelligence/skills/neural-train",
+    "author": "ruvnet",
+    "tags": [
+      "training",
+      "sona",
+      "microlora",
+      "neural"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-intelligence/skills/neural-train/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-intelligence)."
+  },
+  {
+    "rank": 487,
+    "name": "vector-cluster",
+    "summary": "Clusters code by graph community detection using spectral or Louvain methods through the ruvector graph-cluster hook.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-ruvector@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-ruvector:vector-cluster. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "ruvector (npx ruvector@0.3.3)"
+    ],
+    "usage": [
+      {
+        "prompt": "Cluster this codebase by graph community",
+        "result": "Runs npx ruvector hooks graph-cluster to group code by graph community detection."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-ruvector/skills/vector-cluster",
+    "author": "ruvnet",
+    "tags": [
+      "clustering",
+      "louvain",
+      "spectral",
+      "ruvector"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-ruvector/skills/vector-cluster/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-ruvector)."
+  },
+  {
+    "rank": 488,
+    "name": "vector-embed",
+    "summary": "Generates 384-dimension text embeddings with ruvector's ONNX all-MiniLM-L6-v2 model, normalizes them and stores them in an HNSW index.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-ruvector@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-ruvector:vector-embed. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "ruvector (npx ruvector@0.3.3)",
+      "ONNX all-MiniLM-L6-v2"
+    ],
+    "usage": [
+      {
+        "prompt": "Embed these documents and store them in the vector index",
+        "result": "Generates embeddings with ruvector's embed command, normalizes them and stores them in the HNSW index."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-ruvector/skills/vector-embed",
+    "author": "ruvnet",
+    "tags": [
+      "embeddings",
+      "onnx",
+      "hnsw",
+      "ruvector"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-ruvector/skills/vector-embed/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-ruvector)."
+  },
+  {
+    "rank": 489,
+    "name": "vector-hyperbolic",
+    "summary": "Places hierarchical data in the Poincare ball, using depth for the radius and ruvector text embeddings for direction.",
+    "category": "Data",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-ruvector@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-ruvector:vector-hyperbolic. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "ruvector (npx ruvector@0.3.3)"
+    ],
+    "usage": [
+      {
+        "prompt": "Place my category tree in the Poincare ball",
+        "result": "Uses depth for the radius and ruvector text embeddings for direction to place the hierarchy in the Poincare ball."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-ruvector/skills/vector-hyperbolic",
+    "author": "ruvnet",
+    "tags": [
+      "hyperbolic",
+      "poincare",
+      "hierarchy",
+      "embeddings"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-ruvector/skills/vector-hyperbolic/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-ruvector)."
+  },
+  {
+    "rank": 490,
+    "name": "vector-setup",
+    "summary": "Runs first-time setup for ruvector by installing the ONNX, Brain and SONA add-ons, registering the MCP server and verifying the install with doctor.",
+    "category": "DevOps",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-ruvector@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-ruvector:vector-setup. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "ruvector@0.3.3"
+    ],
+    "usage": [
+      {
+        "prompt": "Set up ruvector for the first time",
+        "result": "Installs the ONNX, Brain and SONA add-ons, registers the MCP server and verifies the install with doctor."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-ruvector/skills/vector-setup",
+    "author": "ruvnet",
+    "tags": [
+      "ruvector",
+      "setup",
+      "mcp",
+      "onnx"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-ruvector/skills/vector-setup/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-ruvector)."
+  },
+  {
+    "rank": 491,
+    "name": "memory-bridge",
+    "summary": "Bridges Claude Code auto-memory into AgentDB with ONNX embeddings, deduplicates entries and enables unified cross-project search.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-rag-memory@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-rag-memory:memory-bridge. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [
+      "AgentDB"
+    ],
+    "usage": [
+      {
+        "prompt": "Bridge my Claude Code auto-memory into AgentDB",
+        "result": "Imports the auto-memory into AgentDB with ONNX embeddings and deduplicates it for cross-project search."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-rag-memory/skills/memory-bridge",
+    "author": "ruvnet",
+    "tags": [
+      "memory",
+      "agentdb",
+      "embeddings",
+      "dedupe"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-rag-memory/skills/memory-bridge/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-rag-memory)."
+  },
+  {
+    "rank": 492,
+    "name": "memory-search",
+    "summary": "Searches Ruflo memory using semantic retrieval, a keyword and semantic union, or optional SmartRetrieval reranking.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-rag-memory@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-rag-memory:memory-search. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Search Ruflo memory for how we handled rate limiting",
+        "result": "Searches Ruflo memory with semantic retrieval and optionally reranks results with SmartRetrieval."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-rag-memory/skills/memory-search",
+    "author": "ruvnet",
+    "tags": [
+      "memory",
+      "search",
+      "semantic",
+      "rag"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-rag-memory/skills/memory-search/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-rag-memory)."
+  },
+  {
+    "rank": 493,
+    "name": "diff-analyze",
+    "summary": "Analyzes git diffs to score risk, recommend reviewers and classify changes before a PR or merge.",
+    "category": "Git/Version Control",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-jujutsu@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-jujutsu:diff-analyze. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Analyze this diff for risk and suggest reviewers before I merge",
+        "result": "Analyzes the git diff, scores its risk, classifies the change and recommends reviewers."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-jujutsu/skills/diff-analyze",
+    "author": "ruvnet",
+    "tags": [
+      "git",
+      "diff",
+      "risk",
+      "code-review"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-jujutsu/skills/diff-analyze/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-jujutsu)."
+  },
+  {
+    "rank": 494,
+    "name": "loop-worker",
+    "summary": "Runs Ruflo background workers using Claude Code's native /loop scheduling.",
+    "category": "Productivity",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-loop-workers@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-loop-workers:loop-worker. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run a Ruflo background worker on a loop",
+        "result": "Starts the Ruflo background worker using Claude Code's native /loop scheduling."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-loop-workers/skills/loop-worker",
+    "author": "ruvnet",
+    "tags": [
+      "loop",
+      "workers",
+      "scheduling",
+      "ruflo"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-loop-workers/skills/loop-worker/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-loop-workers)."
+  },
+  {
+    "rank": 495,
+    "name": "sparc-implement",
+    "summary": "Runs the SPARC Pseudocode and Architecture phases by writing algorithm pseudocode, designing module boundaries and API contracts, then implementing.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-sparc@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-sparc:sparc-implement. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run the SPARC pseudocode and architecture phases for this feature",
+        "result": "Writes algorithm pseudocode, designs module boundaries and API contracts, then implements."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-sparc/skills/sparc-implement",
+    "author": "ruvnet",
+    "tags": [
+      "sparc",
+      "pseudocode",
+      "architecture",
+      "implementation"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-sparc/skills/sparc-implement/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-sparc)."
+  },
+  {
+    "rank": 496,
+    "name": "sparc-refine",
+    "summary": "Runs the SPARC Refinement and Completion phases by reviewing code, improving test coverage, validating against the spec and generating documentation.",
+    "category": "Refactoring",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-sparc@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-sparc:sparc-refine. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Run SPARC refinement and completion on this feature",
+        "result": "Reviews the code, improves test coverage, validates against the specification and generates documentation."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-sparc/skills/sparc-refine",
+    "author": "ruvnet",
+    "tags": [
+      "sparc",
+      "review",
+      "coverage",
+      "docs"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-sparc/skills/sparc-refine/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-sparc)."
+  },
+  {
+    "rank": 497,
+    "name": "sparc-spec",
+    "summary": "Runs the SPARC Specification phase by gathering requirements, defining acceptance criteria, identifying constraints and storing the spec in memory.",
+    "category": "Documentation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-sparc@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-sparc:sparc-spec. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Start the SPARC specification phase for a new export feature",
+        "result": "Gathers requirements, defines acceptance criteria, identifies constraints and stores the spec in memory."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-sparc/skills/sparc-spec",
+    "author": "ruvnet",
+    "tags": [
+      "sparc",
+      "requirements",
+      "specification",
+      "acceptance"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-sparc/skills/sparc-spec/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-sparc)."
+  },
+  {
+    "rank": 498,
+    "name": "tdd-workflow",
+    "summary": "Guides a London School TDD workflow with mock-first, outside-in test development.",
+    "category": "Testing",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-testgen@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-testgen:tdd-workflow. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Build this feature using London School TDD",
+        "result": "Follows a mock-first, outside-in test development workflow."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-testgen/skills/tdd-workflow",
+    "author": "ruvnet",
+    "tags": [
+      "tdd",
+      "london-school",
+      "mocks",
+      "testing"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-testgen/skills/tdd-workflow/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-testgen)."
+  },
+  {
+    "rank": 499,
+    "name": "generate-console-theme",
+    "summary": "Generates a data-only animated theme preset for Ruflo Console Theme Studio, such as new color palettes or Orbital globe, stars and swarm variations.",
+    "category": "Frontend",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-console@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-console:generate-console-theme. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Generate a cyberpunk console theme for Ruflo",
+        "result": "Generates a data-only animated theme preset for Ruflo Console Theme Studio."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-console/skills/generate-console-theme",
+    "author": "ruvnet",
+    "tags": [
+      "theme",
+      "animation",
+      "palette",
+      "console"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-console/skills/generate-console-theme/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-console)."
+  },
+  {
+    "rank": 500,
+    "name": "create-plugin",
+    "summary": "Scaffolds a new Claude Code plugin with the proper directory structure, plugin.json, skills, commands and agents.",
+    "category": "Code Generation",
+    "install": [
+      {
+        "step": "In Claude Code, add the marketplace that lists this plugin (skip if already added).",
+        "command": "/plugin marketplace add ruvnet/ruflo"
+      },
+      {
+        "step": "Install the plugin that ships this skill.",
+        "command": "/plugin install ruflo-plugin-creator@ruflo"
+      },
+      {
+        "step": "Restart Claude Code so the skill is discovered.",
+        "command": null
+      },
+      {
+        "step": "Confirm it loaded: ask Claude \"Which skills do you have available?\" and look for ruflo-plugin-creator:create-plugin. The SKILL.md front matter (name, description) ships with the plugin; no extra configuration is needed.",
+        "command": null
+      }
+    ],
+    "prerequisites": [
+      "Claude Code installed and signed in"
+    ],
+    "dependencies": [],
+    "usage": [
+      {
+        "prompt": "Scaffold a new Claude Code plugin called my-tools",
+        "result": "Scaffolds the plugin directory structure with plugin.json, skills, commands and agents."
+      }
+    ],
+    "source": "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-plugin-creator/skills/create-plugin",
+    "author": "ruvnet",
+    "tags": [
+      "plugin",
+      "scaffold",
+      "claude-code",
+      "skills"
+    ],
+    "verified": true,
+    "verificationNote": "SKILL.md confirmed at ruvnet/ruflo/plugins/ruflo-plugin-creator/skills/create-plugin/SKILL.md via the GitHub API on 2026-10-18 (front-matter name matches; repository had 76,297 stars); installable via the ruflo marketplace (plugin ruflo-plugin-creator)."
   }
 ];

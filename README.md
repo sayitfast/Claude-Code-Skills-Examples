@@ -6,7 +6,7 @@
 
 # Top Claude Code Skills & Plugins
 
-A static, responsive catalog of 100 Claude Code skills (`SKILL.md` packages). You can search it, filter it, and open any skill to see copy-ready install steps. It is built with Bootstrap 5.3.8 and vanilla JavaScript. There is no build step and no backend.
+A static, responsive catalog of Claude Code skills (`SKILL.md` packages). You can search it, filter it, and open any skill to see copy-ready install steps. It is built with Bootstrap 5.3.8 and vanilla JavaScript. There is no build step and no backend.
 
 
 <img width="1725" height="759" alt="Screenshot 2026-10-15 at 1 18 41 PM" src="https://github.com/user-attachments/assets/c3afa52d-5322-40d3-b269-1ffe676abb4f" />
@@ -45,7 +45,7 @@ The page opens from `file://`. The data loads from `data/skills.js` through a no
 | `index.html` | Page markup, Bootstrap CDN links (pinned and SRI-checked), modal shell |
 | `css/styles.css` | Small overrides: accent color, focus states, code blocks |
 | `js/app.js` | Search, filters, sort, batched rendering, modal, copy, theme toggle |
-| `data/skills.js` | `window.SKILLS = [...]`, the 100 entries as strict JSON |
+| `data/skills.js` | `window.SKILLS = [...]`, every entry as strict JSON |
 | `REVIEW.md` | Independent review findings, followed by a Resolution section listing what was fixed |
 
 ## Ranking criteria
@@ -59,19 +59,16 @@ The order of skills is an editorial judgment based on these criteria, in priorit
 
 ## Verification summary
 
-These counts describe the data as shipped. The page always shows live counts computed from `window.SKILLS`.
+Every shipped entry is verified. The page always shows live verified and unverified counts computed from `window.SKILLS`.
 
-- **Verified: 100**
-- **Unverified: 0**
-
-Each entry's `SKILL.md` was fetched from GitHub through the authenticated GitHub API on 2026-10-15. Every `source` URL returned HTTP 200. Every `/plugin install <plugin>@<marketplace>` command was checked against that repository's `.claude-plugin/marketplace.json`. No URLs, authors, or star counts were invented. 
+Each entry's `SKILL.md` was fetched from GitHub through the authenticated GitHub API, the first batch on 2026-10-15 and the second on 2026-10-18. Each second-batch entry's front-matter `name` was also checked against the entry name. Every `source` URL returned HTTP 200. Every `/plugin install <plugin>@<marketplace>` command was checked against that repository's `.claude-plugin/marketplace.json`. No URLs, authors, or star counts were invented. 
 ## Data format
 
 `data/skills.js` assigns a JSON array to `window.SKILLS`. Keep it strict JSON: double quotes, no trailing commas, no comments inside the array, and no functions. Each entry has these fields:
 
 | Field | Type | Notes |
 | --- | --- | --- |
-| `rank` | integer | 1–100, unique |
+| `rank` | integer | Unique; a new entry takes the next unused number |
 | `name` | string | Skill name from the `SKILL.md` front matter |
 | `summary` | string | One sentence, 160 characters or fewer |
 | `category` | string | Exactly one of: Code Generation, Testing, Debugging, Refactoring, Documentation, DevOps, Git/Version Control, Data, Security, Productivity, Frontend, Backend |
@@ -91,11 +88,11 @@ You only edit `data/skills.js`. The UI picks up the change automatically.
 
 1. Open `data/skills.js`.
 2. Add a comma after the last entry's closing `}`.
-3. Paste a new entry. Below is a complete, valid example. It is a personal skill you wrote yourself, so it has no public source and is marked unverified:
+3. Paste a new entry. Below is a complete, valid example. It is a personal skill you wrote yourself, so it has no public source and is marked unverified. Change `rank` to the next unused number:
 
    ```json
    {
-     "rank": 101,
+     "rank": 9999,
      "name": "release-notes",
      "summary": "Drafts release notes from merged pull requests since the last git tag, grouped by feature, fix, and chore.",
      "category": "Git/Version Control",
@@ -136,14 +133,14 @@ You only edit `data/skills.js`. The UI picks up the change automatically.
    node -e 'const s=require("fs").readFileSync("data/skills.js","utf8");const a=JSON.parse(s.slice(s.indexOf("window.SKILLS = ")+16).trim().replace(/;$/,""));console.log(a.length+" entries, valid JSON")'
    ```
 
-If you add an entry, the list holds more than 100 skills. To keep exactly 100, replace an existing entry and reuse its rank.
+To replace a skill instead of adding one, overwrite an existing entry and reuse its rank.
 
 ## Features
 
-- Two catalogs with a Skills / Plugins tab bar at the top: `index.html` (top 100 skills) and `plugins.html` (all 315 plugins in the official `anthropics/claude-plugins-official` marketplace, with their `/plugin install` commands).
+- Two catalogs with a Skills / Plugins tab bar at the top: `index.html` (top skills) and `plugins.html` (every plugin in the official `anthropics/claude-plugins-official` marketplace, with their `/plugin install` commands).
 
 - Live search across name, summary, and tags. All words must match.
-- Category filter, a "Verified only" switch, and sorting by rank or by name (A–Z).
+- Category filter, a "Verified only" switch, and sorting by rank, name (A–Z), or favorites. The "Anthropic Official" sort option shows only Anthropic's own skills or plugins (sourced from an `anthropics/` repository, not counting the third-party plugins under `external_plugins/`).
 - Cards render in batches of 24. A "Load more" button shows how many remain and moves focus to the first new card.
 - Detail modal shows install steps, prerequisites, dependencies, usage, source, author, and tags. Each command and prompt has a Copy button that changes to "Copied" for 2 seconds.
 - A message appears when nothing matches, with a button to clear search and filters.
@@ -153,7 +150,7 @@ If you add an entry, the list holds more than 100 skills. To keep exactly 100, r
 
 ## Assumptions
 
-1. **"Top 100" is editorial.** No public ranking of skills exists, so the ranking criteria above define the order.
+1. **"Top" is editorial.** No public ranking of skills exists, so the ranking criteria above define the order.
 2. **Only real `SKILL.md` files count.** Every entry maps to one `SKILL.md` in a public repository. Slash-command-only plugins, MCP servers, and generic tips are excluded.
 3. **Sources are limited to well-known publishers.** Anthropic, obra/superpowers, Vercel, Trail of Bits, Sentry, Cloudflare, Supabase, Expo, HashiCorp, and Hugging Face. Using only these let every entry be verified, which is why there are 0 unverified entries. The UI still fully supports unverified entries (badge and filter).
 4. **Plugin installs are preferred.** When the source repository has a Claude Code plugin marketplace, install steps use `/plugin marketplace add` and `/plugin install`. Otherwise they clone the repository (POSIX shell, safe to re-run) and copy the skill folder's contents into `~/.claude/skills/<name>/`, using the front-matter `name` as the folder name.
